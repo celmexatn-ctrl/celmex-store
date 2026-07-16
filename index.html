@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#05080d" />
+  <meta name="description" content="CelMex Store — Tu próximo smartphone está aquí. Envíos a todo México y atención por WhatsApp 24/7." />
+  <title>CelMex Store — Tienda oficial</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="splash" class="splash" aria-hidden="true"><img src="assets/logo.png" alt=""><strong>CelMex Store</strong><span>Tu próximo smartphone está aquí.</span></div>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+
+  <header class="topbar">
+    <button id="brandButton" class="brand" onclick="scrollToTop()" aria-label="Ir al inicio">
+      <img src="assets/logo.png" alt="Logo CelMex" />
+      <span><strong>CelMex Store</strong><small>Tu mundo móvil, conectado.</small></span>
+    </button>
+    <div class="top-actions">
+      <button id="themeBtn" class="icon-btn" aria-label="Cambiar tema">☾</button>
+      <button id="cartBtn" class="icon-btn" onclick="openQuote()" aria-label="Cotización">🛒<i id="cartCount">0</i></button>
+      <button id="installBtn" class="icon-btn install-btn" hidden aria-label="Instalar aplicación">＋</button>
+      <button class="icon-btn" onclick="openFavorites()" aria-label="Favoritos">♡<i id="favCount">0</i></button>
+      <a class="icon-btn" href="https://wa.me/526313181585?text=Hola%20CelMex%2C%20necesito%20ayuda%20para%20elegir%20un%20equipo." aria-label="WhatsApp">◉</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero reveal">
+      <div class="hero-copy">
+        <span class="eyebrow">TIENDA ONLINE • ATENCIÓN 24/7</span>
+        <h1>Tecnología que conecta <em>tu mundo.</em></h1>
+        <p>Elige modelo, capacidad y color. Nosotros confirmamos existencia, envío y forma de pago directamente por WhatsApp.</p>
+        <div class="hero-actions">
+          <button class="primary" onclick="goCatalog()">Ver catálogo</button>
+          <button class="secondary" onclick="openAdvisor()">No sé cuál elegir</button>
+        </div>
+      </div>
+      <img class="hero-product" src="assets/s25-ultra-silverblue.png" alt="Samsung Galaxy S25 Ultra" />
+      <div class="trust-row"><span>🚚 Envíos a todo México</span><span>🛡️ 1 año con fabricante</span><span>✅ 90 días CelMex</span><span>💳 Efectivo, tarjeta y transferencia</span></div>
+    </section>
+
+    <section class="promo-wrap reveal" aria-label="Promociones y beneficios">
+      <div class="promo-track" id="promoTrack">
+        <article class="promo promo-blue"><b>Envíos a todo México</b><span>Compra desde cualquier estado.</span></article>
+        <article class="promo promo-green"><b>Atención por WhatsApp 24/7</b><span>Resolvemos tus dudas antes de comprar.</span></article>
+        <article class="promo promo-violet"><b>Compra con confianza</b><span>Garantía fabricante + respaldo CelMex.</span></article>
+      </div>
+      <div class="promo-dots" id="promoDots"></div>
+    </section>
+
+    <section class="flash reveal" id="ofertas">
+      <div>
+        <span class="eyebrow">OFERTA FLASH</span>
+        <h2>Beneficio especial de lanzamiento</h2>
+        <p>Solicita tu equipo antes de que termine el contador y pregunta por disponibilidad y promoción vigente.</p>
+      </div>
+      <div class="countdown" id="countdown"><span><b>00</b><small>h</small></span><span><b>00</b><small>m</small></span><span><b>00</b><small>s</small></span></div>
+      <button class="primary" onclick="goCatalog()">Ver equipos</button>
+    </section>
+
+    <section class="featured reveal">
+      <div class="section-head compact"><div><span class="eyebrow">LO MÁS BUSCADO</span><h2>Destacados</h2></div><button class="text-btn" onclick="goCatalog()">Ver todos</button></div>
+      <div class="featured-strip" id="featuredStrip"></div>
+    </section>
+
+    <section class="controls reveal" id="catalogo">
+      <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar modelo, capacidad o color…" autocomplete="off" /><button onclick="clearSearch()" aria-label="Limpiar búsqueda">×</button></label>
+      <div class="chips" id="chips">
+        <button class="chip active" data-filter="all">Todos</button>
+        <button class="chip" data-filter="Samsung">Samsung</button>
+        <button class="chip" data-filter="Apple">Apple</button>
+        <button class="chip" data-filter="Tablets">Tablets</button>
+        <button class="chip" data-filter="favorites">Favoritos</button>
+      </div>
+      <div class="catalog-tools">
+        <label><span>Ordenar</span><select id="sortSelect"><option value="featured">Recomendados</option><option value="priceAsc">Precio: menor a mayor</option><option value="priceDesc">Precio: mayor a menor</option><option value="name">Nombre A–Z</option></select></label>
+        <label class="switch-row"><input id="availableOnly" type="checkbox"><span>Solo disponibles</span></label>
+      </div>
+    </section>
+
+    <section class="section-head reveal"><div><span class="eyebrow">CATÁLOGO CELMEX</span><h2>Equipos disponibles</h2></div><span id="resultCount"></span></section>
+    <section class="products" id="productGrid"></section>
+
+    <section class="recent reveal" id="recentSection" hidden>
+      <div class="section-head compact"><div><span class="eyebrow">VISTOS RECIENTEMENTE</span><h2>Continúa donde te quedaste</h2></div></div>
+      <div class="featured-strip" id="recentStrip"></div>
+    </section>
+
+    <section class="advisor-card reveal">
+      <div><span class="eyebrow">ASESORÍA PERSONALIZADA</span><h2>¿No sabes cuál elegir?</h2><p>Responde tres preguntas y te mostraremos opciones de nuestro catálogo que pueden ajustarse a ti.</p></div>
+      <button class="primary" onclick="openAdvisor()">Encontrar mi equipo</button>
+    </section>
+
+    <section class="quick-order reveal" id="pedidoRapido">
+      <div><span class="eyebrow">COMPRA MÁS RÁPIDO</span><h2>Prepara tu solicitud</h2><p>Guarda tus datos de contacto y envío en este dispositivo. Al enviar una cotización, WhatsApp incluirá la información para atenderte con mayor rapidez.</p></div>
+      <form id="customerForm">
+        <label>Nombre<input name="name" autocomplete="name" placeholder="Tu nombre"></label>
+        <label>Estado<input name="state" autocomplete="address-level1" placeholder="Estado de entrega"></label>
+        <label>Código postal<input name="postal" inputmode="numeric" autocomplete="postal-code" placeholder="Código postal"></label>
+        <label>Forma de pago<select name="payment"><option>Por confirmar</option><option>Efectivo</option><option>Tarjeta</option><option>Transferencia</option></select></label>
+        <button class="primary" type="submit">Guardar mis datos</button>
+      </form>
+    </section>
+
+    <section class="faq reveal">
+      <div><span class="eyebrow">PREGUNTAS FRECUENTES</span><h2>Compra con claridad</h2></div>
+      <details><summary>¿Cómo confirmo que un equipo está disponible?</summary><p>Selecciona modelo, capacidad y color. El botón de WhatsApp envía la configuración exacta para que CelMex confirme existencia.</p></details>
+      <details><summary>¿Realizan envíos?</summary><p>Sí, CelMex realiza envíos a todo México. El costo y tiempo se confirman según el código postal y el equipo elegido.</p></details>
+      <details><summary>¿Qué garantías incluye mi compra?</summary><p>Los equipos incluyen un año de garantía con fabricante y 90 días de respaldo CelMex, sujetos a los términos correspondientes.</p></details>
+      <details><summary>¿Qué formas de pago aceptan?</summary><p>Efectivo, tarjeta y transferencia. La disponibilidad de cada método se confirma durante la atención por WhatsApp.</p></details>
+    </section>
+
+    <section class="why reveal">
+      <div><span class="eyebrow">COMPRA CON CONFIANZA</span><h2>¿Por qué CelMex?</h2></div>
+      <div class="why-grid">
+        <article><b>🚚</b><h3>Envíos nacionales</h3><p>Enviamos a todo México.</p></article>
+        <article><b>🛡️</b><h3>Garantía real</h3><p>1 año con fabricante y 90 días CelMex.</p></article>
+        <article><b>💳</b><h3>Formas de pago</h3><p>Efectivo, tarjeta y transferencia.</p></article>
+        <article><b>💬</b><h3>Atención 24/7</h3><p>Asesoría directa por WhatsApp.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="assets/logo.png" alt="CelMex" />
+    <p><strong>CelMex Store</strong><br />Tu mundo móvil, conectado.</p>
+    <div><a href="mailto:CelMexAtn@gmail.com">CelMexAtn@gmail.com</a><a href="https://www.facebook.com/share/1BVsMDohak/">Facebook</a></div>
+  </footer>
+
+  <a class="floating-wa" href="https://wa.me/526313181585?text=Hola%20CelMex%2C%20necesito%20ayuda%20con%20un%20equipo." aria-label="Abrir WhatsApp"><span>◉</span><b>¿Necesitas ayuda?</b></a>
+
+  <aside id="compareBar" class="compare-bar" hidden><div><small>Comparador</small><strong id="compareNames"></strong></div><button onclick="openCompare()">Comparar</button><button class="clear-compare" onclick="clearCompare()">×</button></aside>
+
+  <dialog id="productModal" class="product-dialog">
+    <button class="close" onclick="closeModal()" aria-label="Cerrar">×</button>
+    <div class="modal-media"><button id="zoomButton" class="zoom-button" aria-label="Ampliar imagen">⌕</button><img id="modalImage" alt="Producto" /><div id="galleryDots" class="gallery-dots"></div></div>
+    <div class="modal-body">
+      <div class="modal-title-row"><div><span class="eyebrow" id="modalBrand"></span><h2 id="modalName"></h2></div><button id="modalFav" class="round-action" aria-label="Favorito">♡</button><button id="shareBtn" class="round-action" aria-label="Compartir">↗</button></div>
+      <p class="modal-desc">Selecciona la versión que buscas y contáctanos. Te confirmaremos existencia, envío y forma de pago.</p>
+      <div class="status-line"><span class="stock-dot"></span><b>Disponible para cotización</b></div>
+      <div class="option-group"><label>Capacidad</label><div id="capacityOptions" class="option-list"></div></div>
+      <div class="option-group"><label>Color</label><div id="colorOptions" class="option-list color-list"></div></div>
+      <div class="price-block"><small>Precio</small><strong id="modalPrice"></strong><span>MXN</span></div>
+      <div class="benefits"><span>✓ Envíos a todo México</span><span>✓ Garantía de fabricante 1 año</span><span>✓ Garantía CelMex 90 días</span><span>✓ Producto original</span></div>
+      <button id="buyButton" class="wa-buy">◉ Pedir por WhatsApp</button><button id="stockAlertButton" class="stock-alert" hidden>🔔 Avisarme cuando esté disponible</button>
+      <button id="quoteButton" class="quote-add">🛒 Agregar a mi cotización</button>
+      <button id="compareButton" class="compare-add">＋ Agregar al comparador</button>
+    </div>
+  </dialog>
+
+  <dialog id="advisorModal" class="simple-dialog">
+    <button class="close" onclick="advisorModal.close()" aria-label="Cerrar">×</button>
+    <span class="eyebrow">ENCUENTRA TU EQUIPO</span><h2>¿Qué estás buscando?</h2>
+    <form id="advisorForm">
+      <label>Marca preferida<select name="brand"><option value="all">Cualquiera</option><option>Samsung</option><option>Apple</option></select></label>
+      <label>Presupuesto aproximado<select name="budget"><option value="999999">Sin límite definido</option><option value="16000">Hasta $16,000</option><option value="22000">Hasta $22,000</option><option value="30000">Hasta $30,000</option><option value="40000">Hasta $40,000</option></select></label>
+      <label>Lo que más te importa<select name="priority"><option value="all">Uso general</option><option value="premium">Equipo premium</option><option value="storage">Mayor almacenamiento</option><option value="tablet">Tablet</option></select></label>
+      <button class="primary" type="submit">Ver recomendaciones</button>
+    </form>
+    <div id="advisorResults" class="advisor-results"></div>
+  </dialog>
+
+  <dialog id="quoteModal" class="simple-dialog quote-dialog">
+    <button class="close" onclick="quoteModal.close()" aria-label="Cerrar">×</button>
+    <span class="eyebrow">MI COTIZACIÓN</span><h2>Equipos seleccionados</h2>
+    <div id="quoteContent" class="quote-content"></div><div id="quoteCustomerSummary" class="customer-summary"></div>
+    <div class="quote-actions"><button class="secondary" onclick="clearQuote()">Vaciar</button><button class="wa-buy" onclick="sendQuote()">◉ Enviar por WhatsApp</button></div>
+  </dialog>
+
+  <dialog id="adminLoginModal" class="simple-dialog auth-dialog">
+    <button class="close" onclick="adminLoginModal.close()" aria-label="Cerrar">×</button>
+    <span class="eyebrow">ACCESO PRIVADO</span><h2>CelMex Admin</h2>
+    <p class="modal-desc">Inicia sesión con tu cuenta autorizada de Firebase.</p>
+    <form id="adminLoginForm" class="admin-login-form">
+      <label>Correo<input id="adminEmail" type="email" autocomplete="username" required placeholder="celmexatn@gmail.com"></label>
+      <label>Contraseña<input id="adminPassword" type="password" autocomplete="current-password" required></label>
+      <p id="adminLoginError" class="form-error" hidden></p>
+      <button class="primary" type="submit">Iniciar sesión</button>
+    </form>
+  </dialog>
+
+  <dialog id="adminModal" class="simple-dialog admin-dialog firebase-admin-dialog">
+    <button class="close" onclick="adminModal.close()" aria-label="Cerrar">×</button>
+    <div class="admin-heading"><div><span class="eyebrow">PANEL EN LA NUBE</span><h2>CelMex Admin</h2></div><button id="adminLogoutBtn" class="secondary small-btn">Cerrar sesión</button></div>
+    <p class="modal-desc">Los cambios se guardan en Firestore y aparecen para todos los clientes.</p>
+    <div class="cloud-status"><span id="firebaseStatusDot"></span><b id="firebaseStatusText">Conectando con Firebase…</b></div>
+
+    <section class="admin-section">
+      <div class="admin-section-head"><h3>Nuevo producto</h3><button id="seedCatalogBtn" class="secondary small-btn" type="button">Publicar catálogo inicial</button></div>
+      <form id="firebaseProductForm" class="firebase-product-form">
+        <input id="editProductId" type="hidden">
+        <label>Marca<input name="brand" required placeholder="Samsung"></label>
+        <label>Categoría<select name="category"><option>Samsung</option><option>Apple</option><option>Tablets</option><option>Accesorios</option></select></label>
+        <label class="span-2">Modelo<input name="name" required placeholder="Samsung Galaxy A58"></label>
+        <label>Precio principal<input name="price" required placeholder="$19,999 o Cotizar"></label>
+        <label>Estado<select name="stock"><option>Disponible</option><option>Últimas piezas</option><option>Por confirmar</option><option>Agotado</option></select></label>
+        <label>Capacidades<input name="capacities" required placeholder="256 GB, 512 GB"></label>
+        <label>Colores<input name="colors" required placeholder="Negro, Azul, Blanco"></label>
+        <label>Etiqueta<input name="badge" placeholder="Nuevo, Oferta, Premium"></label>
+        <label><span>Destacado</span><select name="featured"><option value="false">No</option><option value="true">Sí</option></select></label>
+        <label class="span-2">Imagen desde tu galería<input id="productImageFile" name="imageFile" type="file" accept="image/*"></label>
+        <label class="span-2">O URL de imagen<input name="imageUrl" type="url" placeholder="https://..."></label>
+        <small class="span-2 admin-note">Las fotos elegidas desde el celular se comprimen y guardan temporalmente en Firestore. Más adelante podemos migrarlas a Firebase Storage.</small>
+        <div class="span-2 admin-form-actions"><button class="primary" type="submit">Guardar producto</button><button id="cancelEditBtn" class="secondary" type="button" hidden>Cancelar edición</button></div>
+      </form>
+    </section>
+
+    <section class="admin-section">
+      <h3>Productos publicados</h3>
+      <div id="firebaseAdminList" class="firebase-admin-list"></div>
+    </section>
+  </dialog>
+
+  <dialog id="compareModal" class="simple-dialog compare-dialog">
+    <button class="close" onclick="compareModal.close()" aria-label="Cerrar">×</button>
+    <span class="eyebrow">COMPARADOR CELMEX</span><h2>Comparación rápida</h2><div id="compareContent"></div>
+  </dialog>
+
+    <dialog id="lightboxModal" class="lightbox-dialog"><button class="close" onclick="lightboxModal.close()" aria-label="Cerrar">×</button><img id="lightboxImage" alt="Vista ampliada"></dialog>
+  <dialog id="stockAlertModal" class="simple-dialog"><button class="close" onclick="stockAlertModal.close()" aria-label="Cerrar">×</button><span class="eyebrow">AVISO DE DISPONIBILIDAD</span><h2>Te ayudamos a consultarlo</h2><p>Al continuar, abriremos WhatsApp con el modelo, capacidad y color elegidos para que CelMex pueda dar seguimiento.</p><button id="sendStockAlert" class="wa-buy">◉ Consultar por WhatsApp</button></dialog>
+  <nav class="bottom-nav"><button onclick="scrollToTop()">⌂<small>Inicio</small></button><button onclick="goCatalog()">▦<small>Productos</small></button><button onclick="openQuote()">🛒<small>Cotización</small></button><button onclick="openFavorites()">♡<small>Favoritos</small></button><a href="https://wa.me/526313181585?text=Hola%20CelMex%2C%20quiero%20informaci%C3%B3n.">◉<small>WhatsApp</small></a></nav>
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+  <script type="module" src="firebase-app.js"></script>
+
+</body>
+</html>

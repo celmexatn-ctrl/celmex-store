@@ -1,0 +1,17 @@
+{
+  "name": "CelMex Store V4",
+  "short_name": "CelMex V3",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#05080d",
+  "theme_color": "#05080d",
+  "description": "Catálogo interactivo CelMex Store V4 con favoritos, comparador, cotización y administración local.",
+  "icons": [
+    {
+      "src": "assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
