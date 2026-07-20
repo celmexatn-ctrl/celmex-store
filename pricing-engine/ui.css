@@ -739,3 +739,40 @@ dd.is-profit {
       );
   }
 }
+
+/* === ACCESO DIRECTO PRICING ENGINE === */
+
+.ed-pricing-direct-button {
+  appearance: none;
+  position: fixed;
+  right: 14px;
+  bottom:
+    calc(
+      142px +
+      env(safe-area-inset-bottom, 0px)
+    );
+  z-index: 8800;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  border:
+    1px solid rgba(215, 169, 40, 0.45);
+  border-radius: 50%;
+  background:
+    linear-gradient(
+      145deg,
+      #f0ce58,
+      #d7a51b
+    );
+  color: #111318;
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.38);
+  font-size: 21px;
+}
+
+.ed-pricing-direct-button[hidden] {
+  display: none !important;
+}

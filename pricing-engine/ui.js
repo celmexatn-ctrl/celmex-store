@@ -1516,6 +1516,39 @@
 
     injectAdminButton();
 
+    if (!document.querySelector(
+      "[data-ed-pricing-direct]"
+    )) {
+      const directButton =
+        document.createElement("button");
+
+      directButton.type = "button";
+      directButton.className =
+        "ed-pricing-direct-button";
+
+      directButton.dataset.edPricingDirect =
+        "true";
+
+      directButton.setAttribute(
+        "aria-label",
+        "Abrir E&D Pricing Engine"
+      );
+
+      directButton.title =
+        "E&D Pricing Engine";
+
+      directButton.textContent = "🧮";
+
+      directButton.addEventListener(
+        "click",
+        openPricingEngine
+      );
+
+      document.body.appendChild(
+        directButton
+      );
+    }
+
     console.log(
       "✓ E&D Pricing Engine UI v0.2 cargado"
     );

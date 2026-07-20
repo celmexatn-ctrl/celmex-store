@@ -575,6 +575,17 @@
 
           <button
             type="button"
+            data-ed-v3-account-pricing
+          >
+            <span>🧮</span>
+            <strong>Pricing Engine</strong>
+            <small>Calcular costos y precio de venta</small>
+            <b>›</b>
+          </button>
+
+
+          <button
+            type="button"
             data-ed-v3-account-partner
           >
             <span>♛</span>
@@ -639,6 +650,30 @@
           }
         }
       );
+
+    $("[data-ed-v3-account-pricing]")
+      ?.addEventListener(
+        "click",
+        () => {
+          closeSheet({
+            restoreHome: false
+          });
+
+          window.setTimeout(() => {
+            if (
+              typeof window.openEDPricingEngine ===
+              "function"
+            ) {
+              window.openEDPricingEngine();
+            } else {
+              alert(
+                "E&D Pricing Engine todavía no está disponible. Recarga la aplicación."
+              );
+            }
+          }, 220);
+        }
+      );
+
 
     $("[data-ed-v3-account-partner]")
       ?.addEventListener(
