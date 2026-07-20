@@ -1,0 +1,75 @@
+{
+  "version": "0.1.0",
+  "mode": "simulation",
+  "currency": "MXN",
+
+  "exchangeRate": {
+    "USD_MXN": 18.00,
+    "bufferPercent": 2
+  },
+
+  "costRules": {
+    "shippingBuffer": 0,
+    "importBufferPercent": 0,
+    "returnsReservePercent": 2
+  },
+
+  "profitRules": [
+    {
+      "maxTotalCost": 300,
+      "fixedProfit": 25,
+      "minimumMarginPercent": 10
+    },
+    {
+      "maxTotalCost": 800,
+      "fixedProfit": 50,
+      "minimumMarginPercent": 10
+    },
+    {
+      "maxTotalCost": 2000,
+      "fixedProfit": 100,
+      "minimumMarginPercent": 12
+    },
+    {
+      "maxTotalCost": null,
+      "fixedProfit": 150,
+      "minimumMarginPercent": 12
+    }
+  ],
+
+  "paymentMethods": {
+    "mercadoPago": {
+      "enabled": false,
+      "percentFee": 0,
+      "fixedFee": 0,
+      "serviceTaxPercent": 0
+    },
+    "stripe": {
+      "enabled": false,
+      "percentFee": 0,
+      "fixedFee": 0,
+      "serviceTaxPercent": 0
+    },
+    "shopifyPayments": {
+      "enabled": false,
+      "percentFee": 0,
+      "fixedFee": 0,
+      "serviceTaxPercent": 0
+    }
+  },
+
+  "shopify": {
+    "externalTransactionPercent": 0
+  },
+
+  "rounding": {
+    "strategy": "next-nine",
+    "minimumIncrement": 10
+  },
+
+  "safety": {
+    "minimumProfit": 25,
+    "maximumAutomaticChangePercent": 15,
+    "automaticPublishing": false
+  }
+}

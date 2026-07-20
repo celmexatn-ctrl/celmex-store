@@ -1,0 +1,9 @@
+{
+  "sku": "CJ-DEMO-001",
+  "name": "Producto de demostración CJ",
+  "supplier": "CJdropshipping",
+  "supplierCurrency": "USD",
+  "productCost": 12.50,
+  "shippingCost": 6.25,
+  "quantity": 1
+}

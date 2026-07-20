@@ -1,0 +1,224 @@
+/* === E&D MARKET v3.0.3 — CORRECCIÓN DE ENCUADRE === */
+
+.ed-market-v303 body {
+  padding-bottom:
+    calc(
+      112px +
+      env(safe-area-inset-bottom, 0px)
+    ) !important;
+}
+
+/* Evita que las secciones queden detrás de la navegación. */
+.ed-market-v303 main {
+  padding-bottom: 55px;
+}
+
+/* Accesos rápidos perfectamente alineados. */
+.ed-market-v303 .ed-market-shortcuts {
+  display: grid !important;
+  grid-auto-flow: column;
+  grid-auto-columns: 92px;
+  gap: 10px !important;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding:
+    3px 14px 10px 2px !important;
+  scroll-padding-inline: 2px 14px;
+  scroll-snap-type: x proximity;
+  overscroll-behavior-inline: contain;
+}
+
+.ed-market-v303
+.ed-market-shortcuts > button,
+.ed-market-v303
+.ed-market-shortcuts > a {
+  width: 92px !important;
+  min-width: 92px !important;
+  max-width: 92px !important;
+  min-height: 105px !important;
+  padding: 10px 6px !important;
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+
+.ed-market-v303
+.ed-market-shortcuts strong,
+.ed-market-v303
+.ed-market-shortcuts small {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ed-market-v303
+.ed-market-shortcuts strong {
+  font-size: 9px !important;
+}
+
+.ed-market-v303
+.ed-market-shortcuts small {
+  font-size: 7px !important;
+}
+
+/* Categorías completas y sin texto tapado. */
+.ed-market-v303
+.ed-market-category-section,
+.ed-market-v303
+.ed-market-teaser {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  padding:
+    18px 15px 20px !important;
+  overflow: hidden;
+}
+
+.ed-market-v303
+.ed-market-section-heading {
+  position: relative;
+  z-index: 2;
+  align-items: center !important;
+  min-height: 48px;
+  padding-right: 2px;
+}
+
+.ed-market-v303
+.ed-market-section-heading > div {
+  min-width: 0;
+}
+
+.ed-market-v303
+.ed-market-section-heading h2 {
+  margin-top: 5px !important;
+  overflow-wrap: anywhere;
+  font-size:
+    clamp(18px, 5vw, 23px) !important;
+  line-height: 1.1;
+}
+
+.ed-market-v303
+.ed-market-section-heading > button {
+  flex: 0 0 auto;
+  min-height: 35px;
+  padding: 0 9px !important;
+  border-radius: 10px;
+  background:
+    rgba(215, 169, 40, 0.075) !important;
+  white-space: nowrap;
+}
+
+.ed-market-v303
+.ed-market-category-rail {
+  width: 100%;
+  min-width: 0;
+  padding:
+    5px 14px 10px 1px !important;
+  scroll-padding-inline: 1px 14px;
+}
+
+/* WhatsApp pequeño y menos invasivo. */
+.ed-market-v303 .floating-wa {
+  right: 13px !important;
+  bottom:
+    calc(
+      84px +
+      env(safe-area-inset-bottom, 0px)
+    ) !important;
+  display: grid !important;
+  width: 46px !important;
+  min-width: 46px !important;
+  max-width: 46px !important;
+  height: 46px !important;
+  min-height: 46px !important;
+  padding: 0 !important;
+  place-items: center;
+  border-radius: 50% !important;
+  opacity: 0.9;
+  transform: translate3d(0, 0, 0);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ed-market-v303
+.floating-wa span {
+  font-size: 18px !important;
+}
+
+.ed-market-v303
+.floating-wa b {
+  display: none !important;
+}
+
+.ed-market-v303
+.floating-wa.ed-v303-scrolling {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(14px, 8px, 0)
+    scale(0.85);
+}
+
+/* Barra inferior estable. */
+.ed-market-v303
+.ed-v3-bottom-nav {
+  height:
+    calc(
+      70px +
+      env(safe-area-inset-bottom, 0px)
+    );
+  min-height:
+    calc(
+      70px +
+      env(safe-area-inset-bottom, 0px)
+    ) !important;
+  padding:
+    6px 4px
+    env(safe-area-inset-bottom, 0px)
+    !important;
+}
+
+.ed-market-v303
+.ed-v3-nav-item {
+  min-width: 0;
+  min-height: 56px !important;
+}
+
+.ed-market-v303
+.ed-v3-nav-item > small {
+  overflow: hidden;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Mejor encuadre móvil. */
+@media (max-width: 430px) {
+  .ed-market-v303
+  .ed-marketplace-home {
+    width: calc(100% - 12px) !important;
+  }
+
+  .ed-market-v303
+  .ed-market-shortcuts {
+    grid-auto-columns: 88px;
+  }
+
+  .ed-market-v303
+  .ed-market-shortcuts > button,
+  .ed-market-v303
+  .ed-market-shortcuts > a {
+    width: 88px !important;
+    min-width: 88px !important;
+    max-width: 88px !important;
+  }
+
+  .ed-market-v303
+  .ed-market-category-section,
+  .ed-market-v303
+  .ed-market-teaser {
+    padding-inline: 13px !important;
+  }
+}
