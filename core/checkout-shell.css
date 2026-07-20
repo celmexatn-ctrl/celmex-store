@@ -1,0 +1,227 @@
+/* === E&D CHECKOUT SHELL v3.0.1 === */
+
+.ed-flow-dialog {
+  width: min(100% - 18px, 760px);
+  max-height: calc(100dvh - 18px);
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(215, 169, 40, 0.35);
+  border-radius: 28px;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(215, 169, 40, 0.12),
+      transparent 34%
+    ),
+    #080b10;
+  color: #f7f4ea;
+}
+
+.ed-flow-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(9px);
+}
+
+.ed-flow-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: min(720px, calc(100dvh - 18px));
+}
+
+.ed-flow-header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  padding:
+    max(18px, env(safe-area-inset-top, 0px))
+    20px
+    16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8, 11, 16, 0.93);
+  backdrop-filter: blur(18px);
+}
+
+.ed-flow-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.ed-flow-brand small {
+  display: block;
+  color: #d7a928;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.ed-flow-brand strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 21px;
+}
+
+.ed-flow-close {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  background: #111722;
+  color: white;
+  font-size: 22px;
+}
+
+.ed-flow-progress {
+  height: 5px;
+  margin-top: 16px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.ed-flow-progress span {
+  display: block;
+  width: 16.666%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #b78310, #f3d66f);
+  transition: width 0.3s ease;
+}
+
+.ed-flow-steps {
+  display: flex;
+  gap: 7px;
+  margin-top: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.ed-flow-steps::-webkit-scrollbar {
+  display: none;
+}
+
+.ed-flow-step {
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  color: #8f99a8;
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.ed-flow-step.is-active {
+  border-color: rgba(215, 169, 40, 0.55);
+  background: rgba(215, 169, 40, 0.12);
+  color: #f2cf68;
+}
+
+.ed-flow-step.is-complete {
+  color: #c8d0da;
+}
+
+.ed-flow-content {
+  flex: 1;
+  padding: 24px 20px;
+  overflow-y: auto;
+}
+
+.ed-flow-panel {
+  animation: edFlowEnter 0.25s ease;
+}
+
+.ed-flow-panel h2 {
+  margin: 0 0 8px;
+  font-size: clamp(25px, 7vw, 34px);
+}
+
+.ed-flow-panel > p {
+  margin: 0;
+  color: #a8b0bd;
+  line-height: 1.6;
+}
+
+.ed-flow-placeholder {
+  margin-top: 24px;
+  padding: 22px;
+  border: 1px dashed rgba(215, 169, 40, 0.32);
+  border-radius: 20px;
+  background: rgba(215, 169, 40, 0.05);
+}
+
+.ed-flow-placeholder strong {
+  display: block;
+  margin-bottom: 7px;
+  color: #f2cf68;
+}
+
+.ed-flow-placeholder span {
+  color: #a8b0bd;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.ed-flow-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  padding:
+    14px
+    20px
+    max(14px, env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8, 11, 16, 0.95);
+  backdrop-filter: blur(18px);
+}
+
+.ed-flow-footer button {
+  min-height: 50px;
+  border-radius: 15px;
+  font-weight: 900;
+}
+
+.ed-flow-back {
+  padding: 0 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #111722;
+  color: white;
+}
+
+.ed-flow-next {
+  border: 0;
+  background: linear-gradient(135deg, #f5d96c, #c7951d);
+  color: #0a0b0e;
+}
+
+.ed-flow-footer button:disabled {
+  opacity: 0.45;
+}
+
+@keyframes edFlowEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (min-width: 720px) {
+  .ed-flow-content {
+    padding: 34px;
+  }
+
+  .ed-flow-header,
+  .ed-flow-footer {
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+}
