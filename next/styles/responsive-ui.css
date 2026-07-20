@@ -1,0 +1,987 @@
+/* ========================================================
+   E&D MARKET NEXT v2.1
+   RESPONSIVE UI SYSTEM
+   ======================================================== */
+
+:root {
+  --ed-ui-width: 1180px;
+
+  --ed-ui-space-1: 4px;
+  --ed-ui-space-2: 8px;
+  --ed-ui-space-3: 12px;
+  --ed-ui-space-4: 16px;
+  --ed-ui-space-5: 20px;
+  --ed-ui-space-6: 24px;
+
+  --ed-ui-page-gap:
+    clamp(10px, 3vw, 18px);
+
+  --ed-ui-radius-small: 12px;
+  --ed-ui-radius-medium: 18px;
+  --ed-ui-radius-large: 24px;
+
+  --ed-ui-bottom-nav: 72px;
+  --ed-ui-safe-bottom:
+    env(safe-area-inset-bottom, 0px);
+}
+
+/* --------------------------------------------------------
+   CONTROL GLOBAL DE ENCUADRE
+   -------------------------------------------------------- */
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: clip;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+img,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  min-width: 0;
+}
+
+.ed-next-enabled body {
+  padding-bottom:
+    calc(
+      var(--ed-ui-bottom-nav) +
+      var(--ed-ui-safe-bottom) +
+      20px
+    ) !important;
+}
+
+/* --------------------------------------------------------
+   CONTENEDOR PRINCIPAL
+   -------------------------------------------------------- */
+
+.ed-next-enabled .ed-next-home {
+  width:
+    min(
+      calc(100% - var(--ed-ui-page-gap) * 2),
+      var(--ed-ui-width)
+    ) !important;
+
+  max-width: var(--ed-ui-width);
+  min-width: 0;
+
+  gap:
+    clamp(11px, 2.8vw, 17px) !important;
+
+  margin:
+    0 auto
+    calc(
+      38px +
+      var(--ed-ui-safe-bottom)
+    ) !important;
+}
+
+/* Ningún hijo podrá ensanchar la página. */
+
+.ed-next-enabled .ed-next-home > *,
+.ed-next-enabled .ed-next-section,
+.ed-next-enabled .ed-next-campaign,
+.ed-next-enabled .ed-next-shortcuts,
+.ed-next-enabled .ed-next-category-rail,
+.ed-next-enabled .ed-next-product-rail {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* --------------------------------------------------------
+   ENCABEZADO
+   -------------------------------------------------------- */
+
+.ed-next-enabled .ed-next-header {
+  top: 0;
+
+  grid-template-columns:
+    42px
+    minmax(90px, 1fr)
+    auto !important;
+
+  min-height:
+    clamp(54px, 13vw, 64px) !important;
+
+  padding:
+    max(4px, env(safe-area-inset-top, 0px))
+    0
+    4px !important;
+}
+
+.ed-next-enabled .ed-next-brand {
+  max-width: 150px;
+  overflow: hidden;
+}
+
+.ed-next-enabled .ed-next-brand strong {
+  font-size:
+    clamp(22px, 7vw, 31px) !important;
+
+  line-height: 0.96;
+}
+
+.ed-next-enabled .ed-next-brand small {
+  max-width: 100%;
+  overflow: hidden;
+
+  font-size:
+    clamp(5px, 1.7vw, 7px) !important;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ed-next-enabled .ed-next-header-actions {
+  flex: 0 0 auto;
+}
+
+.ed-next-enabled .ed-next-icon-button {
+  flex: 0 0 auto;
+
+  width:
+    clamp(38px, 10vw, 44px) !important;
+
+  height:
+    clamp(38px, 10vw, 44px) !important;
+}
+
+/* --------------------------------------------------------
+   BUSCADOR
+   -------------------------------------------------------- */
+
+.ed-next-enabled .ed-next-search {
+  grid-template-columns:
+    28px
+    minmax(0, 1fr)
+    auto !important;
+
+  width: 100%;
+
+  min-height:
+    clamp(49px, 13vw, 57px) !important;
+
+  padding:
+    5px
+    clamp(7px, 2vw, 10px)
+    5px
+    clamp(12px, 3.6vw, 17px) !important;
+
+  border-radius:
+    clamp(16px, 4.5vw, 21px) !important;
+}
+
+.ed-next-enabled .ed-next-search input {
+  width: 100%;
+  min-width: 0;
+
+  padding: 0 6px;
+
+  font-size:
+    clamp(12px, 3.4vw, 15px) !important;
+
+  text-overflow: ellipsis;
+}
+
+.ed-next-enabled
+.ed-next-search input::placeholder {
+  opacity: 1;
+}
+
+.ed-next-enabled .ed-next-search button {
+  flex: 0 0 auto;
+
+  width:
+    clamp(35px, 9.5vw, 41px) !important;
+
+  height:
+    clamp(35px, 9.5vw, 41px) !important;
+}
+
+/* --------------------------------------------------------
+   UBICACIÓN
+   -------------------------------------------------------- */
+
+.ed-next-enabled .ed-next-location {
+  max-width: 100%;
+  min-height: 40px !important;
+
+  overflow: hidden;
+}
+
+.ed-next-enabled .ed-next-location > span:nth-child(2) {
+  min-width: 0;
+}
+
+.ed-next-enabled .ed-next-location small,
+.ed-next-enabled .ed-next-location strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------
+   BANNER / CARRUSEL
+   -------------------------------------------------------- */
+
+.ed-next-enabled .ed-next-campaign {
+  width: 100%;
+
+  border-radius:
+    clamp(18px, 5vw, 25px) !important;
+}
+
+.ed-next-enabled .ed-next-campaign-track {
+  width: 100%;
+}
+
+.ed-next-enabled .ed-next-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: 100%;
+
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(150px, 0.65fr) !important;
+
+  min-height:
+    clamp(220px, 48vw, 350px) !important;
+
+  border-radius:
+    clamp(18px, 5vw, 25px) !important;
+}
+
+.ed-next-enabled .ed-next-slide > div {
+  min-width: 0;
+
+  padding:
+    clamp(19px, 5vw, 34px)
+    clamp(16px, 4.5vw, 31px)
+    clamp(28px, 7vw, 44px) !important;
+}
+
+.ed-next-enabled .ed-next-slide small {
+  display: block;
+
+  max-width: 100%;
+
+  font-size:
+    clamp(7px, 2vw, 10px) !important;
+
+  line-height: 1.2;
+
+  overflow-wrap: anywhere;
+}
+
+.ed-next-enabled .ed-next-slide h1,
+.ed-next-enabled .ed-next-slide h2 {
+  max-width: 620px;
+
+  margin-top:
+    clamp(7px, 2vw, 12px) !important;
+
+  font-size:
+    clamp(27px, 7vw, 52px) !important;
+
+  line-height:
+    clamp(0.98, 1vw, 1.05) !important;
+
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.ed-next-enabled .ed-next-slide p {
+  max-width: 470px;
+
+  margin-top:
+    clamp(9px, 2.5vw, 14px) !important;
+
+  font-size:
+    clamp(9px, 2.6vw, 13px) !important;
+
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
+}
+
+.ed-next-enabled .ed-next-slide button {
+  max-width: 100%;
+  min-height:
+    clamp(41px, 11vw, 49px) !important;
+
+  margin-top:
+    clamp(14px, 3vw, 20px) !important;
+
+  padding:
+    0
+    clamp(14px, 4vw, 21px) !important;
+
+  overflow: hidden;
+
+  font-size:
+    clamp(9px, 2.5vw, 12px) !important;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ed-next-enabled .ed-next-slide figure {
+  min-width: 0;
+  max-width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.ed-next-enabled .ed-next-slide figure span {
+  max-width: 100%;
+}
+
+/* --------------------------------------------------------
+   ACCESOS RÁPIDOS
+   -------------------------------------------------------- */
+
+.ed-next-enabled .ed-next-shortcuts {
+  display: grid !important;
+
+  grid-auto-flow: column;
+
+  grid-auto-columns:
+    clamp(84px, 23vw, 112px) !important;
+
+  gap:
+    clamp(8px, 2.5vw, 13px) !important;
+
+  width: 100%;
+
+  padding:
+    2px
+    max(13px, var(--ed-ui-page-gap))
+    9px
+    1px !important;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-padding-inline:
+    1px
+    max(13px, var(--ed-ui-page-gap));
+
+  scroll-snap-type: x proximity;
+  overscroll-behavior-inline: contain;
+}
+
+.ed-next-enabled .ed-next-shortcuts button {
+  width: 100%;
+  min-width: 0;
+
+  min-height:
+    clamp(91px, 25vw, 113px) !important;
+
+  padding:
+    clamp(8px, 2vw, 12px)
+    5px !important;
+
+  overflow: hidden;
+
+  scroll-snap-align: start;
+}
+
+.ed-next-enabled .ed-next-shortcuts button span {
+  width:
+    clamp(40px, 11vw, 50px) !important;
+
+  height:
+    clamp(40px, 11vw, 50px) !important;
+
+  font-size:
+    clamp(18px, 5vw, 24px) !important;
+}
+
+.ed-next-enabled .ed-next-shortcuts strong {
+  display: -webkit-box;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  font-size:
+    clamp(8px, 2.2vw, 10px) !important;
+
+  line-height: 1.25;
+
+  text-align: center;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* --------------------------------------------------------
+   SECCIONES
+   -------------------------------------------------------- */
+
+.ed-next-enabled .ed-next-section {
+  width: 100%;
+
+  gap:
+    clamp(12px, 3vw, 18px) !important;
+
+  padding:
+    clamp(14px, 4vw, 22px) !important;
+
+  border-radius:
+    clamp(18px, 5vw, 24px) !important;
+}
+
+.ed-next-enabled .ed-next-section-heading {
+  display: grid !important;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  width: 100%;
+  min-width: 0;
+
+  gap:
+    clamp(9px, 2.6vw, 16px) !important;
+}
+
+.ed-next-enabled
+.ed-next-section-heading > div {
+  min-width: 0;
+}
+
+.ed-next-enabled
+.ed-next-section-heading small {
+  display: block;
+
+  max-width: 100%;
+
+  overflow: hidden;
+
+  font-size:
+    clamp(7px, 1.9vw, 9px) !important;
+
+  line-height: 1.3;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ed-next-enabled
+.ed-next-section-heading h2 {
+  max-width: 100%;
+
+  margin-top: 4px !important;
+
+  font-size:
+    clamp(18px, 5.2vw, 27px) !important;
+
+  line-height: 1.12;
+
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.ed-next-enabled
+.ed-next-section-heading button {
+  flex: 0 0 auto;
+
+  min-width: max-content;
+
+  min-height:
+    clamp(33px, 9vw, 40px) !important;
+
+  padding:
+    0
+    clamp(8px, 2.5vw, 12px) !important;
+
+  font-size:
+    clamp(8px, 2.1vw, 10px) !important;
+
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------
+   CATEGORÍAS
+   -------------------------------------------------------- */
+
+.ed-next-enabled .ed-next-category-rail {
+  display: grid !important;
+
+  grid-auto-flow: column;
+
+  grid-auto-columns:
+    clamp(74px, 21vw, 98px) !important;
+
+  gap:
+    clamp(9px, 2.6vw, 15px) !important;
+
+  width: 100%;
+
+  padding:
+    3px
+    max(13px, var(--ed-ui-page-gap))
+    9px
+    1px !important;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-padding-inline:
+    1px
+    max(13px, var(--ed-ui-page-gap));
+
+  scroll-snap-type: x proximity;
+  overscroll-behavior-inline: contain;
+}
+
+.ed-next-enabled .ed-next-category {
+  width: 100%;
+  min-width: 0;
+
+  scroll-snap-align: start;
+}
+
+.ed-next-enabled .ed-next-category span {
+  width:
+    clamp(62px, 18vw, 82px) !important;
+
+  height:
+    clamp(62px, 18vw, 82px) !important;
+
+  font-size:
+    clamp(24px, 7vw, 34px) !important;
+}
+
+.ed-next-enabled .ed-next-category strong {
+  display: -webkit-box;
+
+  width: 100%;
+  min-height: 2.5em;
+
+  overflow: hidden;
+
+  font-size:
+    clamp(8px, 2.2vw, 10px) !important;
+
+  line-height: 1.25;
+
+  text-align: center;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* --------------------------------------------------------
+   PRODUCTOS Y TARJETAS
+   -------------------------------------------------------- */
+
+.ed-next-enabled .ed-next-product-rail {
+  display: grid !important;
+
+  grid-auto-flow: column;
+
+  grid-auto-columns:
+    clamp(150px, 43vw, 220px) !important;
+
+  gap:
+    clamp(10px, 3vw, 16px) !important;
+
+  width: 100%;
+
+  padding:
+    2px
+    max(14px, var(--ed-ui-page-gap))
+    10px
+    1px !important;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-padding-inline:
+    1px
+    max(14px, var(--ed-ui-page-gap));
+
+  scroll-snap-type: x proximity;
+  overscroll-behavior-inline: contain;
+}
+
+.ed-next-enabled
+.ed-next-product-skeleton,
+.ed-next-enabled
+.ed-next-product-placeholder {
+  width: 100% !important;
+  min-width: 0 !important;
+
+  scroll-snap-align: start;
+}
+
+.ed-next-enabled
+.ed-next-product-placeholder {
+  min-height: 220px;
+}
+
+/* Tarjetas genéricas del catálogo existente. */
+
+.ed-next-enabled .product-card,
+.ed-next-enabled .shopify-product-card,
+.ed-next-enabled .card-product,
+.ed-next-enabled [class*="product-card"] {
+  min-width: 0;
+  max-width: 100%;
+
+  overflow: hidden;
+}
+
+.ed-next-enabled .product-card img,
+.ed-next-enabled .shopify-product-card img,
+.ed-next-enabled .card-product img,
+.ed-next-enabled [class*="product-card"] img {
+  width: 100%;
+  max-width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+/* --------------------------------------------------------
+   BARRA INFERIOR
+   -------------------------------------------------------- */
+
+.ed-next-enabled .ed-v3-bottom-nav {
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  max-width: 100%;
+
+  min-height:
+    calc(
+      var(--ed-ui-bottom-nav) +
+      var(--ed-ui-safe-bottom)
+    ) !important;
+
+  padding:
+    5px
+    max(3px, env(safe-area-inset-left, 0px))
+    var(--ed-ui-safe-bottom)
+    max(3px, env(safe-area-inset-right, 0px))
+    !important;
+}
+
+.ed-next-enabled .ed-v3-nav-item {
+  min-width: 0;
+  max-width: 100%;
+
+  min-height:
+    clamp(54px, 15vw, 61px) !important;
+
+  overflow: hidden;
+}
+
+.ed-next-enabled .ed-v3-nav-item > span {
+  width:
+    clamp(27px, 8vw, 34px) !important;
+
+  height:
+    clamp(25px, 7vw, 31px) !important;
+
+  font-size:
+    clamp(20px, 5.7vw, 25px) !important;
+}
+
+.ed-next-enabled .ed-v3-nav-item > small {
+  display: block;
+
+  max-width: 100%;
+
+  overflow: hidden;
+
+  font-size:
+    clamp(7px, 2vw, 9px) !important;
+
+  line-height: 1.1;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------
+   FLOTANTES
+   -------------------------------------------------------- */
+
+.ed-next-enabled .floating-wa,
+.ed-next-enabled .ed-pricing-direct-button {
+  right:
+    max(
+      12px,
+      env(safe-area-inset-right, 0px)
+    ) !important;
+
+  bottom:
+    calc(
+      var(--ed-ui-bottom-nav) +
+      var(--ed-ui-safe-bottom) +
+      15px
+    ) !important;
+
+  width:
+    clamp(45px, 12vw, 53px) !important;
+
+  min-width:
+    clamp(45px, 12vw, 53px) !important;
+
+  max-width:
+    clamp(45px, 12vw, 53px) !important;
+
+  height:
+    clamp(45px, 12vw, 53px) !important;
+
+  min-height:
+    clamp(45px, 12vw, 53px) !important;
+
+  padding: 0 !important;
+
+  border-radius: 50% !important;
+}
+
+.ed-next-enabled .floating-wa b {
+  display: none !important;
+}
+
+/* --------------------------------------------------------
+   DIÁLOGOS Y PANELES
+   -------------------------------------------------------- */
+
+.ed-next-enabled dialog {
+  max-width:
+    min(
+      96vw,
+      1120px
+    );
+
+  max-height:
+    calc(
+      100dvh -
+      env(safe-area-inset-top, 0px) -
+      env(safe-area-inset-bottom, 0px) -
+      12px
+    );
+}
+
+.ed-next-enabled .ed-v3-sheet {
+  width: min(100%, 720px);
+
+  max-height:
+    calc(
+      100dvh -
+      env(safe-area-inset-top, 0px) -
+      12px
+    );
+}
+
+/* --------------------------------------------------------
+   PANTALLAS ESTRECHAS
+   -------------------------------------------------------- */
+
+@media (max-width: 650px) {
+  .ed-next-enabled .ed-next-slide {
+    position: relative;
+    display: block !important;
+
+    min-height:
+      clamp(226px, 69vw, 300px) !important;
+  }
+
+  .ed-next-enabled .ed-next-slide > div {
+    position: relative;
+    z-index: 4;
+
+    width:
+      clamp(68%, 75vw, 82%) !important;
+
+    max-width: 430px;
+  }
+
+  .ed-next-enabled .ed-next-slide figure {
+    position: absolute;
+
+    top: 0;
+    right:
+      clamp(-70px, -12vw, -32px);
+
+    width:
+      clamp(180px, 53vw, 260px);
+
+    height: 100%;
+    min-height: 0;
+
+    opacity: 0.72;
+  }
+
+  .ed-next-enabled
+  .ed-next-slide figure span:nth-child(1) {
+    right: 21%;
+    bottom: 15%;
+
+    font-size:
+      clamp(63px, 20vw, 93px);
+  }
+
+  .ed-next-enabled
+  .ed-next-slide figure span:nth-child(2) {
+    right: 0;
+    bottom: 19%;
+
+    font-size:
+      clamp(39px, 12vw, 56px);
+  }
+
+  .ed-next-enabled
+  .ed-next-slide figure span:nth-child(3) {
+    right: 50%;
+    bottom: 12%;
+
+    font-size:
+      clamp(35px, 11vw, 51px);
+  }
+}
+
+/* --------------------------------------------------------
+   360 px
+   -------------------------------------------------------- */
+
+@media (max-width: 370px) {
+  :root {
+    --ed-ui-page-gap: 7px;
+  }
+
+  .ed-next-enabled .ed-next-header {
+    grid-template-columns:
+      39px minmax(80px, 1fr) auto
+      !important;
+  }
+
+  .ed-next-enabled
+  .ed-next-header-actions
+  .ed-next-icon-button:first-child {
+    display: none;
+  }
+
+  .ed-next-enabled .ed-next-slide > div {
+    width: 82% !important;
+
+    padding:
+      18px 14px 28px !important;
+  }
+
+  .ed-next-enabled .ed-next-slide h1,
+  .ed-next-enabled .ed-next-slide h2 {
+    font-size:
+      clamp(25px, 7.4vw, 28px)
+      !important;
+  }
+
+  .ed-next-enabled .ed-next-slide p {
+    max-width: 220px;
+  }
+
+  .ed-next-enabled
+  .ed-next-section-heading {
+    grid-template-columns:
+      minmax(0, 1fr)
+      max-content;
+  }
+
+  .ed-next-enabled
+  .ed-next-section-heading button {
+    min-height: 31px !important;
+
+    padding: 0 7px !important;
+  }
+}
+
+/* --------------------------------------------------------
+   TABLET
+   -------------------------------------------------------- */
+
+@media (min-width: 760px) {
+  .ed-next-enabled .ed-next-home {
+    --ed-ui-page-gap: 22px;
+  }
+
+  .ed-next-enabled .ed-next-shortcuts {
+    grid-auto-columns:
+      minmax(106px, 1fr) !important;
+  }
+
+  .ed-next-enabled .ed-next-category-rail {
+    grid-auto-columns:
+      minmax(90px, 1fr) !important;
+  }
+
+  .ed-next-enabled .ed-next-product-rail {
+    grid-auto-columns:
+      clamp(190px, 24vw, 240px)
+      !important;
+  }
+}
+
+/* --------------------------------------------------------
+   MODO DIAGNÓSTICO
+   -------------------------------------------------------- */
+
+html.ed-layout-debug * {
+  outline:
+    1px solid rgba(255, 75, 75, 0.23);
+}
+
+html.ed-layout-debug
+.ed-layout-overflow {
+  outline:
+    3px solid #ff3d71 !important;
+
+  box-shadow:
+    inset 0 0 0 3px
+    rgba(255, 61, 113, 0.16)
+    !important;
+}
