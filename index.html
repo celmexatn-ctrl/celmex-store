@@ -49,7 +49,213 @@
   </header>
 
   <main>
-    <section class="hero reveal">
+
+<!-- === E&D DISCOVERY HOME 2.1B === -->
+<section class="ed-discovery-home" aria-label="Descubre E&D Market">
+  <div class="ed-discovery-welcome">
+    <div>
+      <span class="ed-discovery-kicker">BIENVENIDO A E&D MARKET</span>
+      <h1>¿Qué quieres descubrir hoy?</h1>
+    </div>
+
+    <button
+      class="ed-delivery-location"
+      type="button"
+      data-ed-go-catalog
+      aria-label="Consultar productos disponibles para tu ubicación"
+    >
+      <span>📍</span>
+      <span>
+        <small>Enviar a</small>
+        <strong>México</strong>
+      </span>
+      <b>›</b>
+    </button>
+  </div>
+
+  <form
+    id="edDiscoverySearchForm"
+    class="ed-discovery-search"
+    role="search"
+  >
+    <span aria-hidden="true">⌕</span>
+
+    <input
+      id="edDiscoverySearch"
+      type="search"
+      placeholder="Buscar productos, marcas y categorías"
+      autocomplete="off"
+      aria-label="Buscar en E&D Market"
+    />
+
+    <button
+      id="edDiscoverySearchClear"
+      type="button"
+      aria-label="Limpiar búsqueda"
+      hidden
+    >
+      ×
+    </button>
+
+    <button
+      class="ed-discovery-search-submit"
+      type="submit"
+      aria-label="Buscar"
+    >
+      Buscar
+    </button>
+  </form>
+
+  <nav
+    class="ed-discovery-tabs"
+    aria-label="Categorías principales"
+  >
+    <button class="is-active" type="button" data-ed-category="all">
+      Para ti
+    </button>
+
+    <button type="button" data-ed-category="Tecnología">
+      Tecnología
+    </button>
+
+    <button type="button" data-ed-category="Hogar">
+      Hogar
+    </button>
+
+    <button type="button" data-ed-category="Moda">
+      Moda
+    </button>
+
+    <button type="button" data-ed-category="Belleza">
+      Belleza
+    </button>
+
+    <button type="button" data-ed-category="Mascotas">
+      Mascotas
+    </button>
+  </nav>
+
+  <article class="ed-discovery-banner">
+    <div class="ed-discovery-banner-copy">
+      <span>SELECCIÓN E&D</span>
+
+      <h2>
+        Productos que combinan
+        <b>calidad, confianza y buen precio.</b>
+      </h2>
+
+      <p>
+        Explora tecnología, hogar, moda, belleza
+        y mucho más en un solo lugar.
+      </p>
+
+      <button type="button" data-ed-go-catalog>
+        Explorar ahora
+        <span>→</span>
+      </button>
+    </div>
+
+    <div class="ed-discovery-banner-art" aria-hidden="true">
+      <span class="ed-orbit ed-orbit-a"></span>
+      <span class="ed-orbit ed-orbit-b"></span>
+
+      <div class="ed-banner-logo">
+        <small>E&amp;D</small>
+        <strong>MARKET</strong>
+      </div>
+    </div>
+  </article>
+
+  <section class="ed-quick-access" aria-label="Accesos rápidos">
+    <button type="button" data-ed-scroll-target="ofertas">
+      <span>⚡</span>
+      <strong>Ofertas</strong>
+      <small>Promociones</small>
+    </button>
+
+    <button type="button" data-ed-go-catalog>
+      <span>▦</span>
+      <strong>Categorías</strong>
+      <small>Explorar</small>
+    </button>
+
+    <button type="button" data-ed-cashback-info>
+      <span>💰</span>
+      <strong>Cashback</strong>
+      <small>Beneficios</small>
+    </button>
+
+    <button type="button" data-ed-shipping-info>
+      <span>🚚</span>
+      <strong>Envíos</strong>
+      <small>Todo México</small>
+    </button>
+
+    <button type="button" data-ed-favorites>
+      <span>♡</span>
+      <strong>Favoritos</strong>
+      <small>Guardados</small>
+    </button>
+  </section>
+
+  <section class="ed-visual-categories">
+    <div class="ed-discovery-section-title">
+      <div>
+        <small>ENCUENTRA MÁS RÁPIDO</small>
+        <h2>Categorías destacadas</h2>
+      </div>
+
+      <button type="button" data-ed-go-catalog>
+        Ver todas
+      </button>
+    </div>
+
+    <div class="ed-category-rail">
+      <button type="button" data-ed-category="Tecnología">
+        <span class="ed-category-visual">📱</span>
+        <strong>Tecnología</strong>
+      </button>
+
+      <button type="button" data-ed-category="Hogar">
+        <span class="ed-category-visual">🏠</span>
+        <strong>Hogar</strong>
+      </button>
+
+      <button type="button" data-ed-category="Moda">
+        <span class="ed-category-visual">👕</span>
+        <strong>Moda</strong>
+      </button>
+
+      <button type="button" data-ed-category="Belleza">
+        <span class="ed-category-visual">✨</span>
+        <strong>Belleza</strong>
+      </button>
+
+      <button type="button" data-ed-category="Mascotas">
+        <span class="ed-category-visual">🐾</span>
+        <strong>Mascotas</strong>
+      </button>
+
+      <button type="button" data-ed-category="Deportes">
+        <span class="ed-category-visual">⚽</span>
+        <strong>Deportes</strong>
+      </button>
+
+      <button type="button" data-ed-category="Oficina">
+        <span class="ed-category-visual">💼</span>
+        <strong>Oficina</strong>
+      </button>
+
+      <button type="button" data-ed-category="Juguetes">
+        <span class="ed-category-visual">🧸</span>
+        <strong>Juguetes</strong>
+      </button>
+    </div>
+  </section>
+</section>
+<!-- === FIN E&D DISCOVERY HOME 2.1B === -->
+
+    <section class="hero reveal ed-legacy-hero">
       <div class="hero-copy">
         <span class="eyebrow">TIENDA ONLINE • ATENCIÓN 24/7</span>
         <h1>Todo lo que buscas, <em>en un solo lugar.</em></h1>
@@ -406,6 +612,7 @@ todo desde un solo lugar.
   <script src="core/checkout-orders.js?v=301"></script>
   <script src="core/checkout-shell.js?v=301"></script>
 
+  <script src="discovery-home.js?v=21"></script>
 <script src="app.js?v=comisiones-producto-2"></script>
   <script type="module" src="firebase-app.js?v=comisiones-producto-2"></script>
   <script src="edmarket-overrides.js?v=1"></script>
