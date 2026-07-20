@@ -196,27 +196,42 @@
       })
       .join("");
 
-    content.innerHTML = `
-      <section
-        class="ed-flow-panel"
-        data-ed-flow-panel="${step.id}"
-      >
-        <h2>${step.title}</h2>
-        <p>${step.description}</p>
+    const moduleMap = {
+      account: EDCore.checkoutAccount,
+      address: EDCore.checkoutAddress,
+      shipping: EDCore.checkoutShipping,
+      payment: EDCore.checkoutPayment,
+      summary: EDCore.checkoutSummary,
+      orders: EDCore.checkoutOrders
+    };
 
-        <div class="ed-flow-placeholder">
-          <strong>
-            Paso ${state.currentStep + 1}
-            de ${steps.length}
-          </strong>
+    const activeModule = moduleMap[step.id];
 
-          <span>
-            El módulo “${step.label}” está conectado
-            y listo para recibir su funcionalidad.
-          </span>
-        </div>
-      </section>
-    `;
+    content.innerHTML =
+      activeModule?.render?.(state.context) ||
+      `
+        <section
+          class="ed-flow-panel"
+          data-ed-flow-panel="${step.id}"
+        >
+          <h2>${step.title}</h2>
+          <p>${step.description}</p>
+
+          <div class="ed-flow-placeholder">
+            <strong>
+              Paso ${state.currentStep + 1}
+              de ${steps.length}
+            </strong>
+
+            <span>
+              El módulo “${step.label}” está conectado
+              y listo para recibir su funcionalidad.
+            </span>
+          </div>
+        </section>
+      `;
+
+    activeModule?.mount?.(content, state.context);
 
     backButton.disabled = state.currentStep === 0;
 
@@ -283,6 +298,33 @@
   }
 
   function next() {
+    const step = steps[state.currentStep];
+
+    const moduleMap = {
+      account: EDCore.checkoutAccount,
+      address: EDCore.checkoutAddress,
+      shipping: EDCore.checkoutShipping,
+      payment: EDCore.checkoutPayment,
+      summary: EDCore.checkoutSummary,
+      orders: EDCore.checkoutOrders
+    };
+
+    const activeModule = moduleMap[step.id];
+    const content = document.getElementById(
+      "edFlowContent"
+    );
+
+    const validation =
+      activeModule?.validate?.(content, state.context);
+
+    if (validation && !validation.valid) {
+      return;
+    }
+
+    if (validation?.data) {
+      state.context[step.id] = validation.data;
+    }
+
     if (state.currentStep >= steps.length - 1) {
       close();
       return;
