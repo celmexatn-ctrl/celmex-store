@@ -1,0 +1,146 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="900"
+  height="900"
+  viewBox="0 0 900 900"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">E&amp;D Market Next</title>
+  <desc id="desc">
+    Logotipo azul eléctrico con corona, letras E&amp;D y carrito.
+  </desc>
+
+  <defs>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4CC2FF"/>
+      <stop offset="0.48" stop-color="#0B84FF"/>
+      <stop offset="1" stop-color="#0047FF"/>
+    </linearGradient>
+
+    <linearGradient id="silver" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.48" stop-color="#DCE8F5"/>
+      <stop offset="1" stop-color="#8EA2B8"/>
+    </linearGradient>
+
+    <radialGradient id="background" cx="50%" cy="36%" r="68%">
+      <stop offset="0" stop-color="#102B52"/>
+      <stop offset="0.55" stop-color="#071225"/>
+      <stop offset="1" stop-color="#02050B"/>
+    </radialGradient>
+
+    <filter id="blueGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="11" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow
+        dx="0"
+        dy="18"
+        stdDeviation="14"
+        flood-color="#000000"
+        flood-opacity="0.72"
+      />
+    </filter>
+  </defs>
+
+  <rect width="900" height="900" rx="190" fill="url(#background)"/>
+
+  <circle
+    cx="450"
+    cy="410"
+    r="330"
+    fill="none"
+    stroke="#0B84FF"
+    stroke-opacity="0.18"
+    stroke-width="5"
+  />
+
+  <!-- Corona -->
+  <g
+    transform="translate(315 86)"
+    fill="url(#blue)"
+    stroke="#65D2FF"
+    stroke-width="5"
+    filter="url(#blueGlow)"
+  >
+    <path d="
+      M20 125
+      L5 35
+      L78 92
+      L135 5
+      L192 92
+      L265 35
+      L250 125
+      Z
+    "/>
+
+    <rect x="25" y="126" width="220" height="31" rx="15"/>
+
+    <circle cx="5" cy="35" r="13"/>
+    <circle cx="135" cy="5" r="13"/>
+    <circle cx="265" cy="35" r="13"/>
+  </g>
+
+  <!-- E&D -->
+  <g
+    filter="url(#softShadow)"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="900"
+    text-anchor="middle"
+  >
+    <text
+      x="450"
+      y="480"
+      font-size="285"
+      fill="url(#silver)"
+      letter-spacing="-24"
+    >E<tspan fill="url(#blue)">&amp;</tspan>D</text>
+  </g>
+
+  <!-- Carrito -->
+  <g
+    transform="translate(315 515)"
+    fill="none"
+    stroke="url(#blue)"
+    stroke-width="25"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#blueGlow)"
+  >
+    <path d="M15 5 H65 L95 145 H240 L270 45 H86"/>
+    <path d="M105 93 H245"/>
+    <circle cx="126" cy="185" r="15" fill="#0B84FF"/>
+    <circle cx="225" cy="185" r="15" fill="#0B84FF"/>
+  </g>
+
+  <text
+    x="450"
+    y="770"
+    text-anchor="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="72"
+    font-weight="800"
+    letter-spacing="24"
+    fill="url(#blue)"
+  >MARKET</text>
+
+  <line x1="245" y1="824" x2="340" y2="824" stroke="#0B84FF" stroke-width="6"/>
+  <line x1="560" y1="824" x2="655" y2="824" stroke="#0B84FF" stroke-width="6"/>
+
+  <text
+    x="450"
+    y="846"
+    text-anchor="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="42"
+    font-weight="700"
+    letter-spacing="18"
+    fill="#FFFFFF"
+  >NEXT</text>
+</svg>
