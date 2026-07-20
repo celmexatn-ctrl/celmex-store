@@ -1,0 +1,441 @@
+/* === E&D MARKET v3.0.2 — HOME COMERCIAL === */
+
+.ed-market-v302 {
+  --ed-v302-gold: #e8bd3d;
+  --ed-v302-surface: #0d131c;
+}
+
+.ed-market-v302 .ed-marketplace-home {
+  gap: 11px;
+  margin-top: 0;
+}
+
+.ed-market-v302 .ed-market-header {
+  min-height: 57px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ed-market-v302
+.ed-market-header.is-scrolled {
+  background:
+    rgba(7, 10, 15, 0.985);
+  box-shadow:
+    0 9px 28px rgba(0, 0, 0, 0.32);
+}
+
+.ed-market-v302 .ed-market-logo {
+  min-width: 100px;
+}
+
+.ed-market-v302 .ed-market-logo strong {
+  font-size: 26px;
+}
+
+.ed-market-v302 .ed-market-logo small {
+  font-size: 6px;
+  letter-spacing: 0.31em;
+}
+
+.ed-market-v302 .ed-market-icon-button {
+  width: 39px;
+  height: 39px;
+}
+
+.ed-market-v302 #edMarketplaceMenu {
+  gap: 4px;
+}
+
+.ed-market-v302 #edMarketplaceMenu span {
+  width: 21px;
+}
+
+.ed-market-v302 .ed-market-search {
+  min-height: 50px;
+  padding:
+    4px 6px
+    4px 13px;
+  border-radius: 17px;
+}
+
+.ed-market-v302
+.ed-market-search input {
+  min-height: 39px;
+  font-size: 13px;
+}
+
+.ed-market-v302
+.ed-market-search > span {
+  font-size: 21px;
+}
+
+.ed-market-v302
+.ed-market-search button {
+  width: 36px;
+  height: 36px;
+}
+
+.ed-market-v302 .ed-market-location {
+  min-height: 38px;
+  padding: 1px 5px;
+}
+
+.ed-market-v302
+.ed-market-location > span:first-child {
+  font-size: 19px;
+}
+
+.ed-market-v302 .ed-market-tabs {
+  min-height: 39px;
+  padding-bottom: 1px;
+}
+
+.ed-market-v302
+.ed-market-tabs button {
+  min-height: 36px;
+  padding: 0 12px;
+  font-size: 10px;
+}
+
+.ed-market-v302
+.ed-market-banner-section {
+  overflow: hidden;
+  border-radius: 20px;
+  touch-action: pan-y;
+}
+
+.ed-market-v302
+.ed-market-banner-track {
+  will-change: transform;
+  transition:
+    transform 0.42s
+    cubic-bezier(
+      0.22,
+      0.75,
+      0.2,
+      1
+    );
+}
+
+.ed-market-v302 .ed-market-banner {
+  grid-template-columns:
+    minmax(0, 1.3fr)
+    minmax(135px, 0.7fr);
+  min-height: 228px;
+  border-radius: 20px;
+}
+
+.ed-market-v302
+.ed-market-banner-copy {
+  padding: 24px 22px 31px;
+}
+
+.ed-market-v302
+.ed-market-banner-copy > small {
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+
+.ed-market-v302
+.ed-market-banner-copy h1,
+.ed-market-v302
+.ed-market-banner-copy h2 {
+  max-width: 490px;
+  margin-top: 7px;
+  font-size:
+    clamp(27px, 5vw, 41px);
+  line-height: 1.02;
+}
+
+.ed-market-v302
+.ed-market-banner-copy p {
+  max-width: 420px;
+  margin-top: 10px;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.ed-market-v302
+.ed-market-banner-copy button {
+  min-height: 41px;
+  margin-top: 15px;
+  padding: 0 15px;
+  border-radius: 12px;
+  font-size: 9px;
+}
+
+.ed-market-v302
+.ed-market-banner-visual {
+  min-height: 205px;
+  transform: scale(0.86);
+  transform-origin: center right;
+}
+
+.ed-market-v302
+.ed-market-banner-visual::before {
+  width: 185px;
+  height: 185px;
+}
+
+.ed-market-v302
+.ed-market-banner-visual::after {
+  width: 240px;
+  height: 240px;
+}
+
+.ed-market-v302 .ed-device-phone {
+  right: 23%;
+  bottom: 14%;
+  font-size: 78px;
+}
+
+.ed-market-v302 .ed-device-watch {
+  right: 1%;
+  bottom: 19%;
+  font-size: 47px;
+}
+
+.ed-market-v302 .ed-device-audio {
+  right: 47%;
+  bottom: 13%;
+  font-size: 44px;
+}
+
+.ed-market-v302 .ed-device-home,
+.ed-market-v302 .ed-device-box {
+  right: 23%;
+  font-size: 72px;
+}
+
+.ed-market-v302 .ed-device-chair,
+.ed-market-v302 .ed-device-shield {
+  right: 0;
+  font-size: 48px;
+}
+
+.ed-market-v302 .ed-device-light,
+.ed-market-v302 .ed-device-gift {
+  right: 49%;
+  font-size: 43px;
+}
+
+.ed-market-v302
+.ed-market-banner-dots {
+  bottom: 10px;
+  gap: 5px;
+}
+
+.ed-market-v302
+.ed-market-banner-dots button {
+  width: 6px;
+  height: 6px;
+  background:
+    rgba(255, 255, 255, 0.32);
+}
+
+.ed-market-v302
+.ed-market-banner-dots button.is-active {
+  width: 19px;
+  background:
+    var(--ed-v302-gold);
+}
+
+.ed-market-v302
+.ed-market-shortcuts {
+  gap: 8px;
+  padding-top: 1px;
+  padding-bottom: 4px;
+  scroll-snap-type: x proximity;
+}
+
+.ed-market-v302
+.ed-market-shortcuts button,
+.ed-market-v302
+.ed-market-shortcuts a {
+  flex-basis: 86px;
+  min-height: 91px;
+  padding: 9px 4px;
+  border-radius: 16px;
+  scroll-snap-align: start;
+}
+
+.ed-market-v302 .ed-shortcut-icon {
+  width: 39px;
+  height: 39px;
+  border-radius: 13px;
+  font-size: 19px;
+}
+
+.ed-market-v302
+.ed-market-shortcuts strong {
+  font-size: 8px;
+}
+
+.ed-market-v302
+.ed-market-shortcuts small {
+  font-size: 7px;
+}
+
+.ed-market-v302 .floating-wa {
+  right: 12px !important;
+  bottom:
+    calc(
+      80px +
+      env(
+        safe-area-inset-bottom,
+        0px
+      )
+    ) !important;
+  min-width: 0 !important;
+  min-height: 48px !important;
+  padding:
+    0 14px !important;
+  border-radius: 16px !important;
+  box-shadow:
+    0 15px 35px
+    rgba(0, 0, 0, 0.35) !important;
+}
+
+.ed-market-v302
+.floating-wa span {
+  font-size: 17px !important;
+}
+
+.ed-market-v302
+.floating-wa b {
+  font-size: 9px !important;
+}
+
+.ed-market-v302
+.ed-v3-bottom-nav {
+  --ed-v3-nav-height: 67px;
+  min-height:
+    calc(
+      67px +
+      env(
+        safe-area-inset-bottom,
+        0px
+      )
+    );
+  padding-top: 5px;
+}
+
+.ed-market-v302
+.ed-v3-nav-item {
+  min-height: 53px;
+  border-radius: 13px;
+}
+
+.ed-market-v302
+.ed-v3-nav-item > span {
+  height: 25px;
+  font-size: 21px;
+}
+
+.ed-market-v302
+.ed-v3-nav-item > small {
+  font-size: 7px;
+}
+
+.ed-market-v302
+.ed-market-category-section,
+.ed-market-v302
+.ed-market-teaser {
+  border-radius: 19px;
+}
+
+@media (max-width: 650px) {
+  .ed-market-v302 .ed-market-banner {
+    display: block;
+    min-height: 235px;
+  }
+
+  .ed-market-v302
+  .ed-market-banner-copy {
+    position: relative;
+    z-index: 4;
+    width: 72%;
+    max-width: 430px;
+    padding:
+      22px 18px 29px;
+  }
+
+  .ed-market-v302
+  .ed-market-banner-copy h1,
+  .ed-market-v302
+  .ed-market-banner-copy h2 {
+    max-width: 330px;
+    font-size: 29px;
+  }
+
+  .ed-market-v302
+  .ed-market-banner-copy p {
+    max-width: 290px;
+  }
+
+  .ed-market-v302
+  .ed-market-banner-visual {
+    position: absolute;
+    top: 0;
+    right: -31px;
+    width: 205px;
+    height: 100%;
+    min-height: 0;
+    opacity: 0.76;
+  }
+}
+
+@media (max-width: 430px) {
+  .ed-market-v302
+  .ed-marketplace-home {
+    width: calc(100% - 12px);
+  }
+
+  .ed-market-v302
+  .ed-market-banner {
+    min-height: 229px;
+  }
+
+  .ed-market-v302
+  .ed-market-banner-copy {
+    width: 78%;
+    padding:
+      20px 16px 28px;
+  }
+
+  .ed-market-v302
+  .ed-market-banner-copy h1,
+  .ed-market-v302
+  .ed-market-banner-copy h2 {
+    max-width: 290px;
+    font-size: 27px;
+  }
+
+  .ed-market-v302
+  .ed-market-banner-copy p {
+    max-width: 230px;
+    font-size: 9px;
+  }
+
+  .ed-market-v302
+  .ed-market-banner-visual {
+    right: -52px;
+    width: 195px;
+    opacity: 0.67;
+  }
+
+  .ed-market-v302 .floating-wa {
+    width: 49px !important;
+    height: 49px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+  }
+
+  .ed-market-v302
+  .floating-wa b {
+    display: none !important;
+  }
+}
