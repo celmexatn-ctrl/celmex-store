@@ -1,0 +1,1205 @@
+/* ========================================================
+   E&D MARKET NEXT v2.3
+   UNIFIED BLUE UI
+   ======================================================== */
+
+:root {
+  --ed23-blue-200: #7ad9ff;
+  --ed23-blue-300: #43c6ff;
+  --ed23-blue-400: #149cff;
+  --ed23-blue-500: #087cff;
+  --ed23-blue-600: #075dea;
+  --ed23-blue-700: #073fc9;
+
+  --ed23-bg: #020817;
+  --ed23-bg-soft: #031127;
+  --ed23-surface: #06172f;
+  --ed23-surface-2: #082249;
+  --ed23-surface-3: #0a2d64;
+
+  --ed23-text: #f7f9ff;
+  --ed23-muted: #a8b6d2;
+  --ed23-border: rgba(67, 198, 255, 0.28);
+  --ed23-border-strong: rgba(67, 198, 255, 0.48);
+
+  --ed23-success: #23d18b;
+  --ed23-warning: #ffb020;
+  --ed23-danger: #ff5d73;
+
+  --ed23-safe-top: env(safe-area-inset-top, 0px);
+  --ed23-safe-right: env(safe-area-inset-right, 0px);
+  --ed23-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --ed23-safe-left: env(safe-area-inset-left, 0px);
+}
+
+/* --------------------------------------------------------
+   BASE GLOBAL
+   -------------------------------------------------------- */
+
+html.ed-premium-ui,
+html.ed-next-enabled {
+  background: var(--ed23-bg);
+  color-scheme: dark;
+}
+
+html.ed-premium-ui body,
+html.ed-next-enabled body {
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(8, 124, 255, 0.25),
+      transparent 34%
+    ),
+    linear-gradient(
+      180deg,
+      #0737a0 0,
+      #05246f 14%,
+      #031335 35%,
+      var(--ed23-bg) 72%
+    ) !important;
+  color: var(--ed23-text);
+}
+
+html.ed-premium-ui *,
+html.ed-next-enabled * {
+  scrollbar-color:
+    var(--ed23-blue-500)
+    rgba(2, 8, 23, 0.38);
+}
+
+html.ed-premium-ui *::-webkit-scrollbar,
+html.ed-next-enabled *::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+html.ed-premium-ui *::-webkit-scrollbar-track,
+html.ed-next-enabled *::-webkit-scrollbar-track {
+  background:
+    rgba(2, 8, 23, 0.35);
+}
+
+html.ed-premium-ui *::-webkit-scrollbar-thumb,
+html.ed-next-enabled *::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background:
+    linear-gradient(
+      180deg,
+      var(--ed23-blue-300),
+      var(--ed23-blue-600)
+    );
+}
+
+/* --------------------------------------------------------
+   MARKETPLACE INTERNACIONAL
+   -------------------------------------------------------- */
+
+.ed-premium-ui .shopify-catalog-section,
+.ed-premium-ui #catalogo-shopify,
+.ed-premium-ui .controls,
+.ed-premium-ui #catalogo {
+  border-color:
+    var(--ed23-border) !important;
+
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(20, 156, 255, 0.16),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(8, 34, 73, 0.98),
+      rgba(3, 17, 39, 0.98)
+    ) !important;
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.035),
+    0 18px 42px
+    rgba(0, 28, 106, 0.22) !important;
+}
+
+.ed-premium-ui
+.shopify-catalog-section .eyebrow,
+.ed-premium-ui
+#catalogo-shopify .eyebrow,
+.ed-premium-ui
+.controls .eyebrow {
+  color:
+    var(--ed23-blue-300) !important;
+}
+
+.ed-premium-ui
+.shopify-catalog-section h2,
+.ed-premium-ui
+#catalogo-shopify h2,
+.ed-premium-ui
+.controls h2,
+.ed-premium-ui
+.section-head h2 {
+  color:
+    var(--ed23-text) !important;
+}
+
+.ed-premium-ui
+.shopify-catalog-section p,
+.ed-premium-ui
+#catalogo-shopify p,
+.ed-premium-ui
+.market-subtitle,
+.ed-premium-ui
+#shopifyCatalogStatus,
+.ed-premium-ui
+#resultCount {
+  color:
+    var(--ed23-muted) !important;
+}
+
+/* Buscadores heredados */
+
+.ed-premium-ui .search,
+.ed-premium-ui .admin-search,
+.ed-premium-ui
+.shopify-catalog-section input,
+.ed-premium-ui
+.controls input,
+.ed-premium-ui
+.controls select {
+  border-color:
+    var(--ed23-border) !important;
+
+  background:
+    rgba(2, 11, 27, 0.76) !important;
+
+  color:
+    var(--ed23-text) !important;
+
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(8, 124, 255, 0.035) !important;
+}
+
+.ed-premium-ui
+.search input::placeholder,
+.ed-premium-ui
+.admin-search input::placeholder,
+.ed-premium-ui
+.shopify-catalog-section
+input::placeholder,
+.ed-premium-ui
+.controls input::placeholder {
+  color:
+    #8094ae !important;
+}
+
+/* Chips y filtros */
+
+.ed-premium-ui .chip,
+.ed-premium-ui
+.controls .chip,
+.ed-premium-ui
+.shopify-category-chip {
+  border-color:
+    var(--ed23-border) !important;
+
+  background:
+    rgba(4, 21, 46, 0.88) !important;
+
+  color:
+    #c6d5e9 !important;
+}
+
+.ed-premium-ui .chip.active,
+.ed-premium-ui
+.controls .chip.active,
+.ed-premium-ui
+.shopify-category-chip.active,
+.ed-premium-ui
+.shopify-category-chip.is-active {
+  border-color:
+    var(--ed23-blue-300) !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--ed23-blue-400),
+      var(--ed23-blue-600)
+    ) !important;
+
+  color: white !important;
+
+  box-shadow:
+    0 9px 23px
+    rgba(7, 93, 234, 0.3) !important;
+}
+
+/* Tarjetas de productos */
+
+.ed-premium-ui
+.shopify-product-card,
+.ed-premium-ui
+.product-card,
+.ed-premium-ui
+.products > article,
+.ed-premium-ui
+.shopify-product-grid > article,
+.ed-premium-ui
+[class*="product-card"] {
+  border-color:
+    var(--ed23-border) !important;
+
+  background:
+    linear-gradient(
+      155deg,
+      rgba(9, 31, 65, 0.98),
+      rgba(3, 15, 34, 0.98)
+    ) !important;
+
+  box-shadow:
+    0 15px 34px
+    rgba(0, 20, 74, 0.25) !important;
+}
+
+.ed-premium-ui
+.shopify-product-card img,
+.ed-premium-ui
+.product-card img,
+.ed-premium-ui
+.products > article img {
+  border-color:
+    rgba(67, 198, 255, 0.16) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f7fbff,
+      #e1ecfb
+    ) !important;
+}
+
+.ed-premium-ui
+.shopify-product-card h3,
+.ed-premium-ui
+.product-card h3,
+.ed-premium-ui
+.products > article h3,
+.ed-premium-ui
+.shopify-product-card strong,
+.ed-premium-ui
+.product-card strong {
+  color:
+    var(--ed23-text) !important;
+}
+
+.ed-premium-ui
+.shopify-product-card p,
+.ed-premium-ui
+.product-card p,
+.ed-premium-ui
+.products > article p,
+.ed-premium-ui
+.shopify-product-card small,
+.ed-premium-ui
+.product-card small {
+  color:
+    var(--ed23-muted) !important;
+}
+
+.ed-premium-ui
+.shopify-product-card .price,
+.ed-premium-ui
+.product-card .price,
+.ed-premium-ui
+[class*="price"] {
+  color:
+    var(--ed23-blue-300) !important;
+}
+
+/* --------------------------------------------------------
+   BOTONES GLOBALES
+   -------------------------------------------------------- */
+
+.ed-premium-ui .primary,
+.ed-premium-ui .wa-buy,
+.ed-premium-ui .quote-add,
+.ed-premium-ui
+button[type="submit"]:not(.close),
+.ed-premium-ui
+.ed-checkout-primary,
+.ed-premium-ui
+.ed-pricing-primary {
+  border-color:
+    transparent !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--ed23-blue-300),
+      var(--ed23-blue-500) 48%,
+      var(--ed23-blue-700)
+    ) !important;
+
+  color: white !important;
+
+  box-shadow:
+    0 11px 27px
+    rgba(7, 93, 234, 0.3) !important;
+}
+
+.ed-premium-ui .secondary,
+.ed-premium-ui .text-btn,
+.ed-premium-ui .compare-add,
+.ed-premium-ui
+.ed-pricing-secondary {
+  border-color:
+    var(--ed23-border) !important;
+
+  background:
+    rgba(8, 60, 132, 0.16) !important;
+
+  color:
+    var(--ed23-blue-300) !important;
+}
+
+/* --------------------------------------------------------
+   CHECKOUT E&D
+   -------------------------------------------------------- */
+
+.ed-premium-ui
+#edCheckoutDialog,
+.ed-premium-ui
+.ed-checkout-dialog,
+.ed-premium-ui
+.ed-checkout-shell,
+.ed-premium-ui
+[class*="ed-checkout-shell"] {
+  border-color:
+    var(--ed23-border-strong) !important;
+
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(20, 156, 255, 0.16),
+      transparent 27%
+    ),
+    linear-gradient(
+      155deg,
+      #071c3c,
+      #020b1a 70%
+    ) !important;
+
+  color:
+    var(--ed23-text) !important;
+
+  box-shadow:
+    0 28px 90px
+    rgba(0, 15, 65, 0.65) !important;
+}
+
+.ed-premium-ui
+.ed-checkout-header,
+.ed-premium-ui
+.ed-checkout-hero,
+.ed-premium-ui
+.ed-checkout-progress,
+.ed-premium-ui
+.ed-checkout-section,
+.ed-premium-ui
+.ed-checkout-card,
+.ed-premium-ui
+.ed-account-card,
+.ed-premium-ui
+.ed-address-card,
+.ed-premium-ui
+.ed-shipping-method,
+.ed-premium-ui
+.ed-payment-method,
+.ed-premium-ui
+.ed-summary-total-card {
+  border-color:
+    var(--ed23-border) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(8, 31, 65, 0.96),
+      rgba(3, 15, 34, 0.96)
+    ) !important;
+}
+
+.ed-premium-ui
+.ed-checkout-header small,
+.ed-premium-ui
+.ed-checkout-hero small,
+.ed-premium-ui
+.ed-checkout-eyebrow,
+.ed-premium-ui
+.ed-checkout-section-number {
+  color:
+    var(--ed23-blue-300) !important;
+}
+
+.ed-premium-ui
+.ed-checkout-header h2,
+.ed-premium-ui
+.ed-checkout-hero h2,
+.ed-premium-ui
+.ed-checkout-section h3,
+.ed-premium-ui
+.ed-checkout-card h3 {
+  color:
+    var(--ed23-text) !important;
+}
+
+.ed-premium-ui
+.ed-checkout-header p,
+.ed-premium-ui
+.ed-checkout-hero p,
+.ed-premium-ui
+.ed-checkout-section p,
+.ed-premium-ui
+.ed-checkout-card p {
+  color:
+    var(--ed23-muted) !important;
+}
+
+/* Logo del checkout */
+
+.ed-premium-ui
+.ed-checkout-logo img,
+.ed-premium-ui
+.ed-checkout-brand img,
+.ed-premium-ui
+#edCheckoutDialog img[src*="logo"],
+.ed-premium-ui
+.ed-checkout-shell img[src*="logo"] {
+  content:
+    url("../../assets/branding-next/icon-next.svg") !important;
+
+  object-fit: contain !important;
+
+  filter:
+    drop-shadow(
+      0 0 17px
+      rgba(20, 156, 255, 0.52)
+    ) !important;
+}
+
+/* Pasos */
+
+.ed-premium-ui
+.ed-checkout-step,
+.ed-premium-ui
+.ed-checkout-progress-step,
+.ed-premium-ui
+[class*="checkout-step"] {
+  color:
+    #8ca1bb !important;
+}
+
+.ed-premium-ui
+.ed-checkout-step.is-active,
+.ed-premium-ui
+.ed-checkout-step.active,
+.ed-premium-ui
+.ed-checkout-progress-step.is-active,
+.ed-premium-ui
+.ed-checkout-progress-step.active {
+  color:
+    var(--ed23-blue-300) !important;
+}
+
+.ed-premium-ui
+.ed-checkout-step.is-active > span,
+.ed-premium-ui
+.ed-checkout-step.active > span,
+.ed-premium-ui
+.ed-checkout-progress-step.is-active > span,
+.ed-premium-ui
+.ed-checkout-progress-step.active > span,
+.ed-premium-ui
+[class*="checkout-step"].is-active
+[class*="number"] {
+  border-color:
+    var(--ed23-blue-300) !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--ed23-blue-300),
+      var(--ed23-blue-600)
+    ) !important;
+
+  color: white !important;
+
+  box-shadow:
+    0 8px 22px
+    rgba(7, 93, 234, 0.33) !important;
+}
+
+/* Líneas entre pasos */
+
+.ed-premium-ui
+.ed-checkout-progress::before,
+.ed-premium-ui
+.ed-checkout-progress-line,
+.ed-premium-ui
+[class*="checkout-step-line"] {
+  background:
+    rgba(67, 198, 255, 0.27) !important;
+}
+
+/* Formularios checkout */
+
+.ed-premium-ui
+.ed-checkout-shell input,
+.ed-premium-ui
+.ed-checkout-shell select,
+.ed-premium-ui
+.ed-checkout-shell textarea,
+.ed-premium-ui
+#edCheckoutDialog input,
+.ed-premium-ui
+#edCheckoutDialog select,
+.ed-premium-ui
+#edCheckoutDialog textarea {
+  border-color:
+    var(--ed23-border) !important;
+
+  background:
+    rgba(1, 8, 20, 0.72) !important;
+
+  color:
+    var(--ed23-text) !important;
+
+  box-shadow: none !important;
+}
+
+.ed-premium-ui
+.ed-checkout-shell input:focus,
+.ed-premium-ui
+.ed-checkout-shell select:focus,
+.ed-premium-ui
+.ed-checkout-shell textarea:focus,
+.ed-premium-ui
+#edCheckoutDialog input:focus,
+.ed-premium-ui
+#edCheckoutDialog select:focus,
+.ed-premium-ui
+#edCheckoutDialog textarea:focus {
+  border-color:
+    var(--ed23-blue-300) !important;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(20, 156, 255, 0.12) !important;
+}
+
+/* Botón cerrar */
+
+.ed-premium-ui
+.ed-checkout-close,
+.ed-premium-ui
+#edCheckoutDialog .close,
+.ed-premium-ui
+.ed-checkout-shell .close {
+  border-color:
+    var(--ed23-border-strong) !important;
+
+  background:
+    rgba(8, 60, 132, 0.2) !important;
+
+  color:
+    var(--ed23-blue-300) !important;
+}
+
+/* Mensajes y estado vacío */
+
+.ed-premium-ui
+.ed-checkout-empty,
+.ed-premium-ui
+.ed-checkout-error,
+.ed-premium-ui
+.ed-checkout-message {
+  color:
+    var(--ed23-text) !important;
+}
+
+.ed-premium-ui
+.ed-checkout-empty strong,
+.ed-premium-ui
+.ed-checkout-error strong,
+.ed-premium-ui
+.ed-checkout-message strong {
+  color:
+    var(--ed23-blue-300) !important;
+}
+
+/* --------------------------------------------------------
+   HOJAS: PEDIDOS Y CUENTA
+   -------------------------------------------------------- */
+
+.ed-premium-ui
+.ed-v3-sheet,
+.ed-premium-ui
+#edV3Sheet,
+.ed-premium-ui
+[class*="ed-v3-sheet"] {
+  border-color:
+    var(--ed23-border-strong) !important;
+
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(20, 156, 255, 0.14),
+      transparent 28%
+    ),
+    linear-gradient(
+      160deg,
+      #071c3c,
+      #020b1a 72%
+    ) !important;
+
+  color:
+    var(--ed23-text) !important;
+
+  box-shadow:
+    0 -25px 75px
+    rgba(0, 14, 59, 0.7) !important;
+}
+
+.ed-premium-ui
+.ed-v3-sheet-header,
+.ed-premium-ui
+.ed-v3-sheet-top {
+  border-bottom-color:
+    var(--ed23-border) !important;
+
+  background:
+    rgba(2, 9, 23, 0.72) !important;
+}
+
+.ed-premium-ui
+#edV3SheetEyebrow,
+.ed-premium-ui
+.ed-v3-sheet-eyebrow,
+.ed-premium-ui
+.ed-account-eyebrow {
+  color:
+    var(--ed23-blue-300) !important;
+}
+
+.ed-premium-ui
+#edV3SheetTitle,
+.ed-premium-ui
+.ed-v3-sheet-title,
+.ed-premium-ui
+.ed-v3-sheet h2,
+.ed-premium-ui
+.ed-v3-sheet h3 {
+  color:
+    var(--ed23-text) !important;
+}
+
+.ed-premium-ui
+#edV3SheetClose,
+.ed-premium-ui
+.ed-v3-sheet-close,
+.ed-premium-ui
+.ed-v3-sheet .close {
+  border-color:
+    var(--ed23-border-strong) !important;
+
+  background:
+    rgba(8, 60, 132, 0.2) !important;
+
+  color:
+    var(--ed23-blue-300) !important;
+}
+
+.ed-premium-ui
+.ed-v3-sheet-content,
+.ed-premium-ui
+#edV3SheetContent {
+  color:
+    var(--ed23-text) !important;
+}
+
+.ed-premium-ui
+.ed-account-card,
+.ed-premium-ui
+.ed-account-menu-item,
+.ed-premium-ui
+.ed-order-card,
+.ed-premium-ui
+.ed-orders-empty,
+.ed-premium-ui
+[class*="account-card"],
+.ed-premium-ui
+[class*="order-card"] {
+  border-color:
+    var(--ed23-border) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(8, 31, 65, 0.96),
+      rgba(3, 15, 34, 0.96)
+    ) !important;
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.025) !important;
+}
+
+.ed-premium-ui
+.ed-account-card strong,
+.ed-premium-ui
+.ed-account-menu-item strong,
+.ed-premium-ui
+.ed-order-card strong,
+.ed-premium-ui
+.ed-orders-empty strong {
+  color:
+    var(--ed23-text) !important;
+}
+
+.ed-premium-ui
+.ed-account-card small,
+.ed-premium-ui
+.ed-account-menu-item small,
+.ed-premium-ui
+.ed-order-card small,
+.ed-premium-ui
+.ed-orders-empty p {
+  color:
+    var(--ed23-muted) !important;
+}
+
+.ed-premium-ui
+.ed-account-card > span,
+.ed-premium-ui
+.ed-account-menu-item > span,
+.ed-premium-ui
+.ed-order-card > span,
+.ed-premium-ui
+[class*="account-icon"],
+.ed-premium-ui
+[class*="order-icon"] {
+  border-color:
+    var(--ed23-border) !important;
+
+  background:
+    rgba(8, 82, 184, 0.18) !important;
+
+  color:
+    var(--ed23-blue-300) !important;
+}
+
+/* --------------------------------------------------------
+   PRICING ENGINE
+   -------------------------------------------------------- */
+
+.ed-premium-ui
+.ed-pricing-dialog {
+  border-color:
+    var(--ed23-border-strong) !important;
+
+  background:
+    var(--ed23-bg) !important;
+}
+
+.ed-premium-ui
+.ed-pricing-shell {
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(20, 156, 255, 0.18),
+      transparent 28%
+    ),
+    linear-gradient(
+      155deg,
+      #071c3c,
+      #020b1a 72%
+    ) !important;
+}
+
+.ed-premium-ui
+.ed-pricing-header {
+  border-bottom-color:
+    var(--ed23-border) !important;
+}
+
+.ed-premium-ui
+.ed-pricing-header small,
+.ed-premium-ui
+.ed-pricing-card-title small,
+.ed-premium-ui
+.ed-pricing-result-summary > small {
+  color:
+    var(--ed23-blue-300) !important;
+}
+
+.ed-premium-ui
+.ed-pricing-card,
+.ed-premium-ui
+.ed-pricing-method,
+.ed-premium-ui
+.ed-pricing-result-method,
+.ed-premium-ui
+.ed-pricing-result-summary {
+  border-color:
+    var(--ed23-border) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(8, 31, 65, 0.98),
+      rgba(3, 15, 34, 0.98)
+    ) !important;
+}
+
+.ed-premium-ui
+.ed-pricing-grid input,
+.ed-premium-ui
+.ed-pricing-grid select,
+.ed-premium-ui
+.ed-pricing-method-fields input,
+.ed-premium-ui
+.ed-pricing-input-suffix,
+.ed-premium-ui
+.ed-pricing-input-prefix {
+  border-color:
+    var(--ed23-border) !important;
+
+  background:
+    rgba(1, 8, 20, 0.72) !important;
+
+  color:
+    var(--ed23-text) !important;
+}
+
+.ed-premium-ui
+.ed-pricing-result-summary > strong,
+.ed-premium-ui
+.ed-pricing-result-method-head > b {
+  color:
+    var(--ed23-blue-300) !important;
+}
+
+/* --------------------------------------------------------
+   ADMINISTRADOR Y SOCIOS
+   -------------------------------------------------------- */
+
+.ed-premium-ui
+.admin-dialog,
+.ed-premium-ui
+#adminModal,
+.ed-premium-ui
+#socioModal,
+.ed-premium-ui
+.simple-dialog,
+.ed-premium-ui
+dialog:not(.ed-pricing-dialog):not(.ed-checkout-dialog) {
+  border-color:
+    var(--ed23-border-strong) !important;
+
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(20, 156, 255, 0.15),
+      transparent 28%
+    ),
+    linear-gradient(
+      155deg,
+      #071c3c,
+      #020b1a 72%
+    ) !important;
+
+  color:
+    var(--ed23-text) !important;
+}
+
+.ed-premium-ui
+.admin-section,
+.ed-premium-ui
+.socio-commission-catalog,
+.ed-premium-ui
+.firebase-product-form,
+.ed-premium-ui
+.socio-form {
+  border-color:
+    var(--ed23-border) !important;
+
+  background:
+    rgba(5, 24, 52, 0.78) !important;
+}
+
+/* --------------------------------------------------------
+   ELIMINAR RESIDUOS DORADOS
+   -------------------------------------------------------- */
+
+.ed-premium-ui
+[style*="#d7a928"],
+.ed-premium-ui
+[style*="#d7a9"],
+.ed-premium-ui
+[style*="#e8bd3d"],
+.ed-premium-ui
+[style*="#f0d05e"] {
+  border-color:
+    var(--ed23-border) !important;
+
+  color:
+    var(--ed23-blue-300) !important;
+}
+
+.ed-premium-ui .tag-mini,
+.ed-premium-ui .eyebrow {
+  color:
+    var(--ed23-blue-300) !important;
+}
+
+.ed-premium-ui hr {
+  border-color:
+    var(--ed23-border) !important;
+}
+
+/* --------------------------------------------------------
+   MOBILE
+   -------------------------------------------------------- */
+
+@media (max-width: 480px) {
+  .ed-premium-ui
+  .shopify-catalog-section,
+  .ed-premium-ui
+  #catalogo-shopify,
+  .ed-premium-ui
+  .controls {
+    border-radius: 22px !important;
+  }
+
+  .ed-premium-ui
+  .ed-v3-sheet,
+  .ed-premium-ui
+  #edV3Sheet {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ========================================================
+   SMOOTH SCROLL SYSTEM
+   ======================================================== */
+
+html.ed-smooth-scroll-ready {
+  width: 100%;
+  max-width: 100%;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  scroll-behavior: smooth;
+
+  overscroll-behavior-y: auto;
+
+  -webkit-text-size-adjust: 100%;
+}
+
+html.ed-smooth-scroll-ready body {
+  width: 100%;
+  max-width: 100%;
+
+  overflow-x: hidden;
+  overflow-y: visible;
+
+  touch-action: pan-y;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+html.ed-smooth-scroll-ready main {
+  min-height: 100dvh;
+
+  touch-action: pan-y;
+}
+
+html.ed-smooth-scroll-ready
+.ed-scroll-surface {
+  overflow-x: hidden;
+  overflow-y: auto !important;
+
+  max-height:
+    calc(
+      100dvh -
+      var(--ed23-safe-top) -
+      var(--ed23-safe-bottom)
+    );
+
+  touch-action: pan-y !important;
+
+  overscroll-behavior-y: contain;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+html.ed-smooth-scroll-ready
+.ed-horizontal-rail {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+
+  touch-action: pan-x pan-y !important;
+
+  overscroll-behavior-inline: contain;
+
+  -webkit-overflow-scrolling: touch;
+
+  scroll-snap-type: x proximity;
+}
+
+html.ed-smooth-scroll-ready
+.ed-v3-sheet,
+html.ed-smooth-scroll-ready
+#edV3Sheet {
+  max-height:
+    calc(
+      100dvh -
+      var(--ed23-safe-top) -
+      8px
+    ) !important;
+
+  overflow: hidden !important;
+}
+
+html.ed-smooth-scroll-ready
+.ed-v3-sheet-content,
+html.ed-smooth-scroll-ready
+#edV3SheetContent {
+  max-height:
+    calc(
+      100dvh -
+      150px -
+      var(--ed23-safe-bottom)
+    ) !important;
+
+  padding-bottom:
+    calc(
+      98px +
+      var(--ed23-safe-bottom)
+    ) !important;
+
+  overflow-y: auto !important;
+
+  touch-action: pan-y !important;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+html.ed-smooth-scroll-ready
+.ed-checkout-dialog,
+html.ed-smooth-scroll-ready
+#edCheckoutDialog {
+  max-height:
+    calc(
+      100dvh -
+      var(--ed23-safe-top) -
+      var(--ed23-safe-bottom) -
+      10px
+    ) !important;
+
+  overflow: hidden !important;
+}
+
+html.ed-smooth-scroll-ready
+.ed-checkout-shell,
+html.ed-smooth-scroll-ready
+.ed-checkout-content,
+html.ed-smooth-scroll-ready
+.ed-checkout-body {
+  max-height:
+    calc(
+      100dvh -
+      var(--ed23-safe-top) -
+      var(--ed23-safe-bottom) -
+      14px
+    ) !important;
+
+  padding-bottom:
+    calc(
+      30px +
+      var(--ed23-safe-bottom)
+    ) !important;
+
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+
+  touch-action: pan-y !important;
+
+  overscroll-behavior-y: contain;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+html.ed-smooth-scroll-ready
+.ed-pricing-dialog {
+  overflow: hidden !important;
+}
+
+html.ed-smooth-scroll-ready
+.ed-pricing-layout {
+  min-height: 0;
+  overflow: hidden;
+}
+
+html.ed-smooth-scroll-ready
+.ed-pricing-form,
+html.ed-smooth-scroll-ready
+.ed-pricing-results {
+  overflow-y: auto !important;
+
+  touch-action: pan-y !important;
+
+  overscroll-behavior-y: contain;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Evita que la barra inferior bloquee contenido */
+
+html.ed-smooth-scroll-ready
+.edp-home {
+  padding-bottom:
+    calc(
+      16px +
+      var(--ed23-safe-bottom)
+    );
+}
+
+html.ed-smooth-scroll-ready
+.shopify-catalog-section,
+html.ed-smooth-scroll-ready
+#catalogo-shopify,
+html.ed-smooth-scroll-ready
+#catalogo,
+html.ed-smooth-scroll-ready
+.controls {
+  scroll-margin-top: 18px;
+}
+
+/* Elimina bloqueos heredados cuando no hay modal */
+
+html.ed-smooth-scroll-ready:not(.ed-overlay-active),
+html.ed-smooth-scroll-ready:not(.ed-overlay-active) body {
+  height: auto;
+  min-height: 100%;
+}
+
+/* Mejor área táctil */
+
+html.ed-smooth-scroll-ready button,
+html.ed-smooth-scroll-ready a {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color:
+    rgba(67, 198, 255, 0.14);
+}
