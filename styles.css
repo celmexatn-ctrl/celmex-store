@@ -3252,3 +3252,142 @@ dialog.product-dialog[open] {
   }
 }
 
+/* === E&D APP NATIVA V1 === */
+
+html.ed-native-app {
+  background: #07090d;
+}
+
+html.ed-native-app body {
+  min-height: 100dvh;
+  overscroll-behavior-y: none;
+}
+
+html.ed-native-app .install-btn,
+html.ed-native-app .install-cta,
+html.ed-native-app #installBtn,
+html.ed-native-app #installAppBtn {
+  display: none !important;
+}
+
+/*
+ * En la APK ya no se necesita mostrar una invitación
+ * para volver a instalar la aplicación.
+ */
+html.ed-native-app [aria-label="Instalar E&D Market"],
+html.ed-native-app [title="Instalar app"] {
+  display: none !important;
+}
+
+html.ed-native-app .topbar {
+  padding-top:
+    max(
+      10px,
+      var(
+        --safe-area-inset-top,
+        env(safe-area-inset-top, 0px)
+      )
+    );
+}
+
+html.ed-native-app main {
+  padding-left:
+    max(
+      12px,
+      var(
+        --safe-area-inset-left,
+        env(safe-area-inset-left, 0px)
+      )
+    );
+
+  padding-right:
+    max(
+      12px,
+      var(
+        --safe-area-inset-right,
+        env(safe-area-inset-right, 0px)
+      )
+    );
+
+  padding-bottom:
+    calc(
+      105px +
+      var(
+        --safe-area-inset-bottom,
+        env(safe-area-inset-bottom, 0px)
+      )
+    );
+}
+
+html.ed-native-app .bottom-nav {
+  padding-bottom:
+    var(
+      --safe-area-inset-bottom,
+      env(safe-area-inset-bottom, 0px)
+    );
+
+  height:
+    calc(
+      70px +
+      var(
+        --safe-area-inset-bottom,
+        env(safe-area-inset-bottom, 0px)
+      )
+    );
+}
+
+html.ed-native-app .floating-wa {
+  bottom:
+    calc(
+      82px +
+      var(
+        --safe-area-inset-bottom,
+        env(safe-area-inset-bottom, 0px)
+      )
+    );
+}
+
+html.ed-native-app dialog {
+  max-height:
+    calc(
+      100dvh -
+      var(
+        --safe-area-inset-top,
+        env(safe-area-inset-top, 0px)
+      ) -
+      var(
+        --safe-area-inset-bottom,
+        env(safe-area-inset-bottom, 0px)
+      ) -
+      12px
+    );
+}
+
+html.ed-native-app .hero-actions {
+  /*
+   * El botón eliminado no debe dejar huecos
+   * en la cuadrícula de acciones.
+   */
+  align-items: stretch;
+}
+
+html.ed-native-app .hero-actions > * {
+  min-width: 0;
+}
+
+/* Evita selección accidental durante la navegación táctil. */
+html.ed-native-app .bottom-nav,
+html.ed-native-app .topbar,
+html.ed-native-app .hero-actions {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Mantiene la selección habilitada en formularios. */
+html.ed-native-app input,
+html.ed-native-app textarea,
+html.ed-native-app select {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
