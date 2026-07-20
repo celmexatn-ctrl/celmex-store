@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">E&amp;D Market</string>
+    <string name="title_activity_main">E&amp;D Market</string>
+    <string name="package_name">com.edmarket.app</string>
+    <string name="custom_url_scheme">com.edmarket.app</string>
+</resources>

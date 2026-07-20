@@ -1,0 +1,63 @@
+name: Compilar APK E&D Market
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-android-debug:
+    name: Generar APK de prueba
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v6
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Configurar Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: gradle
+          cache-dependency-path: |
+            android/*.gradle
+            android/**/*.gradle
+            android/gradle/wrapper/gradle-wrapper.properties
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Reconstruir recursos web
+        run: npm run build:web
+
+      - name: Sincronizar Capacitor
+        run: npx cap sync android
+
+      - name: Dar permisos a Gradle
+        run: chmod +x android/gradlew
+
+      - name: Compilar APK debug
+        working-directory: android
+        run: ./gradlew assembleDebug --no-daemon --stacktrace
+
+      - name: Verificar APK generado
+        run: |
+          test -s android/app/build/outputs/apk/debug/app-debug.apk
+          ls -lh android/app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Guardar APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: ED-Market-APK-Prueba
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 14

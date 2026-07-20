@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "celmex-store-2",
+    "nuevo": "celmex-store-2"
+  },
+  "targets": {},
+  "etags": {}
+}

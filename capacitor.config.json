@@ -1,0 +1,12 @@
+{
+  "appId": "com.edmarket.app",
+  "appName": "E&D Market",
+  "webDir": "www",
+  "backgroundColor": "#07090D",
+  "zoomEnabled": false,
+  "android": {
+    "backgroundColor": "#07090D",
+    "allowMixedContent": false,
+    "webContentsDebuggingEnabled": false
+  }
+}

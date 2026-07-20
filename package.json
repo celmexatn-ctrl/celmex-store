@@ -1,0 +1,19 @@
+{
+  "name": "edmarket-mobile",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aplicación móvil oficial de E&D Market",
+  "scripts": {
+    "build:web": "node scripts/build-capacitor-web.js",
+    "cap:sync": "npm run build:web && npx cap sync",
+    "cap:copy": "npm run build:web && npx cap copy",
+    "cap:doctor": "npx cap doctor"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.4.2",
+    "@capacitor/core": "^8.4.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.4.2"
+  }
+}

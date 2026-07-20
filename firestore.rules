@@ -1,0 +1,33 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+    function email() {
+      return signedIn() ? request.auth.token.email : null;
+    }
+    function isAdmin() {
+      return signedIn() && email() == 'celmexatn@gmail.com';
+    }
+
+    match /productos/{productId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /socios/{socioId} {
+      allow read: if isAdmin() || (signedIn() && socioId == email());
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /ventasSocios/{ventaId} {
+      allow read: if isAdmin() || (signedIn() && resource.data.socioEmail == email());
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
