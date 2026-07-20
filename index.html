@@ -25,6 +25,7 @@
   <meta property="og:image" content="https://celmexstore.com/assets/icon-512.png">
   <link rel="canonical" href="https://celmexstore.com/">
   <link rel="stylesheet" href="core/checkout-shell.css?v=301" />
+  <link rel="stylesheet" href="marketplace-home.css?v=2201">
 </head>
 <body>
   <div id="splash" class="splash" aria-hidden="true"><img src="assets/logo.png" alt="" decoding="async" fetchpriority="high"><strong>E&D Market</strong><span>Todo lo que buscas, en un solo lugar.</span></div>
@@ -49,6 +50,421 @@
   </header>
 
   <main>
+
+<!-- === E&D MARKETPLACE HOME OPTION 1 === -->
+<section
+  id="edMarketplaceHome"
+  class="ed-marketplace-home"
+  aria-label="Inicio E&D Market"
+>
+  <header class="ed-market-header">
+    <button
+      id="edMarketplaceMenu"
+      class="ed-market-icon-button"
+      type="button"
+      aria-label="Abrir menú"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <button
+      class="ed-market-logo"
+      type="button"
+      onclick="scrollToTop()"
+      aria-label="Ir al inicio"
+    >
+      <strong>E&amp;D</strong>
+      <small>MARKET</small>
+    </button>
+
+    <div class="ed-market-header-actions">
+      <button
+        id="edMarketplaceNotifications"
+        class="ed-market-icon-button ed-notification-button"
+        type="button"
+        aria-label="Notificaciones"
+      >
+        ♧
+        <i>1</i>
+      </button>
+
+      <button
+        class="ed-market-icon-button ed-market-cart-button"
+        type="button"
+        onclick="openQuote()"
+        aria-label="Abrir carrito"
+      >
+        🛒
+        <i id="edMarketplaceCartCount">0</i>
+      </button>
+    </div>
+  </header>
+
+  <form
+    id="edMarketplaceSearchForm"
+    class="ed-market-search"
+    role="search"
+  >
+    <span aria-hidden="true">⌕</span>
+
+    <input
+      id="edMarketplaceSearchInput"
+      type="search"
+      placeholder="Buscar productos, marcas y categorías"
+      autocomplete="off"
+      aria-label="Buscar en E&D Market"
+    />
+
+    <button
+      id="edMarketplaceClearSearch"
+      class="ed-market-search-clear"
+      type="button"
+      aria-label="Limpiar búsqueda"
+      hidden
+    >
+      ×
+    </button>
+
+    <button
+      class="ed-market-camera"
+      type="button"
+      aria-label="Búsqueda visual próximamente"
+    >
+      ▣
+    </button>
+  </form>
+
+  <button
+    class="ed-market-location"
+    type="button"
+    data-ed-market-catalog
+  >
+    <span>⌖</span>
+
+    <span>
+      <small>Enviar a</small>
+      <strong>México</strong>
+    </span>
+
+    <b>›</b>
+  </button>
+
+  <nav class="ed-market-tabs" aria-label="Categorías principales">
+    <button
+      class="is-active"
+      type="button"
+      data-ed-market-category="all"
+    >
+      Para ti
+    </button>
+
+    <button
+      type="button"
+      data-ed-market-category="Tecnología"
+    >
+      Tecnología
+    </button>
+
+    <button
+      type="button"
+      data-ed-market-category="Hogar"
+    >
+      Hogar
+    </button>
+
+    <button
+      type="button"
+      data-ed-market-category="Moda"
+    >
+      Moda
+    </button>
+
+    <button
+      type="button"
+      data-ed-market-category="Belleza"
+    >
+      Belleza
+    </button>
+
+    <button
+      type="button"
+      data-ed-market-category="Mascotas"
+    >
+      Mascotas
+    </button>
+  </nav>
+
+  <section class="ed-market-banner-section">
+    <div
+      id="edMarketBannerTrack"
+      class="ed-market-banner-track"
+    >
+      <article class="ed-market-banner ed-market-banner-tech">
+        <div class="ed-market-banner-copy">
+          <small>TECNOLOGÍA</small>
+
+          <h1>
+            Los mejores productos
+            <b>al mejor precio</b>
+          </h1>
+
+          <p>
+            Tecnología, accesorios y novedades
+            seleccionadas por E&D Market.
+          </p>
+
+          <button type="button" data-ed-market-catalog>
+            Ver ofertas
+          </button>
+        </div>
+
+        <div class="ed-market-banner-visual" aria-hidden="true">
+          <span class="ed-device ed-device-phone">📱</span>
+          <span class="ed-device ed-device-watch">⌚</span>
+          <span class="ed-device ed-device-audio">🎧</span>
+          <i></i>
+        </div>
+      </article>
+
+      <article class="ed-market-banner ed-market-banner-home">
+        <div class="ed-market-banner-copy">
+          <small>HOGAR E&D</small>
+
+          <h2>
+            Todo para transformar
+            <b>tu espacio</b>
+          </h2>
+
+          <p>
+            Descubre productos útiles, modernos
+            y pensados para tu día a día.
+          </p>
+
+          <button
+            type="button"
+            data-ed-market-category="Hogar"
+          >
+            Descubrir
+          </button>
+        </div>
+
+        <div class="ed-market-banner-visual" aria-hidden="true">
+          <span class="ed-device ed-device-home">🏠</span>
+          <span class="ed-device ed-device-chair">🛋️</span>
+          <span class="ed-device ed-device-light">💡</span>
+          <i></i>
+        </div>
+      </article>
+
+      <article class="ed-market-banner ed-market-banner-benefits">
+        <div class="ed-market-banner-copy">
+          <small>BENEFICIOS E&D</small>
+
+          <h2>
+            Compra fácil,
+            <b>segura y acompañada</b>
+          </h2>
+
+          <p>
+            Atención personalizada, envíos y
+            beneficios para nuestros clientes.
+          </p>
+
+          <button
+            type="button"
+            data-ed-market-scroll="ofertas"
+          >
+            Conocer beneficios
+          </button>
+        </div>
+
+        <div class="ed-market-banner-visual" aria-hidden="true">
+          <span class="ed-device ed-device-box">📦</span>
+          <span class="ed-device ed-device-shield">🛡️</span>
+          <span class="ed-device ed-device-gift">🎁</span>
+          <i></i>
+        </div>
+      </article>
+    </div>
+
+    <div
+      id="edMarketBannerDots"
+      class="ed-market-banner-dots"
+      aria-label="Seleccionar promoción"
+    ></div>
+  </section>
+
+  <section class="ed-market-shortcuts" aria-label="Accesos rápidos">
+    <button type="button" data-ed-market-scroll="ofertas">
+      <span class="ed-shortcut-icon ed-shortcut-hot">🔥</span>
+      <strong>Ofertas</strong>
+      <small>Especiales</small>
+    </button>
+
+    <button type="button" data-ed-market-coupon>
+      <span class="ed-shortcut-icon">🎟️</span>
+      <strong>Cupones</strong>
+      <small>Promociones</small>
+    </button>
+
+    <button type="button" data-ed-market-shipping>
+      <span class="ed-shortcut-icon">🚚</span>
+      <strong>Envíos</strong>
+      <small>Todo México</small>
+    </button>
+
+    <button type="button" onclick="openFavorites()">
+      <span class="ed-shortcut-icon">♡</span>
+      <strong>Favoritos</strong>
+      <small>Guardados</small>
+    </button>
+
+    <button type="button" onclick="openSocioAccess()">
+      <span class="ed-shortcut-icon">♛</span>
+      <strong>Socios</strong>
+      <small>Beneficios</small>
+    </button>
+
+    <a
+      href="https://wa.me/526313181585?text=Hola%20E%26D%20Market%2C%20necesito%20ayuda."
+    >
+      <span class="ed-shortcut-icon">🎧</span>
+      <strong>Atención</strong>
+      <small>24/7</small>
+    </a>
+  </section>
+
+  <section class="ed-market-category-section">
+    <div class="ed-market-section-heading">
+      <div>
+        <small>EXPLORA E&D</small>
+        <h2>Categorías destacadas</h2>
+      </div>
+
+      <button type="button" data-ed-market-catalog>
+        Ver todas
+      </button>
+    </div>
+
+    <div class="ed-market-category-rail">
+      <button type="button" data-ed-market-category="Tecnología">
+        <span>📱</span>
+        <strong>Tecnología</strong>
+      </button>
+
+      <button type="button" data-ed-market-category="Hogar">
+        <span>🛋️</span>
+        <strong>Hogar</strong>
+      </button>
+
+      <button type="button" data-ed-market-category="Moda">
+        <span>👕</span>
+        <strong>Moda</strong>
+      </button>
+
+      <button type="button" data-ed-market-category="Belleza">
+        <span>✨</span>
+        <strong>Belleza</strong>
+      </button>
+
+      <button type="button" data-ed-market-category="Deportes">
+        <span>⚽</span>
+        <strong>Deportes</strong>
+      </button>
+
+      <button type="button" data-ed-market-category="Mascotas">
+        <span>🐾</span>
+        <strong>Mascotas</strong>
+      </button>
+
+      <button type="button" data-ed-market-category="Oficina">
+        <span>💻</span>
+        <strong>Oficina</strong>
+      </button>
+
+      <button type="button" data-ed-market-category="Juguetes">
+        <span>🧸</span>
+        <strong>Juguetes</strong>
+      </button>
+    </div>
+  </section>
+
+  <section class="ed-market-teaser">
+    <div class="ed-market-section-heading">
+      <div>
+        <small>SELECCIÓN PERSONALIZADA</small>
+        <h2>Ofertas para ti</h2>
+      </div>
+
+      <button type="button" data-ed-market-catalog>
+        Ver todas
+      </button>
+    </div>
+
+    <div class="ed-market-countdown">
+      <span>Termina en</span>
+      <strong id="edMarketCountdown">10 : 49 : 10</strong>
+    </div>
+
+    <div class="ed-market-product-preview">
+      <article>
+        <i>-30%</i>
+        <button type="button" aria-label="Agregar a favoritos">♡</button>
+        <div>📱</div>
+        <small>TECNOLOGÍA</small>
+        <strong>Smartphone destacado</strong>
+        <del>$32,999</del>
+        <b>$25,499</b>
+        <span>🚚 Envío disponible</span>
+      </article>
+
+      <article>
+        <i>-25%</i>
+        <button type="button" aria-label="Agregar a favoritos">♡</button>
+        <div>🎧</div>
+        <small>AUDIO</small>
+        <strong>Audífonos inalámbricos</strong>
+        <del>$1,299</del>
+        <b>$899</b>
+        <span>🚚 Envío disponible</span>
+      </article>
+
+      <article>
+        <i>-20%</i>
+        <button type="button" aria-label="Agregar a favoritos">♡</button>
+        <div>⌚</div>
+        <small>ACCESORIOS</small>
+        <strong>Smartwatch deportivo</strong>
+        <del>$2,199</del>
+        <b>$1,649</b>
+        <span>🚚 Envío disponible</span>
+      </article>
+
+      <article>
+        <i>-15%</i>
+        <button type="button" aria-label="Agregar a favoritos">♡</button>
+        <div>👟</div>
+        <small>MODA</small>
+        <strong>Calzado casual</strong>
+        <del>$899</del>
+        <b>$719</b>
+        <span>🚚 Envío disponible</span>
+      </article>
+    </div>
+
+    <button
+      class="ed-market-see-real-products"
+      type="button"
+      data-ed-market-catalog
+    >
+      Ver productos reales del catálogo
+    </button>
+  </section>
+</section>
+<!-- === FIN E&D MARKETPLACE HOME OPTION 1 === -->
+
 
 <!-- === E&D DISCOVERY HOME 2.1B === -->
 <section class="ed-discovery-home" aria-label="Descubre E&D Market">
@@ -625,5 +1041,6 @@ todo desde un solo lugar.
   <script src="shopify-product-modal.js?v=11"></script>
 
   <script src="shopify-discovery.js?v=11"></script>
+  <script src="marketplace-home.js?v=2201"></script>
 </body>
 </html>
