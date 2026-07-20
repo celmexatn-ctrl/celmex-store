@@ -26,6 +26,7 @@
   <link rel="canonical" href="https://celmexstore.com/">
   <link rel="stylesheet" href="core/checkout-shell.css?v=301" />
   <link rel="stylesheet" href="marketplace-home.css?v=2201">
+  <link rel="stylesheet" href="edmarket-v3.css?v=301">
 </head>
 <body>
   <div id="splash" class="splash" aria-hidden="true"><img src="assets/logo.png" alt="" decoding="async" fetchpriority="high"><strong>E&D Market</strong><span>Todo lo que buscas, en un solo lugar.</span></div>
@@ -1006,7 +1007,62 @@ todo desde un solo lugar.
 
     <dialog id="lightboxModal" class="lightbox-dialog"><button class="close" onclick="lightboxModal.close()" aria-label="Cerrar">×</button><img id="lightboxImage" alt="Vista ampliada"></dialog>
   <dialog id="stockAlertModal" class="simple-dialog"><button class="close" onclick="stockAlertModal.close()" aria-label="Cerrar">×</button><span class="eyebrow">AVISO DE DISPONIBILIDAD</span><h2>Te ayudamos a consultarlo</h2><p>Al continuar, abriremos WhatsApp con el producto, variante y disponibilidad elegidos para que CelMex pueda dar seguimiento.</p><button id="sendStockAlert" class="wa-buy">◉ Consultar por WhatsApp</button></dialog>
-  <nav class="bottom-nav"><button onclick="scrollToTop()">⌂<small>Inicio</small></button><button onclick="goCatalog()">▦<small>Productos</small></button><button onclick="openQuote()">🛒<small>Carrito</small></button><button onclick="openFavorites()">♡<small>Favoritos</small></button><a href="https://wa.me/526313181585?text=Hola%20CelMex%2C%20quiero%20informaci%C3%B3n.">◉<small>WhatsApp</small></a></nav>
+  <nav
+  id="edV3BottomNav"
+  class="bottom-nav ed-v3-bottom-nav"
+  aria-label="Navegación principal"
+>
+  <button
+    class="ed-v3-nav-item is-active"
+    type="button"
+    data-ed-v3-nav="home"
+    aria-label="Inicio"
+  >
+    <span>⌂</span>
+    <small>Inicio</small>
+  </button>
+
+  <button
+    class="ed-v3-nav-item"
+    type="button"
+    data-ed-v3-nav="categories"
+    aria-label="Categorías"
+  >
+    <span>▦</span>
+    <small>Categorías</small>
+  </button>
+
+  <button
+    class="ed-v3-nav-item ed-v3-cart-nav"
+    type="button"
+    data-ed-v3-nav="cart"
+    aria-label="Carrito"
+  >
+    <span>🛒</span>
+    <small>Carrito</small>
+    <i id="edV3CartCount">0</i>
+  </button>
+
+  <button
+    class="ed-v3-nav-item"
+    type="button"
+    data-ed-v3-nav="orders"
+    aria-label="Pedidos"
+  >
+    <span>▣</span>
+    <small>Pedidos</small>
+  </button>
+
+  <button
+    class="ed-v3-nav-item"
+    type="button"
+    data-ed-v3-nav="account"
+    aria-label="Cuenta"
+  >
+    <span>♙</span>
+    <small>Cuenta</small>
+  </button>
+</nav>
   <div id="toast" class="toast"></div>
   <script src="shopify-config.js?v=1"></script>
   <script src="shopify-storefront.js?v=1"></script>
@@ -1042,5 +1098,42 @@ todo desde un solo lugar.
 
   <script src="shopify-discovery.js?v=11"></script>
   <script src="marketplace-home.js?v=2201"></script>
+<!-- === E&D MARKET v3 PANELS === -->
+<div
+  id="edV3Overlay"
+  class="ed-v3-overlay"
+  hidden
+></div>
+
+<aside
+  id="edV3Sheet"
+  class="ed-v3-sheet"
+  aria-hidden="true"
+  aria-label="Panel E&D Market"
+>
+  <div class="ed-v3-sheet-handle"></div>
+
+  <header class="ed-v3-sheet-header">
+    <div>
+      <small id="edV3SheetEyebrow">E&D MARKET</small>
+      <h2 id="edV3SheetTitle">Explorar</h2>
+    </div>
+
+    <button
+      id="edV3SheetClose"
+      type="button"
+      aria-label="Cerrar panel"
+    >
+      ×
+    </button>
+  </header>
+
+  <div
+    id="edV3SheetContent"
+    class="ed-v3-sheet-content"
+  ></div>
+</aside>
+<!-- === FIN E&D MARKET v3 PANELS === -->
+  <script src="edmarket-v3.js?v=301"></script>
 </body>
 </html>
