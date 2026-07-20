@@ -1,32 +1,43 @@
-# E&D Pricing Engine v0.1
+# E&D Pricing Engine v0.2
 
-Estado actual: simulador local.
+## Estado
 
-## Incluye
+Simulador local integrado al panel administrador.
 
-- Conversión USD a MXN.
-- Colchón de tipo de cambio.
-- Costo del producto y envío.
+## Funciones
+
+- Costos de proveedor y envío.
+- Conversión USD/MXN.
+- Colchón cambiario.
+- Reserva de importación.
 - Reserva para devoluciones.
-- Utilidad fija o porcentaje mínimo.
-- Comparación entre pasarelas.
-- Tarifa externa de Shopify configurable.
-- Redondeo comercial.
+- Utilidad fija.
+- Margen mínimo.
+- Utilidad mínima absoluta.
+- Comisión adicional de Shopify.
+- Mercado Pago configurable.
+- Stripe configurable.
+- Shopify Payments configurable.
+- IVA de la comisión configurable.
+- Comparación por método.
+- Precio conservador recomendado.
+- Historial local de simulaciones.
+- Copia y descarga del resultado.
+
+## Seguridad
+
+- No contiene credenciales.
+- No consulta CJ todavía.
+- No publica precios en Shopify.
+- No realiza cobros.
 - Publicación automática desactivada.
 
-## No incluye todavía
+## Acceso
 
-- Conexión real con CJdropshipping.
-- Consulta automática del tipo de cambio.
-- Credenciales de Shopify.
-- Publicación de productos.
-- Tarifas reales de las pasarelas.
-- Impuestos aduanales automáticos.
+Abrir el panel administrador y seleccionar:
 
-## Ejecutar prueba
+E&D Pricing Engine → Abrir simulador de precios
 
-node pricing-engine/engine.js
+También puede abrirse desde JavaScript con:
 
-Las tarifas incluidas inicialmente están en cero.
-Deben configurarse únicamente con los costos reales
-del contrato y cuenta de E&D Market.
+openEDPricingEngine()
