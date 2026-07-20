@@ -1,0 +1,208 @@
+name: Generar Release E&D Market
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-release:
+    name: APK y AAB firmados
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+
+    env:
+      KEYSTORE_BASE64: ${{ secrets.EDMARKET_KEYSTORE_BASE64 }}
+      STORE_PASSWORD: ${{ secrets.EDMARKET_STORE_PASSWORD }}
+      KEY_PASSWORD: ${{ secrets.EDMARKET_KEY_PASSWORD }}
+      KEY_ALIAS: ${{ secrets.EDMARKET_KEY_ALIAS }}
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v6
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Configurar Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: gradle
+          cache-dependency-path: |
+            android/*.gradle
+            android/**/*.gradle
+            android/gradle/wrapper/gradle-wrapper.properties
+
+      - name: Validar secretos
+        shell: bash
+        run: |
+          set -e
+          test -n "$KEYSTORE_BASE64"
+          test -n "$STORE_PASSWORD"
+          test -n "$KEY_PASSWORD"
+          test -n "$KEY_ALIAS"
+          echo "Secretos disponibles."
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Construir recursos web
+        run: npm run build:web
+
+      - name: Sincronizar Capacitor
+        run: npx cap sync android
+
+      - name: Restaurar llave temporal
+        shell: bash
+        run: |
+          set -e
+          printf '%s' "$KEYSTORE_BASE64" |
+            base64 --decode > android/app/edmarket-upload-key.jks
+
+          chmod 600 android/app/edmarket-upload-key.jks
+
+          keytool -list \
+            -keystore android/app/edmarket-upload-key.jks \
+            -storepass "$STORE_PASSWORD" \
+            -alias "$KEY_ALIAS"
+
+      - name: Dar permisos a Gradle
+        run: chmod +x android/gradlew
+
+      - name: Compilar APK y AAB Release
+        working-directory: android
+        run: |
+          ./gradlew \
+            clean \
+            assembleRelease \
+            bundleRelease \
+            --no-daemon \
+            --stacktrace
+
+      - name: Localizar herramientas Android
+        id: tools
+        shell: bash
+        run: |
+          set -e
+
+          BUILD_TOOLS_DIR="$(
+            find "$ANDROID_HOME/build-tools" \
+              -mindepth 1 \
+              -maxdepth 1 \
+              -type d |
+            sort -V |
+            tail -n 1
+          )"
+
+          test -x "$BUILD_TOOLS_DIR/zipalign"
+          test -x "$BUILD_TOOLS_DIR/apksigner"
+
+          echo "dir=$BUILD_TOOLS_DIR" >> "$GITHUB_OUTPUT"
+
+      - name: Firmar APK Release
+        shell: bash
+        run: |
+          set -e
+
+          UNSIGNED_APK="$(
+            find android/app/build/outputs/apk/release \
+              -type f \
+              -name '*unsigned*.apk' |
+            head -n 1
+          )"
+
+          test -s "$UNSIGNED_APK"
+
+          mkdir -p release
+
+          "${{ steps.tools.outputs.dir }}/zipalign" \
+            -p \
+            -f \
+            4 \
+            "$UNSIGNED_APK" \
+            release/ED-Market-v1.0-release-aligned.apk
+
+          "${{ steps.tools.outputs.dir }}/apksigner" sign \
+            --ks android/app/edmarket-upload-key.jks \
+            --ks-key-alias "$KEY_ALIAS" \
+            --ks-pass env:STORE_PASSWORD \
+            --key-pass env:KEY_PASSWORD \
+            --out release/ED-Market-v1.0.apk \
+            release/ED-Market-v1.0-release-aligned.apk
+
+          "${{ steps.tools.outputs.dir }}/apksigner" verify \
+            --verbose \
+            --print-certs \
+            release/ED-Market-v1.0.apk
+
+          rm -f release/ED-Market-v1.0-release-aligned.apk
+
+      - name: Firmar AAB para Google Play
+        shell: bash
+        run: |
+          set -e
+
+          UNSIGNED_AAB="$(
+            find android/app/build/outputs/bundle/release \
+              -type f \
+              -name '*.aab' |
+            head -n 1
+          )"
+
+          test -s "$UNSIGNED_AAB"
+
+          cp "$UNSIGNED_AAB" release/ED-Market-v1.0.aab
+
+          jarsigner \
+            -verbose \
+            -sigalg SHA256withRSA \
+            -digestalg SHA-256 \
+            -keystore android/app/edmarket-upload-key.jks \
+            -storepass "$STORE_PASSWORD" \
+            -keypass "$KEY_PASSWORD" \
+            release/ED-Market-v1.0.aab \
+            "$KEY_ALIAS"
+
+          jarsigner \
+            -verify \
+            -verbose \
+            -certs \
+            release/ED-Market-v1.0.aab
+
+      - name: Verificar archivos finales
+        shell: bash
+        run: |
+          set -e
+          test -s release/ED-Market-v1.0.apk
+          test -s release/ED-Market-v1.0.aab
+
+          ls -lh \
+            release/ED-Market-v1.0.apk \
+            release/ED-Market-v1.0.aab
+
+      - name: Guardar APK firmado
+        uses: actions/upload-artifact@v4
+        with:
+          name: ED-Market-APK-Release
+          path: release/ED-Market-v1.0.apk
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Guardar AAB para Play Store
+        uses: actions/upload-artifact@v4
+        with:
+          name: ED-Market-AAB-PlayStore
+          path: release/ED-Market-v1.0.aab
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Eliminar llave temporal
+        if: always()
+        shell: bash
+        run: rm -f android/app/edmarket-upload-key.jks

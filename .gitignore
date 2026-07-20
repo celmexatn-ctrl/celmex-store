@@ -87,3 +87,7 @@ firebase-debug.*.log
 android/local.properties
 android/.gradle/
 android/**/build/
+
+# Llaves privadas de firma Android
+*.jks
+*.keystore
