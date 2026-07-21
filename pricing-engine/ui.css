@@ -243,7 +243,7 @@
   display: grid;
   height: 100%;
   place-items: center;
-  color: #d9b343;
+  color: #b8c2cc;
   font-size: 10px;
 }
 
@@ -359,10 +359,10 @@ input:checked + span::after {
 
 .ed-pricing-secondary {
   border:
-    1px solid rgba(215, 169, 40, 0.25);
+    1px solid rgba(184, 194, 204, 0.28);
   background:
-    rgba(215, 169, 40, 0.05);
-  color: #dfbe53;
+    rgba(184, 194, 204, 0.07);
+  color: #d4dce4;
 }
 
 .ed-pricing-primary {
@@ -370,8 +370,8 @@ input:checked + span::after {
   background:
     linear-gradient(
       135deg,
-      #f0d05e,
-      #dba71c
+      #e6ebf0,
+      #aab5c0
     );
   color: #111319;
 }

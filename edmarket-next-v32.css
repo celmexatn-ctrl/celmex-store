@@ -1019,3 +1019,213 @@ html.edmarket-next-v32
       !important;
   }
 }
+
+/* =========================================================
+   E&D MARKET NEXT — SILVER UI 3.3
+   Sustituye detalles dorados por acabado plateado.
+   Conserva Electric Blue como color principal.
+========================================================= */
+
+:root {
+  --ed-next-silver-050: #f4f7fa;
+  --ed-next-silver-100: #e8edf2;
+  --ed-next-silver-200: #d9e1e8;
+  --ed-next-silver-300: #c7d0d9;
+  --ed-next-silver-400: #aeb9c4;
+  --ed-next-silver-500: #929eaa;
+  --ed-next-silver-line:
+    rgba(199, 208, 217, 0.34);
+  --ed-next-silver-soft:
+    rgba(199, 208, 217, 0.08);
+}
+
+/* Checkout: etiquetas y detalles secundarios */
+
+.ed-flow-brand small,
+.ed-account-intro small,
+.ed-address-intro small,
+.ed-shipping-screen small,
+.ed-payment-screen small,
+.ed-summary-screen small,
+.ed-orders-screen small {
+  color: var(--ed-next-silver-300) !important;
+}
+
+/* Botón cerrar sin borde amarillo */
+
+.ed-flow-close {
+  border-color:
+    rgba(67, 212, 255, 0.42) !important;
+  background:
+    rgba(5, 18, 39, 0.94) !important;
+  color: #43d4ff !important;
+  box-shadow:
+    0 0 0 1px rgba(8, 124, 255, 0.12),
+    0 10px 30px rgba(0, 0, 0, 0.28) !important;
+}
+
+/* Cuenta invitado seleccionada */
+
+.ed-account-option.is-selected {
+  border-color:
+    var(--ed-next-silver-line) !important;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(217, 225, 232, 0.11),
+      rgba(146, 158, 170, 0.05)
+    ) !important;
+  box-shadow:
+    0 0 0 1px rgba(217, 225, 232, 0.08),
+    0 18px 38px rgba(0, 0, 0, 0.24) !important;
+}
+
+.ed-account-option.is-selected strong,
+.ed-account-option.is-selected small {
+  color: var(--ed-next-silver-100) !important;
+}
+
+/* Botón principal del checkout en plateado */
+
+.ed-flow-next {
+  border:
+    1px solid rgba(255, 255, 255, 0.48) !important;
+  background:
+    linear-gradient(
+      135deg,
+      var(--ed-next-silver-050),
+      var(--ed-next-silver-300) 54%,
+      var(--ed-next-silver-400)
+    ) !important;
+  color: #07101f !important;
+  box-shadow:
+    0 14px 34px rgba(174, 185, 196, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72) !important;
+}
+
+/* Iconos del checkout */
+
+.ed-account-icon {
+  border-color:
+    var(--ed-next-silver-line) !important;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(217, 225, 232, 0.14),
+      rgba(146, 158, 170, 0.05)
+    ) !important;
+}
+
+/* Mis pedidos */
+
+.ed-v3-empty-state > span {
+  border-color:
+    var(--ed-next-silver-line) !important;
+  background:
+    var(--ed-next-silver-soft) !important;
+}
+
+.ed-v3-empty-state button {
+  border:
+    1px solid rgba(255, 255, 255, 0.45) !important;
+  background:
+    linear-gradient(
+      135deg,
+      var(--ed-next-silver-050),
+      var(--ed-next-silver-300),
+      var(--ed-next-silver-400)
+    ) !important;
+  color: #07101f !important;
+  box-shadow:
+    0 14px 32px rgba(174, 185, 196, 0.2) !important;
+}
+
+/* Mi cuenta */
+
+.ed-v3-account-hero {
+  border-color:
+    var(--ed-next-silver-line) !important;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(217, 225, 232, 0.1),
+      rgba(8, 124, 255, 0.08)
+    ) !important;
+}
+
+.ed-v3-account-avatar {
+  border-color:
+    var(--ed-next-silver-line) !important;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(232, 237, 242, 0.14),
+      rgba(146, 158, 170, 0.06)
+    ) !important;
+  color: var(--ed-next-silver-100) !important;
+}
+
+.ed-v3-account-hero small {
+  color: var(--ed-next-silver-300) !important;
+}
+
+.ed-v3-account-actions button b {
+  color: var(--ed-next-silver-300) !important;
+}
+
+/* Pricing Engine */
+
+.ed-pricing-input-suffix b,
+.ed-pricing-input-prefix b {
+  color: var(--ed-next-silver-300) !important;
+}
+
+.ed-pricing-secondary {
+  border-color:
+    var(--ed-next-silver-line) !important;
+  background:
+    var(--ed-next-silver-soft) !important;
+  color: var(--ed-next-silver-200) !important;
+}
+
+.ed-pricing-primary {
+  background:
+    linear-gradient(
+      135deg,
+      var(--ed-next-silver-050),
+      var(--ed-next-silver-300),
+      var(--ed-next-silver-400)
+    ) !important;
+  color: #07101f !important;
+}
+
+/* Pantalla inicial Next */
+
+.ed-next-slide h1 b,
+.ed-next-slide h2 b {
+  color: var(--ed-next-silver-100) !important;
+}
+
+.ed-next-slide button {
+  background:
+    linear-gradient(
+      135deg,
+      var(--ed-next-silver-050),
+      var(--ed-next-silver-300),
+      var(--ed-next-silver-400)
+    ) !important;
+  color: #07101f !important;
+}
+
+/* Buscador Discovery */
+
+.ed-discovery-search-submit {
+  background:
+    linear-gradient(
+      135deg,
+      var(--ed-next-silver-050),
+      var(--ed-next-silver-300),
+      var(--ed-next-silver-400)
+    ) !important;
+  color: #07101f !important;
+}
