@@ -860,6 +860,81 @@
     }
   }
 
+
+  /*
+   * Fase 4.5.4-D
+   * Puente oficial entre la tienda y el Checkout Shell modular.
+   *
+   * Valores admitidos:
+   * - "modular": utiliza el nuevo flujo por pasos.
+   * - "legacy": utiliza temporalmente el checkout anterior.
+   */
+  const OFFICIAL_CHECKOUT_MODE_KEY =
+    "edmarket-checkout-mode-v454";
+
+  function getOfficialCheckoutMode() {
+    return (
+      localStorage.getItem(
+        OFFICIAL_CHECKOUT_MODE_KEY
+      ) || "modular"
+    );
+  }
+
+  function openOfficialCheckout() {
+    const mode = getOfficialCheckoutMode();
+
+    if (
+      mode !== "legacy" &&
+      window.EDCore?.checkoutShell?.open
+    ) {
+      try {
+        return window.EDCore.checkoutShell.open();
+      } catch (error) {
+        console.error(
+          "Checkout modular E&D:",
+          error
+        );
+
+        console.warn(
+          "Se abrirá temporalmente el checkout anterior."
+        );
+      }
+    }
+
+    return openEDCheckout();
+  }
+
+  function closeOfficialCheckout() {
+    window.EDCore?.checkoutShell?.close?.();
+    closeEDCheckout();
+  }
+
+  function useModularCheckout() {
+    localStorage.setItem(
+      OFFICIAL_CHECKOUT_MODE_KEY,
+      "modular"
+    );
+
+    console.log(
+      "✓ Checkout modular establecido como oficial."
+    );
+
+    return "modular";
+  }
+
+  function useLegacyCheckout() {
+    localStorage.setItem(
+      OFFICIAL_CHECKOUT_MODE_KEY,
+      "legacy"
+    );
+
+    console.log(
+      "✓ Checkout anterior activado temporalmente."
+    );
+
+    return "legacy";
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     ensureCheckout();
 
@@ -872,26 +947,34 @@
       ?.addEventListener("click", applyEDCoupon);
 
     /*
-     * Reemplazamos el acceso directo al checkout por el checkout previo E&D.
+     * Checkout oficial E&D Market.
+     * El flujo modular es la opción predeterminada.
      */
-    window.openQuote = openEDCheckout;
-    window.openEDCheckout = openEDCheckout;
+    window.openQuote = openOfficialCheckout;
+    window.openEDCheckout = openOfficialCheckout;
+    window.openEDCheckoutLegacy = openEDCheckout;
+    window.openEDFlowCheckoutOfficial =
+      openOfficialCheckout;
 
     document
       .querySelectorAll('[onclick="openQuote()"]')
       .forEach(element => {
-        element.onclick = openEDCheckout;
+        element.onclick = openOfficialCheckout;
       });
 
     setTimeout(() => {
-      window.openQuote = openEDCheckout;
+      window.openQuote = openOfficialCheckout;
+      window.openEDCheckout =
+        openOfficialCheckout;
 
       document
         .querySelectorAll('[onclick="openQuote()"]')
         .forEach(element => {
-          element.onclick = openEDCheckout;
+          element.onclick =
+            openOfficialCheckout;
         });
     }, 1200);
+
   });
 
   document.addEventListener("click", event => {
@@ -901,7 +984,14 @@
   });
 
   window.EDCheckout = {
-    open: openEDCheckout,
-    close: closeEDCheckout
+    version: "4.5.4-D",
+    open: openOfficialCheckout,
+    close: closeOfficialCheckout,
+    openLegacy: openEDCheckout,
+    closeLegacy: closeEDCheckout,
+    useModular: useModularCheckout,
+    useLegacy: useLegacyCheckout,
+    getMode: getOfficialCheckoutMode
   };
+
 })();
