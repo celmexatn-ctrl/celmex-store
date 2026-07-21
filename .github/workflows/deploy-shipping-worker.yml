@@ -1,16 +1,32 @@
+name: Deploy E&D Shipping Worker
+
+"on":
+  push:
+    branches:
+      - main
+    paths:
+      - "cloudflare/shipping-api/**"
+      - ".github/workflows/deploy-shipping-worker.yml"
+  workflow_dispatch:
+
 jobs:
   deploy:
     name: Deploy Shipping Worker
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: cloudflare/shipping-api
+
     steps:
-      - name: Checkout repository
+      - name: Descargar repositorio
         uses: actions/checkout@v4
 
-      - name: Deploy to Cloudflare
-        run: |
-          cd cloudflare/shipping-api
-          npx wrangler deploy
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Desplegar en Cloudflare
+        run: npx wrangler deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
