@@ -1,0 +1,836 @@
+/* =====================================================
+   E&D MARKET NEXT UI 3.1
+   Responsive, azul eléctrico y unificación visual
+   ===================================================== */
+
+:root {
+  --next-31-bg: #020817;
+  --next-31-bg-deep: #01050e;
+  --next-31-surface: #06152d;
+  --next-31-surface-soft: #082044;
+  --next-31-card: rgba(6, 27, 59, 0.96);
+
+  --next-31-blue: #087cff;
+  --next-31-blue-bright: #00b7ff;
+  --next-31-blue-soft: #43d4ff;
+  --next-31-blue-deep: #1043d7;
+
+  --next-31-text: #f8fbff;
+  --next-31-muted: #9fb3ce;
+  --next-31-border: rgba(55, 181, 255, 0.27);
+  --next-31-border-strong: rgba(62, 202, 255, 0.65);
+
+  --next-31-radius: 22px;
+  --next-31-radius-large: 30px;
+
+  --next-31-shadow:
+    0 20px 55px rgba(0, 28, 92, 0.38);
+
+  --next-31-glow:
+    0 0 0 1px rgba(55, 190, 255, 0.12),
+    0 17px 45px rgba(0, 91, 255, 0.19);
+}
+
+/* =====================================================
+   BASE
+   ===================================================== */
+
+html,
+body {
+  min-height: 100%;
+  background-color: var(--next-31-bg) !important;
+}
+
+body.edmarket-next-ui {
+  color: var(--next-31-text) !important;
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(0, 125, 255, 0.27),
+      transparent 31%
+    ),
+    linear-gradient(
+      180deg,
+      #041a3c 0%,
+      #020a18 48%,
+      #01050e 100%
+    ) !important;
+}
+
+/* Neutralización amplia del dorado anterior */
+
+:where(
+  .gold,
+  .text-gold,
+  .ed-gold,
+  .has-gold,
+  .is-gold,
+  .gold-text,
+  .gold-border
+) {
+  color: var(--next-31-blue-soft) !important;
+  border-color: var(--next-31-border) !important;
+}
+
+:where(
+  [style*="#d4af37"],
+  [style*="#D4AF37"],
+  [style*="#f5c542"],
+  [style*="#F5C542"],
+  [style*="#c99b28"],
+  [style*="#C99B28"],
+  [style*="#daa520"],
+  [style*="#DAA520"]
+) {
+  border-color: var(--next-31-border) !important;
+}
+
+/* =====================================================
+   ENCABEZADO Y LOGO NEXT
+   ===================================================== */
+
+:where(
+  header,
+  .topbar,
+  .app-header,
+  .ed-header,
+  .marketplace-header,
+  .native-header,
+  .next-header
+) {
+  color: #ffffff !important;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(2, 8, 22, 0.99),
+      rgba(3, 25, 62, 0.99)
+    ) !important;
+  border-color: rgba(41, 170, 255, 0.28) !important;
+  box-shadow:
+    0 13px 36px rgba(0, 0, 0, 0.28),
+    inset 0 -1px 0 rgba(38, 178, 255, 0.16) !important;
+}
+
+:where(
+  .logo,
+  .brand,
+  .ed-brand,
+  .marketplace-brand,
+  .app-logo,
+  .header-logo
+) {
+  position: relative;
+  color: #ffffff !important;
+  filter:
+    drop-shadow(
+      0 0 13px rgba(0, 174, 255, 0.23)
+    ) !important;
+}
+
+/* Fuerza azul en ampersand o partes coloreadas */
+
+:where(
+  .logo,
+  .brand,
+  .ed-brand,
+  .marketplace-brand,
+  .app-logo,
+  .header-logo
+) span {
+  color: var(--next-31-blue-bright) !important;
+}
+
+/* Etiqueta NEXT agregada por JavaScript */
+
+.ed-next-logo-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 18px;
+  margin-left: 7px;
+  padding: 2px 7px;
+  color: #dff8ff !important;
+  font-size: 9px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  vertical-align: middle;
+  border: 1px solid rgba(61, 209, 255, 0.48);
+  border-radius: 999px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 112, 255, 0.45),
+      rgba(0, 188, 255, 0.27)
+    );
+  box-shadow:
+    0 0 15px rgba(0, 174, 255, 0.17);
+}
+
+/* Botones del encabezado */
+
+:where(
+  .menu-button,
+  .header-action,
+  .cart-button,
+  .app-header button,
+  .topbar button,
+  .marketplace-header button
+) {
+  color: #dff5ff !important;
+  border: 1px solid rgba(38, 170, 255, 0.18) !important;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(4, 22, 50, 0.96),
+      rgba(2, 11, 27, 0.96)
+    ) !important;
+  box-shadow:
+    0 10px 28px rgba(0, 36, 90, 0.28) !important;
+}
+
+/* Contadores */
+
+:where(
+  .cart-count,
+  .badge-count,
+  .notification-count,
+  [data-cart-count]
+) {
+  color: #ffffff !important;
+  background:
+    linear-gradient(
+      135deg,
+      var(--next-31-blue),
+      var(--next-31-blue-bright)
+    ) !important;
+  border-color: rgba(168, 234, 255, 0.7) !important;
+}
+
+/* =====================================================
+   SPLASH RESPONSIVO
+   ===================================================== */
+
+.ed-next-welcome {
+  min-height: 100dvh;
+  height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color:
+    var(--next-31-blue-bright)
+    transparent;
+}
+
+.ed-next-welcome::-webkit-scrollbar {
+  width: 4px;
+}
+
+.ed-next-welcome::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--next-31-blue-bright);
+}
+
+.ed-next-welcome-card {
+  width: min(100%, 480px);
+  min-height: calc(
+    100dvh -
+    env(safe-area-inset-top) -
+    env(safe-area-inset-bottom)
+  );
+  margin: auto;
+  padding:
+    max(22px, env(safe-area-inset-top))
+    clamp(20px, 5vw, 28px)
+    max(20px, env(safe-area-inset-bottom));
+  gap: clamp(16px, 2.8vh, 28px);
+  border-color: rgba(55, 181, 255, 0.34);
+  background:
+    radial-gradient(
+      circle at 50% 33%,
+      rgba(0, 121, 255, 0.14),
+      transparent 30%
+    ),
+    linear-gradient(
+      160deg,
+      rgba(5, 25, 57, 0.98),
+      rgba(2, 10, 25, 0.99)
+    );
+}
+
+/* Marca del splash */
+
+.ed-next-welcome-brand {
+  flex: 0 0 auto;
+  min-height: clamp(62px, 10vh, 90px);
+}
+
+.ed-next-brand-mark {
+  font-size: clamp(42px, 8vh, 68px);
+  line-height: 0.9;
+}
+
+.ed-next-brand-mark span {
+  color: var(--next-31-blue-bright) !important;
+}
+
+.ed-next-brand-copy strong {
+  color: #ffffff !important;
+}
+
+.ed-next-brand-copy small {
+  color: var(--next-31-blue-soft) !important;
+}
+
+/* Texto responsivo */
+
+.ed-next-welcome-copy {
+  flex: 0 0 auto;
+  gap: clamp(8px, 1.6vh, 14px);
+}
+
+.ed-next-welcome-copy small {
+  color: var(--next-31-blue-soft) !important;
+  font-size: clamp(11px, 1.6vh, 14px);
+}
+
+.ed-next-welcome-copy h1 {
+  font-size:
+    clamp(34px, min(9vw, 6.5vh), 55px);
+  line-height: 0.98;
+}
+
+.ed-next-welcome-copy h1 span {
+  color: var(--next-31-blue-bright) !important;
+}
+
+.ed-next-welcome-copy p {
+  max-width: 430px;
+  font-size: clamp(14px, 2vh, 17px);
+  line-height: 1.52;
+}
+
+/* Visual central */
+
+.ed-next-welcome-visual {
+  flex: 1 1 auto;
+  min-height: clamp(190px, 31vh, 310px);
+  max-height: 340px;
+}
+
+.ed-next-glow-ring {
+  width: clamp(175px, 31vh, 245px);
+  height: clamp(175px, 31vh, 245px);
+  border-color: rgba(55, 202, 255, 0.48);
+  box-shadow:
+    0 0 52px rgba(0, 145, 255, 0.27),
+    inset 0 0 50px rgba(0, 110, 255, 0.16);
+}
+
+.ed-next-device-stack {
+  font-size: clamp(64px, 13vh, 100px);
+}
+
+/* Acciones */
+
+.ed-next-welcome-actions {
+  flex: 0 0 auto;
+  gap: clamp(9px, 1.4vh, 13px);
+}
+
+.ed-next-welcome-actions button {
+  min-height: clamp(52px, 7vh, 62px);
+  font-size: clamp(15px, 2.2vh, 18px);
+}
+
+.ed-next-primary {
+  color: #ffffff !important;
+  background:
+    linear-gradient(
+      135deg,
+      #087cff,
+      #00b7ff
+    ) !important;
+  box-shadow:
+    0 14px 32px rgba(0, 117, 255, 0.3) !important;
+}
+
+.ed-next-secondary {
+  color: #e8f8ff !important;
+  border-color: rgba(47, 185, 255, 0.35) !important;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(4, 23, 52, 0.96),
+      rgba(2, 11, 27, 0.98)
+    ) !important;
+}
+
+/* Beneficios inferiores */
+
+.ed-next-features {
+  flex: 0 0 auto;
+  gap: clamp(7px, 2vw, 12px);
+}
+
+.ed-next-feature {
+  color: #c1d9ef;
+  font-size: clamp(10px, 1.5vh, 12px);
+}
+
+.ed-next-feature i {
+  width: clamp(34px, 5.3vh, 42px);
+  height: clamp(34px, 5.3vh, 42px);
+  color: var(--next-31-blue-soft) !important;
+  border-color: rgba(44, 189, 255, 0.32);
+  background: rgba(0, 119, 255, 0.13);
+}
+
+/* Pantallas muy bajas */
+
+@media (max-height: 760px) {
+  .ed-next-welcome-card {
+    gap: 13px;
+  }
+
+  .ed-next-welcome-brand {
+    min-height: 54px;
+  }
+
+  .ed-next-welcome-copy {
+    gap: 7px;
+  }
+
+  .ed-next-welcome-copy h1 {
+    font-size: clamp(30px, 6.2vh, 42px);
+  }
+
+  .ed-next-welcome-copy p {
+    font-size: 13px;
+    line-height: 1.42;
+  }
+
+  .ed-next-welcome-visual {
+    min-height: 155px;
+    max-height: 205px;
+  }
+
+  .ed-next-glow-ring {
+    width: 160px;
+    height: 160px;
+  }
+
+  .ed-next-device-stack {
+    font-size: 62px;
+  }
+
+  .ed-next-welcome-actions button {
+    min-height: 48px;
+  }
+}
+
+/* Pantallas extremadamente pequeñas */
+
+@media (max-height: 640px) {
+  .ed-next-welcome-card {
+    justify-content: flex-start;
+    min-height: auto;
+  }
+
+  .ed-next-welcome-visual {
+    min-height: 135px;
+    max-height: 150px;
+  }
+
+  .ed-next-glow-ring {
+    width: 130px;
+    height: 130px;
+  }
+
+  .ed-next-device-stack {
+    font-size: 50px;
+  }
+}
+
+/* Tablets y pantallas anchas */
+
+@media (min-width: 720px) {
+  .ed-next-welcome {
+    padding:
+      max(24px, env(safe-area-inset-top))
+      24px
+      max(24px, env(safe-area-inset-bottom));
+  }
+
+  .ed-next-welcome-card {
+    min-height: min(900px, calc(100dvh - 48px));
+    border-radius: 36px;
+  }
+}
+
+/* =====================================================
+   HOME NEXT
+   ===================================================== */
+
+:where(
+  .hero,
+  .marketplace-hero,
+  .discovery-hero,
+  .ed-hero
+) {
+  border-color: rgba(58, 190, 255, 0.55) !important;
+  background:
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(81, 221, 255, 0.36),
+      transparent 26%
+    ),
+    linear-gradient(
+      140deg,
+      #0844cf 0%,
+      #087cff 47%,
+      #00a9ff 100%
+    ) !important;
+  box-shadow:
+    0 22px 58px rgba(0, 84, 220, 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18) !important;
+}
+
+/* Botón blanco del hero */
+
+:where(
+  .hero .secondary,
+  .hero .button-secondary,
+  .hero .btn-secondary,
+  .marketplace-hero .secondary,
+  .discovery-hero .secondary
+) {
+  color: #0754bd !important;
+  background: #f8fbff !important;
+  border-color: rgba(255, 255, 255, 0.65) !important;
+}
+
+/* Dirección */
+
+:where(
+  .location-card,
+  .shipping-location,
+  .delivery-location,
+  [data-location-card]
+) {
+  color: #eaf9ff !important;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 111, 255, 0.35),
+      rgba(0, 180, 255, 0.16)
+    ) !important;
+  border: 1px solid rgba(58, 194, 255, 0.32) !important;
+}
+
+/* Categorías */
+
+:where(
+  .category-card,
+  .category-button,
+  .quick-action,
+  .discovery-shortcut
+) {
+  color: #e8f6ff !important;
+  border-color: rgba(58, 178, 255, 0.24) !important;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(9, 42, 91, 0.92),
+      rgba(5, 23, 54, 0.96)
+    ) !important;
+  box-shadow:
+    0 13px 31px rgba(0, 48, 113, 0.23) !important;
+}
+
+:where(
+  .category-card.active,
+  .category-button.active,
+  .quick-action.active
+) {
+  border-color: var(--next-31-blue-soft) !important;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 111, 255, 0.55),
+      rgba(0, 178, 255, 0.26)
+    ) !important;
+}
+
+/* =====================================================
+   PRODUCTOS
+   ===================================================== */
+
+:where(
+  .product-card,
+  .shopify-product-card,
+  .catalog-card
+) {
+  background:
+    linear-gradient(
+      155deg,
+      rgba(7, 30, 65, 0.98),
+      rgba(2, 14, 33, 0.99)
+    ) !important;
+  border-color: rgba(54, 172, 255, 0.25) !important;
+  box-shadow: var(--next-31-glow) !important;
+}
+
+:where(
+  .product-card button,
+  .shopify-product-card button,
+  .catalog-card button,
+  .product-add-button
+) {
+  color: #ffffff !important;
+  background:
+    linear-gradient(
+      135deg,
+      var(--next-31-blue),
+      var(--next-31-blue-bright)
+    ) !important;
+  border: 0 !important;
+}
+
+/* =====================================================
+   CUENTA NEXT
+   ===================================================== */
+
+:where(
+  .account-screen,
+  .account-panel,
+  .account-modal,
+  .ed-account-screen
+) {
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(0, 113, 255, 0.2),
+      transparent 32%
+    ),
+    linear-gradient(
+      180deg,
+      #041831,
+      #020817
+    ) !important;
+}
+
+:where(
+  .account-profile,
+  .account-user-card,
+  .account-card,
+  .profile-card
+) {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(9, 39, 79, 0.98),
+      rgba(4, 20, 44, 0.98)
+    ) !important;
+  border: 1px solid rgba(57, 182, 255, 0.28) !important;
+  box-shadow: var(--next-31-glow) !important;
+}
+
+:where(
+  .account-menu-item,
+  .account-option,
+  .ed-account-item
+) {
+  color: #f2f9ff !important;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(7, 31, 66, 0.96),
+      rgba(3, 16, 37, 0.98)
+    ) !important;
+  border-color: rgba(54, 165, 255, 0.2) !important;
+}
+
+:where(
+  .account-menu-item .icon,
+  .account-option .icon,
+  .ed-account-item .icon
+) {
+  color: var(--next-31-blue-soft) !important;
+  background: rgba(0, 115, 255, 0.12) !important;
+}
+
+/* =====================================================
+   PEDIDOS NEXT
+   ===================================================== */
+
+:where(
+  .orders-screen,
+  .orders-panel,
+  .orders-modal,
+  .ed-orders-screen
+) {
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(0, 117, 255, 0.17),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #041832,
+      #020817
+    ) !important;
+}
+
+:where(
+  .order-empty,
+  .orders-empty,
+  .empty-orders,
+  .order-card
+) {
+  border-color: rgba(57, 181, 255, 0.25) !important;
+  background:
+    linear-gradient(
+      150deg,
+      rgba(7, 32, 68, 0.97),
+      rgba(3, 16, 37, 0.99)
+    ) !important;
+}
+
+/* =====================================================
+   CHECKOUT NEXT
+   ===================================================== */
+
+#edFlowCheckout {
+  color: #f7fbff !important;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(0, 120, 255, 0.18),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #041831 0%,
+      #020817 100%
+    ) !important;
+  border-color: rgba(57, 191, 255, 0.55) !important;
+}
+
+:where(
+  .ed-flow-step.is-active,
+  .ed-flow-step-button.is-active,
+  .ed-flow-step[aria-current="step"]
+) {
+  color: #ffffff !important;
+  border-color: var(--next-31-blue-soft) !important;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 113, 255, 0.6),
+      rgba(0, 184, 255, 0.3)
+    ) !important;
+}
+
+:where(
+  .ed-flow-primary,
+  #edFlowCheckout button[type="submit"]
+) {
+  color: #ffffff !important;
+  background:
+    linear-gradient(
+      135deg,
+      var(--next-31-blue),
+      var(--next-31-blue-bright)
+    ) !important;
+  border: 0 !important;
+}
+
+:where(
+  .ed-flow-secondary,
+  #edFlowCheckout button[data-ed-flow-previous]
+) {
+  color: #dff5ff !important;
+  border-color: rgba(56, 182, 255, 0.25) !important;
+  background: rgba(3, 18, 42, 0.96) !important;
+}
+
+:where(
+  .ed-shipping-method.is-selected,
+  .ed-payment-method.is-selected
+) {
+  border-color: var(--next-31-blue-soft) !important;
+  box-shadow:
+    0 0 0 3px rgba(0, 174, 255, 0.1),
+    0 15px 35px rgba(0, 80, 196, 0.19) !important;
+}
+
+/* =====================================================
+   NAVEGACIÓN INFERIOR NEXT
+   ===================================================== */
+
+:where(
+  .bottom-nav,
+  .app-bottom-nav,
+  .native-bottom-nav,
+  .ed-bottom-nav
+) {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 31, 74, 0.99),
+      rgba(2, 13, 34, 0.99)
+    ) !important;
+  border-top-color: rgba(50, 181, 255, 0.38) !important;
+}
+
+:where(
+  .bottom-nav .active,
+  .bottom-nav .is-active,
+  .app-bottom-nav .active,
+  .app-bottom-nav .is-active,
+  .native-bottom-nav .active,
+  .native-bottom-nav .is-active
+) {
+  color: var(--next-31-blue-soft) !important;
+  border-color: rgba(45, 184, 255, 0.3) !important;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 124, 255, 0.42),
+      rgba(0, 64, 173, 0.3)
+    ) !important;
+}
+
+/* =====================================================
+   RESPONSIVE GENERAL
+   ===================================================== */
+
+@media (max-width: 420px) {
+  .ed-next-logo-badge {
+    margin-left: 4px;
+    padding-inline: 5px;
+    font-size: 8px;
+  }
+
+  :where(
+    .category-card,
+    .category-button,
+    .quick-action
+  ) {
+    border-radius: 18px !important;
+  }
+}
+
+@media (min-width: 800px) {
+  :where(
+    .main-content,
+    .marketplace-content,
+    .app-content
+  ) {
+    width: min(100%, 1180px);
+    margin-inline: auto;
+  }
+}
