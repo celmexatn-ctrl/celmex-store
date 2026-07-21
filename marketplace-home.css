@@ -91,7 +91,7 @@ main > .featured {
 }
 
 .ed-market-logo strong {
-  color: #f1cd58;
+  color: #dfe5ea;
   font-family: Georgia, serif;
   font-size: 30px;
   font-weight: 500;
@@ -100,7 +100,7 @@ main > .featured {
 
 .ed-market-logo small {
   margin-top: 3px;
-  color: #d7ad31;
+  color: #aeb9c4;
   font-size: 7px;
   font-weight: 900;
   letter-spacing: 0.38em;
@@ -122,7 +122,7 @@ main > .featured {
   padding: 0 5px;
   border: 2px solid #080b10;
   border-radius: 999px;
-  background: #e8b82d;
+  background: #bcc6d0;
   color: #111319;
   font-size: 9px;
   font-style: normal;
@@ -150,7 +150,7 @@ main > .featured {
 }
 
 .ed-market-search > span {
-  color: #e3bd4a;
+  color: #cbd4dc;
   font-size: 24px;
 }
 
@@ -205,7 +205,7 @@ main > .featured {
 }
 
 .ed-market-location > span:first-child {
-  color: #e6ba38;
+  color: #c4cdd6;
   font-size: 22px;
 }
 
@@ -225,7 +225,7 @@ main > .featured {
 }
 
 .ed-market-location b {
-  color: #dcb43d;
+  color: #b7c1cb;
   font-size: 18px;
 }
 
@@ -259,7 +259,7 @@ main > .featured {
 }
 
 .ed-market-tabs button.is-active {
-  color: #f0cb56;
+  color: #dce3e9;
 }
 
 .ed-market-tabs button.is-active::after {
@@ -270,7 +270,7 @@ main > .featured {
   left: 13px;
   height: 3px;
   border-radius: 99px;
-  background: #e7bb3a;
+  background: #bdc7d1;
 }
 
 .ed-market-banner-section {
@@ -346,7 +346,7 @@ main > .featured {
 }
 
 .ed-market-banner-copy > small {
-  color: #d9ad2f;
+  color: #adb8c3;
   font-size: 9px;
   font-weight: 950;
   letter-spacing: 0.13em;
@@ -365,7 +365,7 @@ main > .featured {
 .ed-market-banner-copy h1 b,
 .ed-market-banner-copy h2 b {
   display: block;
-  color: #efc94e;
+  color: #d8e0e7;
 }
 
 .ed-market-banner-copy p {
@@ -386,8 +386,8 @@ main > .featured {
   background:
     linear-gradient(
       135deg,
-      #f4d462,
-      #dda91d
+      #e8edf1,
+      #acb7c2
     );
   color: #111318;
   font-size: 11px;
@@ -522,7 +522,7 @@ main > .featured {
 
 .ed-market-banner-dots button.is-active {
   width: 22px;
-  background: #e8bd41;
+  background: #c0cad4;
 }
 
 .ed-market-shortcuts {
@@ -599,7 +599,7 @@ main > .featured {
 }
 
 .ed-market-section-heading small {
-  color: #be9a33;
+  color: #9ba7b4;
   font-size: 8px;
   font-weight: 900;
   letter-spacing: 0.13em;
@@ -617,7 +617,7 @@ main > .featured {
   padding: 5px;
   border: 0;
   background: transparent;
-  color: #ddb43b;
+  color: #b7c1cb;
   font-size: 9px;
   font-weight: 900;
 }
@@ -751,7 +751,7 @@ main > .featured {
 }
 
 .ed-market-product-preview article > small {
-  color: #b69632;
+  color: #909ca8;
   font-size: 7px;
   font-weight: 900;
 }
@@ -791,7 +791,7 @@ main > .featured {
   border: 1px solid rgba(219, 174, 42, 0.35);
   border-radius: 14px;
   background: rgba(219, 174, 42, 0.08);
-  color: #e6c45d;
+  color: #d5dde4;
   font-size: 10px;
   font-weight: 900;
 }
@@ -828,7 +828,7 @@ main > .featured {
 }
 
 .ed-market-toast strong {
-  color: #e7c65e;
+  color: #d6dee5;
   font-size: 11px;
 }
 

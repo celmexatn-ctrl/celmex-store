@@ -203,7 +203,7 @@
 
 .ed-v3-sheet-header small {
   display: block;
-  color: #bd9933;
+  color: #9ba7b4;
   font-size: 8px;
   font-weight: 950;
   letter-spacing: 0.14em;
@@ -229,7 +229,7 @@
   border-radius: 50%;
   background:
     rgba(215, 169, 40, 0.055);
-  color: #e6c152;
+  color: #d0d8e0;
   font-size: 25px;
 }
 
@@ -310,7 +310,7 @@
 }
 
 .ed-v3-category-grid b {
-  color: #d9b343;
+  color: #b8c2cc;
   font-size: 18px;
 }
 
@@ -325,8 +325,8 @@
   background:
     linear-gradient(
       135deg,
-      #f1d05c,
-      #dca91d
+      #e2e7ec,
+      #aeb8c3
     );
   color: #111319;
   font-size: 11px;
@@ -377,8 +377,8 @@
   background:
     linear-gradient(
       135deg,
-      #f2d15d,
-      #dba71c
+      #e4e9ee,
+      #aab5c0
     );
   color: #111319;
   font-size: 10px;
@@ -431,7 +431,7 @@
 
 .ed-v3-order-copy small {
   overflow-wrap: anywhere;
-  color: #b6922e;
+  color: #8f9aa6;
   font-size: 7px;
   font-weight: 900;
   letter-spacing: 0.07em;
@@ -456,7 +456,7 @@
 }
 
 .ed-v3-order-total b {
-  color: #e8c550;
+  color: #d3dbe3;
   font-size: 11px;
 }
 
@@ -524,13 +524,13 @@
       rgba(231, 188, 57, 0.2),
       rgba(15, 21, 30, 0.93)
     );
-  color: #f0ce5c;
+  color: #e1e6eb;
   font-family: Georgia, serif;
   font-size: 27px;
 }
 
 .ed-v3-account-hero small {
-  color: #b6922f;
+  color: #8f9aa6;
   font-size: 8px;
   font-weight: 900;
   letter-spacing: 0.12em;
@@ -603,7 +603,7 @@
 }
 
 .ed-v3-account-actions b {
-  color: #d9b241;
+  color: #b8c2cc;
   font-size: 18px;
 }
 
