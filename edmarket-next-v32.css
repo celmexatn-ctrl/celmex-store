@@ -1,0 +1,1021 @@
+/* =========================================================
+   E&D MARKET NEXT UI 3.2
+   Corrección exacta sobre componentes reales
+   ========================================================= */
+
+:root {
+  --bg: #010612;
+  --panel: #06152d;
+  --panel2: #08234b;
+  --text: #f7fbff;
+  --muted: #9eb2cd;
+  --blue: #087cff;
+  --line: rgba(55, 184, 255, 0.24);
+
+  --ed32-blue: #087cff;
+  --ed32-cyan: #00b9ff;
+  --ed32-light: #5bdcff;
+  --ed32-deep: #0637ad;
+  --ed32-bg: #010612;
+  --ed32-panel: #06152d;
+  --ed32-card: #082044;
+  --ed32-text: #f7fbff;
+  --ed32-muted: #9fb4cf;
+  --ed32-border: rgba(57, 188, 255, 0.27);
+  --ed32-border-strong: rgba(66, 211, 255, 0.66);
+}
+
+/* ---------------------------------------------------------
+   BASE GENERAL
+   --------------------------------------------------------- */
+
+html.edmarket-next-v32,
+html.edmarket-next-v32 body {
+  background-color: var(--ed32-bg) !important;
+  color-scheme: dark;
+}
+
+html.edmarket-next-v32 body {
+  color: var(--ed32-text) !important;
+  background:
+    radial-gradient(
+      circle at 50% -8%,
+      rgba(8, 124, 255, 0.28),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 100% 54%,
+      rgba(0, 157, 255, 0.11),
+      transparent 32%
+    ),
+    linear-gradient(
+      180deg,
+      #041a3c 0%,
+      #020a19 43%,
+      #010612 100%
+    ) !important;
+}
+
+/* ---------------------------------------------------------
+   SPLASH NATIVO DE LA WEB
+   --------------------------------------------------------- */
+
+html.edmarket-next-v32 #splash {
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(0, 145, 255, 0.3),
+      transparent 29%
+    ),
+    linear-gradient(
+      180deg,
+      #031630,
+      #010612
+    ) !important;
+}
+
+html.edmarket-next-v32 #splash img {
+  width: min(54vw, 230px) !important;
+  height: min(54vw, 230px) !important;
+  object-fit: contain !important;
+  filter:
+    drop-shadow(0 0 30px rgba(0, 184, 255, 0.48)) !important;
+}
+
+html.edmarket-next-v32 #splash strong {
+  color: #ffffff !important;
+}
+
+html.edmarket-next-v32 #splash span {
+  color: #a8c5df !important;
+}
+
+/* ---------------------------------------------------------
+   ENCABEZADO REAL
+   --------------------------------------------------------- */
+
+html.edmarket-next-v32 .topbar {
+  min-height: 68px;
+  padding:
+    max(9px, env(safe-area-inset-top))
+    12px
+    9px !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(2, 9, 23, 0.985),
+      rgba(4, 29, 70, 0.985)
+    ) !important;
+
+  border-bottom:
+    1px solid rgba(54, 188, 255, 0.31) !important;
+
+  box-shadow:
+    0 12px 38px rgba(0, 12, 43, 0.4),
+    inset 0 -1px 0 rgba(97, 216, 255, 0.11) !important;
+}
+
+html.edmarket-next-v32 .brand {
+  min-width: 0;
+  gap: 10px !important;
+  color: #ffffff !important;
+}
+
+html.edmarket-next-v32 .brand img {
+  width: 46px !important;
+  height: 46px !important;
+  flex: 0 0 46px;
+  object-fit: contain !important;
+
+  filter:
+    drop-shadow(0 0 15px rgba(0, 184, 255, 0.46)) !important;
+}
+
+html.edmarket-next-v32 .brand strong {
+  color: #ffffff !important;
+  font-size: 16px !important;
+  letter-spacing: -0.015em;
+}
+
+html.edmarket-next-v32 .brand small {
+  color: #77dfff !important;
+  font-size: 9px !important;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+html.edmarket-next-v32 .ed-next-header-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 17px;
+  margin-left: 5px;
+  padding: 2px 6px;
+
+  color: #e9fbff !important;
+  font-size: 8px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.17em;
+
+  border:
+    1px solid rgba(71, 215, 255, 0.58);
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8, 124, 255, 0.68),
+      rgba(0, 190, 255, 0.35)
+    );
+
+  box-shadow:
+    0 0 16px rgba(0, 182, 255, 0.25);
+}
+
+html.edmarket-next-v32 .top-actions {
+  flex: 0 0 auto;
+  gap: 6px !important;
+}
+
+html.edmarket-next-v32 .icon-btn,
+html.edmarket-next-v32 .round-action {
+  color: #dff7ff !important;
+
+  border:
+    1px solid rgba(53, 175, 255, 0.23) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(8, 36, 76, 0.97),
+      rgba(3, 16, 37, 0.98)
+    ) !important;
+
+  box-shadow:
+    0 8px 22px rgba(0, 42, 105, 0.25) !important;
+}
+
+html.edmarket-next-v32 .icon-btn i {
+  color: #ffffff !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--ed32-blue),
+      var(--ed32-cyan)
+    ) !important;
+
+  border:
+    1px solid rgba(206, 247, 255, 0.74);
+}
+
+/* ---------------------------------------------------------
+   LOGO TEXTUAL DEL MARKETPLACE
+   --------------------------------------------------------- */
+
+html.edmarket-next-v32 .ed-market-logo {
+  color: #ffffff !important;
+}
+
+html.edmarket-next-v32 .ed-market-logo strong {
+  color: #ffffff !important;
+  text-shadow:
+    0 0 19px rgba(0, 167, 255, 0.22);
+}
+
+html.edmarket-next-v32 .ed-market-logo small {
+  color: var(--ed32-light) !important;
+}
+
+html.edmarket-next-v32 .ed-market-logo::before {
+  border-color:
+    rgba(61, 207, 255, 0.42) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(8, 124, 255, 0.38),
+      rgba(0, 190, 255, 0.16)
+    ) !important;
+}
+
+/* ---------------------------------------------------------
+   PANTALLA INICIAL NEXT
+   --------------------------------------------------------- */
+
+html.edmarket-next-v32 .ed-next-welcome {
+  width: 100%;
+  min-height: 100dvh;
+  height: 100dvh;
+  padding: 0 !important;
+
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+
+  background:
+    radial-gradient(
+      circle at 50% 15%,
+      rgba(0, 138, 255, 0.31),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 50% 70%,
+      rgba(0, 94, 255, 0.18),
+      transparent 34%
+    ),
+    linear-gradient(
+      180deg,
+      #020b1c 0%,
+      #031936 48%,
+      #010611 100%
+    ) !important;
+}
+
+html.edmarket-next-v32 .ed-next-welcome-card {
+  width: min(100%, 520px) !important;
+  min-height: 100dvh !important;
+  margin: 0 auto !important;
+
+  display: grid !important;
+  grid-template-rows:
+    auto
+    auto
+    minmax(150px, 1fr)
+    auto
+    auto;
+
+  align-content: stretch;
+  gap: clamp(12px, 2.2vh, 23px) !important;
+
+  padding:
+    max(22px, env(safe-area-inset-top))
+    clamp(20px, 5.5vw, 30px)
+    max(20px, env(safe-area-inset-bottom)) !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(0, 131, 255, 0.13),
+      transparent 29%
+    ),
+    linear-gradient(
+      160deg,
+      rgba(5, 27, 62, 0.96),
+      rgba(2, 10, 25, 0.99)
+    ) !important;
+
+  box-shadow: none !important;
+}
+
+html.edmarket-next-v32
+.ed-next-welcome-brand {
+  min-height: 56px !important;
+}
+
+html.edmarket-next-v32
+.ed-next-brand-mark {
+  color: #ffffff !important;
+  font-size:
+    clamp(43px, min(13vw, 8vh), 68px) !important;
+
+  text-shadow:
+    0 0 28px rgba(0, 145, 255, 0.27);
+}
+
+html.edmarket-next-v32
+.ed-next-brand-mark span {
+  color: var(--ed32-cyan) !important;
+}
+
+html.edmarket-next-v32
+.ed-next-brand-copy strong {
+  color: #ffffff !important;
+}
+
+html.edmarket-next-v32
+.ed-next-brand-copy small {
+  color: var(--ed32-light) !important;
+}
+
+html.edmarket-next-v32
+.ed-next-welcome-copy {
+  gap: clamp(7px, 1.4vh, 13px) !important;
+}
+
+html.edmarket-next-v32
+.ed-next-welcome-copy small {
+  color: var(--ed32-light) !important;
+  font-size: clamp(10px, 1.7vh, 13px) !important;
+}
+
+html.edmarket-next-v32
+.ed-next-welcome-copy h1 {
+  margin: 0 !important;
+
+  font-size:
+    clamp(
+      31px,
+      min(9.7vw, 6.5vh),
+      53px
+    ) !important;
+
+  line-height: 0.99 !important;
+}
+
+html.edmarket-next-v32
+.ed-next-welcome-copy h1 span {
+  color: var(--ed32-cyan) !important;
+}
+
+html.edmarket-next-v32
+.ed-next-welcome-copy p {
+  margin: 0 !important;
+  color: #b6cbe1 !important;
+
+  font-size:
+    clamp(13px, 1.9vh, 16px) !important;
+
+  line-height: 1.48 !important;
+}
+
+/* ---------------------------------------------------------
+   COMPOSICIÓN PREMIUM DE DISPOSITIVOS
+   --------------------------------------------------------- */
+
+html.edmarket-next-v32
+.ed-next-welcome-visual {
+  position: relative;
+  min-height: 150px !important;
+  max-height: 315px !important;
+
+  display: grid !important;
+  place-items: center;
+  overflow: visible;
+}
+
+html.edmarket-next-v32
+.ed-next-device-stack {
+  width: min(88vw, 380px);
+  height: clamp(155px, 29vh, 285px);
+
+  position: relative;
+  display: block !important;
+
+  font-size: 0 !important;
+  filter: none !important;
+}
+
+.ed-next-device-stage {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.ed-next-device-aura {
+  position: absolute;
+  width: min(65vw, 255px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(74, 215, 255, 0.45);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 152, 255, 0.22),
+      rgba(0, 90, 255, 0.05) 51%,
+      transparent 70%
+    );
+
+  box-shadow:
+    0 0 60px rgba(0, 139, 255, 0.29),
+    inset 0 0 60px rgba(0, 112, 255, 0.14);
+}
+
+.ed-next-phone {
+  position: absolute;
+  z-index: 3;
+
+  width: clamp(77px, 20vw, 115px);
+  height: clamp(148px, 33vh, 222px);
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(4deg);
+
+  border:
+    3px solid rgba(194, 239, 255, 0.83);
+  border-radius: clamp(18px, 5vw, 28px);
+
+  background:
+    linear-gradient(
+      155deg,
+      #061a3a,
+      #073b93 48%,
+      #00a9ff
+    );
+
+  box-shadow:
+    0 24px 34px rgba(0, 0, 0, 0.48),
+    0 0 35px rgba(0, 166, 255, 0.31),
+    inset 0 0 22px rgba(255, 255, 255, 0.1);
+}
+
+.ed-next-phone::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+
+  width: 35%;
+  height: 7px;
+
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #010612;
+}
+
+.ed-next-phone::after {
+  content: "E&D";
+  position: absolute;
+  inset: 0;
+
+  display: grid;
+  place-items: center;
+
+  color: #ffffff;
+  font-family: Georgia, serif;
+  font-size: clamp(20px, 6vw, 34px);
+  font-weight: 800;
+
+  text-shadow:
+    0 0 17px rgba(102, 225, 255, 0.58);
+}
+
+.ed-next-watch {
+  position: absolute;
+  z-index: 4;
+
+  width: clamp(48px, 13vw, 70px);
+  aspect-ratio: 0.84;
+
+  left: 17%;
+  bottom: 15%;
+
+  border:
+    3px solid rgba(166, 230, 255, 0.8);
+  border-radius: 18px;
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      #27caff,
+      #0867dc 45%,
+      #03152e 73%
+    );
+
+  box-shadow:
+    0 16px 26px rgba(0, 0, 0, 0.45),
+    0 0 24px rgba(0, 180, 255, 0.31);
+
+  transform: rotate(-9deg);
+}
+
+.ed-next-watch::before,
+.ed-next-watch::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 42%;
+  height: 39%;
+
+  transform: translateX(-50%);
+  z-index: -1;
+
+  border-radius: 10px;
+  background:
+    linear-gradient(
+      180deg,
+      #123f77,
+      #061a36
+    );
+}
+
+.ed-next-watch::before {
+  bottom: 90%;
+}
+
+.ed-next-watch::after {
+  top: 90%;
+}
+
+.ed-next-buds {
+  position: absolute;
+  z-index: 4;
+
+  width: clamp(70px, 18vw, 99px);
+  height: clamp(48px, 13vw, 70px);
+
+  right: 12%;
+  top: 19%;
+
+  border:
+    2px solid rgba(177, 235, 255, 0.7);
+  border-radius: 45% 45% 38% 38%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0b5aca,
+      #041b40 70%
+    );
+
+  box-shadow:
+    0 15px 26px rgba(0, 0, 0, 0.43),
+    0 0 25px rgba(0, 176, 255, 0.27);
+
+  transform: rotate(8deg);
+}
+
+.ed-next-buds::before,
+.ed-next-buds::after {
+  content: "";
+  position: absolute;
+  top: 16%;
+
+  width: 23%;
+  height: 45%;
+
+  border-radius: 999px 999px 45% 45%;
+  background:
+    linear-gradient(
+      180deg,
+      #9feaff,
+      #0b7be3
+    );
+}
+
+.ed-next-buds::before {
+  left: 18%;
+  transform: rotate(-12deg);
+}
+
+.ed-next-buds::after {
+  right: 18%;
+  transform: rotate(12deg);
+}
+
+/* Anular aro anterior para no duplicarlo */
+
+html.edmarket-next-v32
+.ed-next-glow-ring {
+  display: none !important;
+}
+
+/* ---------------------------------------------------------
+   BOTONES DE BIENVENIDA
+   --------------------------------------------------------- */
+
+html.edmarket-next-v32
+.ed-next-welcome-actions {
+  gap: 10px !important;
+}
+
+html.edmarket-next-v32
+.ed-next-welcome-actions button {
+  min-height: clamp(49px, 6.9vh, 59px) !important;
+  border-radius: 17px !important;
+}
+
+html.edmarket-next-v32
+.ed-next-primary {
+  color: #ffffff !important;
+  border: 0 !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--ed32-blue),
+      var(--ed32-cyan)
+    ) !important;
+
+  box-shadow:
+    0 13px 30px rgba(0, 121, 255, 0.34) !important;
+}
+
+html.edmarket-next-v32
+.ed-next-secondary {
+  color: #e8f9ff !important;
+
+  border:
+    1px solid rgba(57, 190, 255, 0.34) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(7, 31, 67, 0.97),
+      rgba(3, 15, 34, 0.98)
+    ) !important;
+}
+
+html.edmarket-next-v32
+.ed-next-feature {
+  color: #b9d4eb !important;
+}
+
+html.edmarket-next-v32
+.ed-next-feature i {
+  color: var(--ed32-light) !important;
+  border-color:
+    rgba(59, 202, 255, 0.3) !important;
+  background:
+    rgba(0, 116, 255, 0.14) !important;
+}
+
+/* ---------------------------------------------------------
+   HOME PRINCIPAL REAL
+   --------------------------------------------------------- */
+
+html.edmarket-next-v32 .hero {
+  border-color:
+    rgba(59, 201, 255, 0.52) !important;
+
+  background:
+    radial-gradient(
+      circle at 80% 22%,
+      rgba(96, 229, 255, 0.31),
+      transparent 27%
+    ),
+    linear-gradient(
+      140deg,
+      #0737ad 0%,
+      #087cff 48%,
+      #00a9ff 100%
+    ) !important;
+
+  box-shadow:
+    0 25px 66px rgba(0, 72, 196, 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.19) !important;
+}
+
+html.edmarket-next-v32 .eyebrow {
+  color: #79e4ff !important;
+}
+
+html.edmarket-next-v32 .primary {
+  color: #ffffff !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--ed32-blue),
+      var(--ed32-cyan)
+    ) !important;
+
+  box-shadow:
+    0 11px 29px rgba(0, 118, 255, 0.29) !important;
+}
+
+html.edmarket-next-v32 .secondary {
+  color: #e8f8ff !important;
+
+  border-color:
+    rgba(61, 190, 255, 0.28) !important;
+
+  background:
+    rgba(3, 22, 50, 0.72) !important;
+}
+
+html.edmarket-next-v32
+.promo-dots button.active,
+html.edmarket-next-v32
+.gallery-dots button.active {
+  background:
+    linear-gradient(
+      90deg,
+      var(--ed32-blue),
+      var(--ed32-cyan)
+    ) !important;
+}
+
+/* Corrige la clase antigua deformada promo-#d7a928 */
+
+html.edmarket-next-v32
+.promo[class*="promo-"] {
+  border-color:
+    rgba(58, 185, 255, 0.24) !important;
+}
+
+html.edmarket-next-v32
+.promo-green,
+html.edmarket-next-v32
+.promo[class*="d7a928"] {
+  background:
+    linear-gradient(
+      135deg,
+      #0756bb,
+      #04152f
+    ) !important;
+}
+
+/* ---------------------------------------------------------
+   CATÁLOGO, CUENTA, PEDIDOS Y CHECKOUT
+   --------------------------------------------------------- */
+
+html.edmarket-next-v32 .card,
+html.edmarket-next-v32 .featured-card,
+html.edmarket-next-v32 .shopify-product-card,
+html.edmarket-next-v32 .ed-shipping-method,
+html.edmarket-next-v32 .ed-payment-method,
+html.edmarket-next-v32 .ed-payment-detail-card,
+html.edmarket-next-v32 .ed-summary-total-card,
+html.edmarket-next-v32 .account-card,
+html.edmarket-next-v32 .order-card {
+  color: var(--ed32-text) !important;
+
+  border-color:
+    rgba(55, 177, 255, 0.25) !important;
+
+  background:
+    linear-gradient(
+      155deg,
+      rgba(8, 33, 72, 0.98),
+      rgba(2, 14, 33, 0.99)
+    ) !important;
+
+  box-shadow:
+    0 16px 40px rgba(0, 42, 105, 0.24) !important;
+}
+
+html.edmarket-next-v32 .chip.active,
+html.edmarket-next-v32
+.ed-shipping-method.is-selected,
+html.edmarket-next-v32
+.ed-payment-method.is-selected {
+  color: #ffffff !important;
+
+  border-color:
+    var(--ed32-light) !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8, 124, 255, 0.75),
+      rgba(0, 185, 255, 0.34)
+    ) !important;
+
+  box-shadow:
+    0 0 0 3px rgba(0, 181, 255, 0.09),
+    0 14px 34px rgba(0, 77, 195, 0.25) !important;
+}
+
+html.edmarket-next-v32 #edFlowCheckout {
+  color: var(--ed32-text) !important;
+
+  border-color:
+    rgba(57, 194, 255, 0.58) !important;
+
+  background:
+    radial-gradient(
+      circle at 50% 0,
+      rgba(0, 121, 255, 0.2),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #041a38,
+      #010711
+    ) !important;
+}
+
+/* ---------------------------------------------------------
+   NAVEGACIÓN INFERIOR REAL
+   --------------------------------------------------------- */
+
+html.edmarket-next-v32 .bottom-nav {
+  padding-bottom:
+    max(7px, env(safe-area-inset-bottom)) !important;
+
+  border-top:
+    1px solid rgba(55, 189, 255, 0.38) !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 34, 81, 0.99),
+      rgba(2, 13, 34, 0.998)
+    ) !important;
+
+  box-shadow:
+    0 -15px 42px rgba(0, 34, 92, 0.35) !important;
+}
+
+html.edmarket-next-v32
+.bottom-nav button,
+html.edmarket-next-v32
+.bottom-nav a {
+  color: #c9dff3 !important;
+}
+
+html.edmarket-next-v32
+.bottom-nav button.is-active,
+html.edmarket-next-v32
+.bottom-nav button.active,
+html.edmarket-next-v32
+.bottom-nav a.is-active,
+html.edmarket-next-v32
+.bottom-nav a.active {
+  color: var(--ed32-light) !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 124, 255, 0.42),
+      rgba(0, 72, 184, 0.22)
+    ) !important;
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE: TELÉFONOS BAJOS
+   --------------------------------------------------------- */
+
+@media (max-height: 760px) {
+  html.edmarket-next-v32
+  .ed-next-welcome-card {
+    gap: 10px !important;
+    grid-template-rows:
+      auto auto minmax(125px, 1fr) auto auto;
+  }
+
+  html.edmarket-next-v32
+  .ed-next-welcome-copy h1 {
+    font-size:
+      clamp(29px, 5.8vh, 40px) !important;
+  }
+
+  html.edmarket-next-v32
+  .ed-next-welcome-copy p {
+    font-size: 12.5px !important;
+    line-height: 1.38 !important;
+  }
+
+  html.edmarket-next-v32
+  .ed-next-device-stack {
+    height: clamp(125px, 25vh, 190px);
+  }
+
+  html.edmarket-next-v32
+  .ed-next-welcome-actions button {
+    min-height: 46px !important;
+  }
+}
+
+@media (max-height: 630px) {
+  html.edmarket-next-v32
+  .ed-next-welcome-card {
+    min-height: auto !important;
+    grid-template-rows:
+      auto auto 130px auto auto;
+  }
+
+  html.edmarket-next-v32
+  .ed-next-welcome-brand {
+    min-height: 43px !important;
+  }
+
+  html.edmarket-next-v32
+  .ed-next-brand-mark {
+    font-size: 38px !important;
+  }
+
+  html.edmarket-next-v32
+  .ed-next-welcome-copy p {
+    display: none;
+  }
+
+  html.edmarket-next-v32
+  .ed-next-device-stack {
+    height: 130px;
+  }
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE: TELÉFONOS ESTRECHOS
+   --------------------------------------------------------- */
+
+@media (max-width: 390px) {
+  html.edmarket-next-v32 .topbar {
+    padding-inline: 8px !important;
+  }
+
+  html.edmarket-next-v32 .brand {
+    gap: 6px !important;
+  }
+
+  html.edmarket-next-v32 .brand img {
+    width: 40px !important;
+    height: 40px !important;
+    flex-basis: 40px;
+  }
+
+  html.edmarket-next-v32 .brand strong {
+    font-size: 14px !important;
+  }
+
+  html.edmarket-next-v32 .brand small {
+    font-size: 8px !important;
+  }
+
+  html.edmarket-next-v32
+  .ed-next-header-badge {
+    display: none;
+  }
+
+  html.edmarket-next-v32 .icon-btn {
+    width: 37px !important;
+    height: 37px !important;
+  }
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE: TABLETS
+   --------------------------------------------------------- */
+
+@media (min-width: 700px) {
+  html.edmarket-next-v32
+  .ed-next-welcome {
+    padding:
+      max(24px, env(safe-area-inset-top))
+      24px
+      max(24px, env(safe-area-inset-bottom))
+      !important;
+  }
+
+  html.edmarket-next-v32
+  .ed-next-welcome-card {
+    min-height:
+      min(900px, calc(100dvh - 48px))
+      !important;
+
+    border:
+      1px solid rgba(60, 198, 255, 0.31)
+      !important;
+
+    border-radius: 36px !important;
+
+    box-shadow:
+      0 34px 90px rgba(0, 0, 0, 0.53),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08)
+      !important;
+  }
+}
