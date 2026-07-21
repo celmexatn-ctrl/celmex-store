@@ -1,0 +1,563 @@
+/* ========================================================
+   E&D MARKET NEXT v2.4
+   FINAL ELECTRIC BLUE IDENTITY
+   ======================================================== */
+
+:root {
+  --ed-final-blue-050: #eef9ff;
+  --ed-final-blue-100: #d5f1ff;
+  --ed-final-blue-200: #8edfff;
+  --ed-final-blue-300: #43c6ff;
+  --ed-final-blue-400: #149cff;
+  --ed-final-blue-500: #087cff;
+  --ed-final-blue-600: #075dea;
+  --ed-final-blue-700: #073fc9;
+  --ed-final-blue-800: #05246f;
+
+  --ed-final-bg: #010612;
+  --ed-final-bg-soft: #020b1d;
+  --ed-final-surface: #04142d;
+  --ed-final-surface-2: #061d40;
+  --ed-final-surface-3: #082b61;
+
+  --ed-final-text: #f7faff;
+  --ed-final-muted: #9bafc8;
+  --ed-final-border: rgba(67, 198, 255, 0.27);
+  --ed-final-border-strong: rgba(67, 198, 255, 0.52);
+
+  --ed-accent: var(--ed-final-blue-500);
+  --ed-accent-soft: var(--ed-final-blue-300);
+  --ed-accent-dark: var(--ed-final-blue-700);
+
+  --gold: var(--ed-final-blue-500);
+  --gold-soft: var(--ed-final-blue-300);
+  --gold-strong: var(--ed-final-blue-600);
+  --accent: var(--ed-final-blue-500);
+  --accent-2: var(--ed-final-blue-300);
+}
+
+/* --------------------------------------------------------
+   FONDO Y SUPERFICIES
+   -------------------------------------------------------- */
+
+html.ed-premium-ui,
+html.ed-next-enabled,
+html.ed-blue-final {
+  background: var(--ed-final-bg) !important;
+  color-scheme: dark;
+}
+
+html.ed-blue-final body {
+  background:
+    radial-gradient(
+      circle at 50% -8%,
+      rgba(8, 124, 255, 0.32),
+      transparent 31%
+    ),
+    linear-gradient(
+      180deg,
+      #073bad 0%,
+      #052978 13%,
+      #031538 34%,
+      #010612 73%
+    ) !important;
+
+  color: var(--ed-final-text) !important;
+}
+
+/* --------------------------------------------------------
+   ELIMINAR IDENTIDAD DORADA GLOBAL
+   -------------------------------------------------------- */
+
+html.ed-blue-final .eyebrow,
+html.ed-blue-final .tag-mini,
+html.ed-blue-final [class*="eyebrow"],
+html.ed-blue-final [class*="section-number"],
+html.ed-blue-final [class*="step-number"],
+html.ed-blue-final [class*="badge"] {
+  color: var(--ed-final-blue-300) !important;
+}
+
+html.ed-blue-final hr,
+html.ed-blue-final [class*="divider"],
+html.ed-blue-final [class*="separator"] {
+  border-color: var(--ed-final-border) !important;
+  background-color: var(--ed-final-border) !important;
+}
+
+/* --------------------------------------------------------
+   MARKETPLACE INTERNACIONAL
+   -------------------------------------------------------- */
+
+html.ed-blue-final .shopify-catalog-section,
+html.ed-blue-final #catalogo-shopify,
+html.ed-blue-final .controls,
+html.ed-blue-final #catalogo {
+  border-color: var(--ed-final-border-strong) !important;
+
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(20, 156, 255, 0.19),
+      transparent 29%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(5, 29, 66, 0.98),
+      rgba(1, 10, 27, 0.99)
+    ) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 18px 45px rgba(0, 38, 140, 0.24) !important;
+}
+
+html.ed-blue-final .market-subtitle,
+html.ed-blue-final #shopifyCatalogStatus,
+html.ed-blue-final #resultCount {
+  color: var(--ed-final-muted) !important;
+}
+
+html.ed-blue-final .search,
+html.ed-blue-final .shopify-search,
+html.ed-blue-final #shopifyCatalogSearch,
+html.ed-blue-final #searchInput {
+  border-color: var(--ed-final-border) !important;
+  background: rgba(1, 8, 22, 0.88) !important;
+  color: var(--ed-final-text) !important;
+}
+
+/* Filtros */
+
+html.ed-blue-final .chip,
+html.ed-blue-final [class*="category-chip"],
+html.ed-blue-final [data-filter] {
+  border-color: var(--ed-final-border) !important;
+  background: rgba(3, 18, 43, 0.93) !important;
+  color: #d3def0 !important;
+}
+
+html.ed-blue-final .chip.active,
+html.ed-blue-final [class*="category-chip"].active,
+html.ed-blue-final [class*="category-chip"].is-active,
+html.ed-blue-final [data-filter].active {
+  border-color: var(--ed-final-blue-300) !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--ed-final-blue-400),
+      var(--ed-final-blue-600)
+    ) !important;
+
+  color: #ffffff !important;
+
+  box-shadow:
+    0 10px 26px rgba(7, 93, 234, 0.35) !important;
+}
+
+/* Tarjetas */
+
+html.ed-blue-final .shopify-product-card,
+html.ed-blue-final .product-card,
+html.ed-blue-final .products > article,
+html.ed-blue-final .shopify-product-grid > article,
+html.ed-blue-final [class*="product-card"] {
+  border-color: var(--ed-final-border) !important;
+
+  background:
+    linear-gradient(
+      155deg,
+      rgba(6, 29, 64, 0.99),
+      rgba(2, 12, 30, 0.99)
+    ) !important;
+
+  color: var(--ed-final-text) !important;
+
+  box-shadow:
+    0 16px 36px rgba(0, 25, 91, 0.29) !important;
+}
+
+html.ed-blue-final
+.shopify-product-card [class*="label"],
+html.ed-blue-final
+.product-card [class*="label"],
+html.ed-blue-final
+.shopify-product-card [class*="tag"],
+html.ed-blue-final
+.product-card [class*="tag"] {
+  border-color: rgba(67, 198, 255, 0.25) !important;
+  background: rgba(8, 124, 255, 0.13) !important;
+  color: var(--ed-final-blue-300) !important;
+}
+
+/* --------------------------------------------------------
+   CHECKOUT
+   -------------------------------------------------------- */
+
+html.ed-blue-final #edCheckoutDialog,
+html.ed-blue-final .ed-checkout-dialog,
+html.ed-blue-final .ed-checkout-shell {
+  border-color: var(--ed-final-border-strong) !important;
+
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(20, 156, 255, 0.18),
+      transparent 27%
+    ),
+    linear-gradient(
+      155deg,
+      #051a3b,
+      #010916 72%
+    ) !important;
+
+  box-shadow:
+    0 28px 90px rgba(0, 16, 67, 0.7) !important;
+}
+
+html.ed-blue-final .ed-checkout-header,
+html.ed-blue-final .ed-checkout-hero,
+html.ed-blue-final .ed-checkout-progress,
+html.ed-blue-final .ed-checkout-section,
+html.ed-blue-final .ed-checkout-card,
+html.ed-blue-final .ed-account-card,
+html.ed-blue-final .ed-address-card,
+html.ed-blue-final .ed-shipping-method,
+html.ed-blue-final .ed-payment-method,
+html.ed-blue-final .ed-summary-total-card {
+  border-color: var(--ed-final-border) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(6, 30, 65, 0.98),
+      rgba(2, 13, 31, 0.98)
+    ) !important;
+}
+
+html.ed-blue-final .ed-checkout-logo img,
+html.ed-blue-final .ed-checkout-brand img,
+html.ed-blue-final
+#edCheckoutDialog img[src*="logo"] {
+  content:
+    url("../../assets/branding-next/icon-next.svg") !important;
+
+  filter:
+    drop-shadow(
+      0 0 20px rgba(20, 156, 255, 0.6)
+    ) !important;
+}
+
+html.ed-blue-final .ed-checkout-step,
+html.ed-blue-final [class*="checkout-step"] {
+  color: #8498b1 !important;
+}
+
+html.ed-blue-final .ed-checkout-step.is-active,
+html.ed-blue-final .ed-checkout-step.active,
+html.ed-blue-final [class*="checkout-step"].is-active,
+html.ed-blue-final [class*="checkout-step"].active {
+  color: var(--ed-final-blue-300) !important;
+}
+
+html.ed-blue-final
+.ed-checkout-step.is-active > span,
+html.ed-blue-final
+.ed-checkout-step.active > span,
+html.ed-blue-final
+[class*="checkout-step"].is-active
+[class*="number"] {
+  border-color: var(--ed-final-blue-300) !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--ed-final-blue-300),
+      var(--ed-final-blue-600)
+    ) !important;
+
+  color: #ffffff !important;
+
+  box-shadow:
+    0 9px 25px rgba(7, 93, 234, 0.36) !important;
+}
+
+html.ed-blue-final .ed-checkout-shell input,
+html.ed-blue-final .ed-checkout-shell select,
+html.ed-blue-final .ed-checkout-shell textarea,
+html.ed-blue-final #edCheckoutDialog input,
+html.ed-blue-final #edCheckoutDialog select,
+html.ed-blue-final #edCheckoutDialog textarea {
+  border-color: var(--ed-final-border) !important;
+  background: rgba(1, 8, 21, 0.85) !important;
+  color: var(--ed-final-text) !important;
+}
+
+html.ed-blue-final .ed-checkout-close,
+html.ed-blue-final #edCheckoutDialog .close {
+  border-color: var(--ed-final-border-strong) !important;
+  background: rgba(8, 124, 255, 0.12) !important;
+  color: var(--ed-final-blue-300) !important;
+}
+
+/* Mensajes vacíos */
+
+html.ed-blue-final .ed-checkout-empty strong,
+html.ed-blue-final .ed-checkout-error strong,
+html.ed-blue-final .ed-checkout-message strong {
+  color: var(--ed-final-blue-300) !important;
+}
+
+/* --------------------------------------------------------
+   CUENTA Y PEDIDOS
+   -------------------------------------------------------- */
+
+html.ed-blue-final .ed-v3-sheet,
+html.ed-blue-final #edV3Sheet {
+  border-color: var(--ed-final-border-strong) !important;
+
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(20, 156, 255, 0.16),
+      transparent 28%
+    ),
+    linear-gradient(
+      160deg,
+      #041a3b,
+      #010916 72%
+    ) !important;
+}
+
+html.ed-blue-final .ed-v3-sheet-header,
+html.ed-blue-final .ed-v3-sheet-top {
+  border-bottom-color: var(--ed-final-border) !important;
+  background: rgba(1, 8, 21, 0.8) !important;
+}
+
+html.ed-blue-final #edV3SheetEyebrow,
+html.ed-blue-final .ed-v3-sheet-eyebrow {
+  color: var(--ed-final-blue-300) !important;
+}
+
+html.ed-blue-final #edV3SheetClose,
+html.ed-blue-final .ed-v3-sheet-close,
+html.ed-blue-final .ed-v3-sheet .close {
+  border-color: var(--ed-final-border-strong) !important;
+  background: rgba(8, 124, 255, 0.12) !important;
+  color: var(--ed-final-blue-300) !important;
+}
+
+html.ed-blue-final .ed-account-card,
+html.ed-blue-final .ed-account-menu-item,
+html.ed-blue-final .ed-order-card,
+html.ed-blue-final .ed-orders-empty,
+html.ed-blue-final [class*="account-card"],
+html.ed-blue-final [class*="order-card"] {
+  border-color: var(--ed-final-border) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(6, 30, 65, 0.97),
+      rgba(2, 13, 31, 0.98)
+    ) !important;
+}
+
+html.ed-blue-final
+.ed-account-card > span,
+html.ed-blue-final
+.ed-account-menu-item > span,
+html.ed-blue-final
+[class*="account-icon"],
+html.ed-blue-final
+[class*="order-icon"] {
+  border-color: rgba(67, 198, 255, 0.25) !important;
+  background: rgba(8, 124, 255, 0.13) !important;
+  color: var(--ed-final-blue-300) !important;
+}
+
+/* Botón pedidos vacío */
+
+html.ed-blue-final
+.ed-orders-empty button,
+html.ed-blue-final
+[class*="orders-empty"] button {
+  border-color: transparent !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--ed-final-blue-400),
+      var(--ed-final-blue-600)
+    ) !important;
+
+  color: #ffffff !important;
+}
+
+/* --------------------------------------------------------
+   PRICING ENGINE, SOCIOS Y ADMIN
+   -------------------------------------------------------- */
+
+html.ed-blue-final .ed-pricing-dialog,
+html.ed-blue-final .admin-dialog,
+html.ed-blue-final #adminModal,
+html.ed-blue-final #socioModal,
+html.ed-blue-final .simple-dialog {
+  border-color: var(--ed-final-border-strong) !important;
+
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(20, 156, 255, 0.16),
+      transparent 28%
+    ),
+    linear-gradient(
+      155deg,
+      #041a3b,
+      #010916 72%
+    ) !important;
+}
+
+html.ed-blue-final .ed-pricing-card,
+html.ed-blue-final .ed-pricing-method,
+html.ed-blue-final .ed-pricing-result-method,
+html.ed-blue-final .ed-pricing-result-summary,
+html.ed-blue-final .admin-section,
+html.ed-blue-final .socio-commission-catalog {
+  border-color: var(--ed-final-border) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(6, 30, 65, 0.97),
+      rgba(2, 13, 31, 0.98)
+    ) !important;
+}
+
+html.ed-blue-final .ed-pricing-primary,
+html.ed-blue-final .primary,
+html.ed-blue-final .wa-buy,
+html.ed-blue-final button[type="submit"]:not(.close) {
+  border-color: transparent !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--ed-final-blue-300),
+      var(--ed-final-blue-500) 50%,
+      var(--ed-final-blue-700)
+    ) !important;
+
+  color: #ffffff !important;
+
+  box-shadow:
+    0 11px 28px rgba(7, 93, 234, 0.34) !important;
+}
+
+/* --------------------------------------------------------
+   BARRAS DE SCROLL
+   -------------------------------------------------------- */
+
+html.ed-blue-final * {
+  scrollbar-color:
+    var(--ed-final-blue-400)
+    rgba(1, 8, 21, 0.42) !important;
+}
+
+html.ed-blue-final *::-webkit-scrollbar-thumb {
+  background:
+    linear-gradient(
+      180deg,
+      var(--ed-final-blue-300),
+      var(--ed-final-blue-600)
+    ) !important;
+}
+
+/* --------------------------------------------------------
+   REEMPLAZOS DE COLORES HEREDADOS
+   -------------------------------------------------------- */
+
+html.ed-blue-final .is-selected,
+html.ed-blue-final .is-active,
+html.ed-blue-final .selected,
+html.ed-blue-final .active {
+  --selected-color:
+    var(--ed-final-blue-400);
+}
+
+html.ed-blue-final
+[class*="gold"],
+html.ed-blue-final
+[class*="yellow"],
+html.ed-blue-final
+[class*="amber"] {
+  border-color: var(--ed-final-border) !important;
+  color: var(--ed-final-blue-300) !important;
+}
+
+/* Flechas y pequeños acentos */
+
+html.ed-blue-final
+.ed-account-menu-item > b,
+html.ed-blue-final
+.ed-account-card > b,
+html.ed-blue-final
+[class*="account"] > b,
+html.ed-blue-final
+[class*="order"] > b {
+  color: var(--ed-final-blue-300) !important;
+}
+
+/* --------------------------------------------------------
+   NAVEGACIÓN INFERIOR
+   -------------------------------------------------------- */
+
+html.ed-blue-final .edp-bottom-nav {
+  border-top-color:
+    rgba(67, 198, 255, 0.34) !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(3, 29, 78, 0.99),
+      rgba(1, 7, 20, 0.998)
+    ) !important;
+}
+
+html.ed-blue-final .edp-nav-item.is-active {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 124, 255, 0.43),
+      rgba(4, 49, 135, 0.23)
+    ) !important;
+
+  color: var(--ed-final-blue-300) !important;
+}
+
+html.ed-blue-final .edp-nav-item.is-active::before {
+  background:
+    linear-gradient(
+      90deg,
+      var(--ed-final-blue-300),
+      var(--ed-final-blue-500)
+    ) !important;
+}
+
+/* --------------------------------------------------------
+   ÚLTIMA BARRERA CONTRA EL DORADO
+   -------------------------------------------------------- */
+
+html.ed-blue-final
+[style*="215, 169, 40"],
+html.ed-blue-final
+[style*="224, 180, 47"],
+html.ed-blue-final
+[style*="215,169,40"],
+html.ed-blue-final
+[style*="224,180,47"] {
+  border-color: var(--ed-final-border) !important;
+  color: var(--ed-final-blue-300) !important;
+}
