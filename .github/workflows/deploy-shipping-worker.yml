@@ -1,1 +1,28 @@
+name: Deploy E&D Shipping Worker
 
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "cloudflare/shipping-api/**"
+      - ".github/workflows/deploy-shipping-worker.yml"
+
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy Shipping Worker
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: cloudflare/shipping-api
+          command: deploy
